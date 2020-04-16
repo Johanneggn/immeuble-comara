@@ -1,1 +1,88 @@
-// Specific CSS for your home-page
+// Cover
+.cover {
+  min-height: 500px;
+  width: 100vw;
+  background-image: linear-gradient(rgba(0,0,0,.02), rgba(0,0,0,.02)), asset-url('test-cover-4.png');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#Title-home {
+  font-size: 96px;
+  color: $white !important;
+  text-shadow: 2px 2px 2px $dark-gray;
+}
+
+// presentation
+
+.presentation-home {
+  min-height: 300px;
+}
+
+.title-presentation-immeuble {
+  border-bottom: 1px solid $lm-gray;
+}
+
+
+// review part
+
+.review {
+  background-color: $green;
+  height: 340px;
+  width: 285px;
+  // margin: 50px;
+  border-radius: 3px;
+}
+
+.reviews {
+  background-color: $white;
+  min-height: 500px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+//card home
+
+.card-home-flat {
+  height: 290px;
+  max-width: 255px;
+  border-radius: 3px;
+}
+.cards-flat-home {
+  border-top: 1px solid $lm-gray;
+  justify-content: center;
+}
+
+.flat-name-home {
+  font-size: 20px;
+}
+
+.flat-capacity{
+  font-size: 26px;
+  color: $white;
+  padding-top: 7px;
+}
+
+.i-user-flat-home {
+  font-size: 21px;
+  color: $white;
+  padding: 10px;
+}
+.photo-flat {
+  display: flex;
+  height: 205px;
+  width: 255px;
+  background-color: $green;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+
