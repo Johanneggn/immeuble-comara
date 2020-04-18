@@ -83,3 +83,5 @@ production:
   database: immeuble-comara_production
   username: immeuble-comara
   password: <%= ENV['IMMEUBLE-COMARA_DATABASE_PASSWORD'] %>
+  production:
+  url: <%= ENV['POSTGRESQL_ADDON_URI'] %>
