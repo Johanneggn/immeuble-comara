@@ -1,0 +1,46 @@
+// partie photo
+
+.photo-flat-index-principale {
+ height: 500px;
+ width: 600px
+}
+
+.photo-flat-index-secondaire {
+ height: 150px;
+ width: 180px;
+}
+
+.photo-show-flat {
+  border-top: 1px solid $lm-gray;
+}
+
+// partie description
+
+.titles-description-flat {
+  font-size: 24px;
+  font-weight: 300;
+  border-bottom: 1px solid $lm-gray;
+}
+
+.description-show-flat {
+  background-color: $white;
+  border-radius: 5px;
+}
+
+.text-description-flat {
+  min-height: 300px;
+}
+
+.list-equipements {
+  min-height: 300px;
+}
+
+.text-hours-accessibility {
+  min-height: 150px;
+}
+// partie réservation
+
+.booking-show-flat {
+  border-radius: 5px;
+  background-color: $white;
+}

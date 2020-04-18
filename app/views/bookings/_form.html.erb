@@ -1,0 +1,30 @@
+<%= simple_form_for @booking do |f| %>
+          <% if @booking.errors.any? %>
+            <div class="errors-container">
+              <ul>
+                <% @booking.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+            <%= f.input :start_date,
+                        as: :string,
+                        required: false,
+                        label: 'Dates d\'arrivée' %>
+            <%= f.input :end_date,
+                        as: :string,
+                        required: false,
+                        label: 'Date de départ' %>
+
+              <div class="d-flex flex-row-reverse mt-4">
+                <%= f.submit "Réservez" %>
+              </div>
+            </div>
+        <% end %>
+
+            <%= f.input :travellers,
+                        as: :select,
+                        collection: Booking::TRAVELLERS,
+                        input_html: {class: "select2"},
+                        label: 'Nombre de Voyageurs' %>

@@ -56,15 +56,17 @@
     <div class="cards-flat-home">
       <div class="row">
         <% @flats.each do |flat| %>
-          <div class="col-md-3 d-flex justify-content-center">
-            <div class="card-home-flat bg-white mt-5 px-0">
-              <div class="photo-flat">
-                  <p class="w-100 text-right flat-capacity"><%= flat.capacity %></p>
-                  <i class="fas fa-user i-user-flat-home"></i>
+
+            <div class="col-md-3 d-flex justify-content-center">
+              <div class="card-home-flat bg-white mt-5 px-0">
+                <div class="photo-flat">
+                    <p class="w-100 text-right flat-capacity"><%= flat.capacity %></p>
+                    <i class="fas fa-user i-user-flat-home"></i>
+                </div>
+                <h3 class="flat-name-home text-center py-3"><%= flat.name %></h3>
               </div>
-              <h3 class="flat-name-home text-center py-3"><%= flat.name %></h3>
             </div>
-          </div>
+
         <% end %>
       </div>
     </div>
