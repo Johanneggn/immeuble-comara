@@ -1,0 +1,77 @@
+// container gauche contenant tous les appartements
+
+.index-flats {
+  border-top: 1px solid $lm-gray;
+}
+
+
+// chaque appartement
+
+.flat-list{
+  background-color: $white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+  border-radius: 5px;
+}
+
+.flat-list:hover {
+  border : 2px solid $green;
+}
+
+.flat-list:hover h3 {
+  color: $green !important;
+}
+
+.block-info {
+  min-height: 45px;
+}
+
+.photo-flat-index {
+height: 137px;
+min-width: 80px;
+}
+
+.link-show-flat:hover {
+  text-decoration: none !important;
+}
+
+// textes des appartements
+
+#title-index-flat {
+  font-size: 28px;
+}
+
+#flat-name-index {
+  font-size: 26px !important;
+  color: $light-dark;
+  font-weight: 600;
+}
+
+#capacity-flat {
+  font-size: 16px;
+  color: $dm-gray;
+}
+
+.user-solid-index {
+  font-size: 14px !important;
+  color: $dm-gray;
+}
+
+#price-per-day-index {
+  font-size: 16px;
+  color: $dm-gray;
+}
+
+#total-price-flat-index {
+  font-size: 24px;
+  font-family: "mukta";
+  font-weight: 600;
+}
+
+// MAP
+
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  margin-top: 10px;
+}

@@ -25,17 +25,17 @@ johanne.save!
 puts "Done seeding user"
 
 #flats
-flat_1 = Flat.new(name: "Studio avec terrasse", description: "blablabla", price_per_day: 30, address: "2 rue Clément Marot, Brest", capacity: 2)
+flat_1 = Flat.new(name: "Studio avec terrasse", description: "blablabla", price_per_day: 30, address: "Abidjan", capacity: 2)
 flat_1.save!
-flat_2 = Flat.new(name: "Studio dernier étage", description: "blablabla", price_per_day: 25, address: "2 rue Clément Marot, Brest", capacity: 2)
+flat_2 = Flat.new(name: "Studio dernier étage", description: "blablabla", price_per_day: 25, address: "Abidjan", capacity: 2)
 flat_2.save!
-flat_3 = Flat.new(name: "Appartement 2 chambres", description: "blablabla", price_per_day: 40, address: "2 rue Clément Marot, Brest", capacity: 4)
+flat_3 = Flat.new(name: "Appartement 2 chambres", description: "blablabla", price_per_day: 40, address: "Abidjan", capacity: 4)
 flat_3.save!
-flat_4 = Flat.new(name: "Appartement salon et 1 chambre", description: "blablabla", price_per_day: 25, address: "2 rue Clément Marot, Brest", capacity: 4)
+flat_4 = Flat.new(name: "Appartement salon et 1 chambre", description: "blablabla", price_per_day: 25, address: "Abidjan", capacity: 4)
 flat_4.save!
-flat_5 = Flat.new(name: "Appartement salon et 1 chambre", description: "blablabla", price_per_day: 25, address: "2 rue Clément Marot, Brest", capacity: 4)
+flat_5 = Flat.new(name: "Appartement salon et 1 chambre", description: "blablabla", price_per_day: 25, address: "Abidjan", capacity: 4)
 flat_5.save!
-flat_6 = Flat.new(name: "Appartement salon et 1 chambre", description: "blablabla", price_per_day: 25, address: "2 rue Clément Marot, Brest", capacity: 4)
+flat_6 = Flat.new(name: "Appartement salon et 1 chambre", description: "blablabla", price_per_day: 25, address: "Abidjan", capacity: 4)
 flat_6.save!
 
 puts "__________________________________________________________"
