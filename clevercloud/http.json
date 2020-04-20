@@ -1,3 +1,10 @@
 {
+  "error_pages": {
+    "404": "path/to/page"
+    },
     "force_https": true,
+    "aliases": {
+        "/path": "redirection"
+    },
+    "charset": "latin-1"
 }
