@@ -1,6 +1,6 @@
-<div class="container-show-flat">
-  <h1 class="title-index-flat mt-5 ml-5 pl-4"><%= @flat.name %></h1>
-  <div class="photo-show-flat py-3 mt-2 mx-5">
+<div class="container">
+  <h1 class="title-index-flat mt-5"><%= @flat.name %></h1>
+  <div class="photo-show-flat">
     <div class="row">
     <div class="col-md-6 d-flex justify-content-center py-3">
       <%= image_tag("191546988.jpg", crop: :fill, class: "photo-flat-index-principale") %>
@@ -42,25 +42,25 @@
     </div>
     </div>
   </div>
-  <div class="description-booking mx-5 px-4">
+  <div class="description-booking">
     <div class="row">
       <div class="col-md-8">
         <div class="description-show-flat">
           <div class="description-flat-show">
-            <h3 class="titles-description-flat mx-5 pt-4 pb-2">Description de l'appartement</h3>
-            <div class="text-description-flat">
-              <p class="px-5"><%= @flat.description %></p>
+            <h3 class="titles-description-flat pt-4 pb-2 mx-3">Description de l'appartement</h3>
+            <div class="text-description-flat mx-3">
+              <p><%= @flat.description %></p>
             </div>
           </div>
           <div class="equipement-flat-show">
-            <h3 class="titles-description-flat mx-5 pb-2">Équipements de l'appartement</h3>
-              <div class="list-equipements px-5">
+            <h3 class="titles-description-flat pb-2 mx-3">Équipements de l'appartement</h3>
+              <div class="list-equipements px-3">
 
               </div>
           </div>
           <div class="accessibility-hours">
-            <h3 class="titles-description-flat mx-5 pb-2">Accessibilité et horaire</h3>
-            <div class="text-hours-accessibility px-5">
+            <h3 class="titles-description-flat pb-2 mx-3">Accessibilité et horaire</h3>
+            <div class="text-hours-accessibility mx-3">
               <p>Heure d'arrivée</p>
               <p>Heure de départ</p>
             </div>

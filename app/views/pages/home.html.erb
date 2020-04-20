@@ -1,4 +1,4 @@
-<div class="home-page">
+
   <div class="cover">
     <div class="cover-text">
       <div class="d-flex justify-content-center">
@@ -9,6 +9,7 @@
       </div>
     </div>
   </div>
+ <div class="container-fluid">
   <div class="presentation-home m-5">
     <div class=" row d-flex">
       <div class="col">
@@ -51,14 +52,15 @@
       </div>
     </div>
   </div>
+
   <div class="flat-index-home m-5">
-    <h1 class="mb-2">Nos appartements</h1>
-    <div class="cards-flat-home">
+    <h1 class="mb-2 ml-4">Nos appartements</h1>
+    <div class="cards-flat-home mx-4">
       <div class="row">
         <% @flats.each do |flat| %>
-
-            <div class="col-md-3 d-flex justify-content-center">
-              <div class="card-home-flat bg-white mt-5 px-0">
+          <%= link_to flat_path(flat), class: "link-show-flat" do %>
+            <div class="col-md-12 ">
+              <div class="card-home-flat bg-white mt-5 mx-3 px-0">
                 <div class="photo-flat">
                     <p class="w-100 text-right flat-capacity"><%= flat.capacity %></p>
                     <i class="fas fa-user i-user-flat-home"></i>
@@ -66,7 +68,7 @@
                 <h3 class="flat-name-home text-center py-3"><%= flat.name %></h3>
               </div>
             </div>
-
+          <% end %>
         <% end %>
       </div>
     </div>
