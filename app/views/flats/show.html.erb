@@ -1,73 +1,55 @@
 <div class="container">
   <div class="row text-right">
     <div class="index-show-search-bar">
-      <div class="d-flex">
         <%= form_tag flats_path, method: :get do %>
+        <div class="row">
+          <div class="col">
           <%= text_field_tag :start_date_response,
                 params[:start_date_response],
                 class: "form-home-booking",
-                placeholder: "Date de départ" %>
+                placeholder: "Date de d'arrivée" %>
+          </div>
+          <div class="col">
           <%= text_field_tag :end_date_response,
                 params[:end_date_response],
                 class: "form-home-booking",
-                placeholder: "Date de fin" %>
+                placeholder: "Date de départ" %>
+          </div>
+          <div class="col">
           <%= text_field_tag :capacity_response,
                 params[:capacity_response],
                 class: "form-home-booking",
                 placeholder: "Nombre de voyageurs" %>
+          </div>
+          <div class="col">
           <%= submit_tag 'Modifiez',
           class: "submit-index-show"%>
+          </div>
+         </div>
         <% end %>
-      </div>
     </div>
   </div>
   <div class="contenu-show mt-5 pt-3">
   <h1 class="title-index-flat mt-5"><%= @flat.name %></h1>
   <div class="photo-show-flat">
     <div class="row">
-    <div class="col-md-6 d-flex justify-content-center py-3">
-      <%= image_tag("191546988.jpg", crop: :fill, class: "photo-flat-index-principale") %>
+    <div class="col-md-6 d-flex justify-content-center py-4">
+      <%= cl_image_tag @flat.picture.key, crop: :thumb, class: "photo-flat-index-principale" %>
     </div>
     <div class="col-md-6">
       <div class="row pt-3 pb-2">
-        <div class="col px-0">
-          <%= image_tag("191546988.jpg", crop: :fill, class: "photo-flat-index-secondaire") %>
+        <% @flat.photos.each do |photo| %>
+        <div class="col p-2">
+          <%= cl_image_tag photo.key, crop: :fit, class: "photo-flat-index-secondaire" %>
         </div>
-        <div class="col px-0">
-          <%= image_tag("191546988.jpg", crop: :fill, class: "photo-flat-index-secondaire") %>
-        </div>
-        <div class="col px-0">
-          <%= image_tag("191546988.jpg", crop: :fill, class: "photo-flat-index-secondaire") %>
-        </div>
-      </div>
-      <div class="row py-2">
-        <div class="col px-0">
-          <%= image_tag("191546988.jpg", crop: :fill, class: "photo-flat-index-secondaire") %>
-        </div>
-        <div class="col px-0">
-          <%= image_tag("191546988.jpg", crop: :fill, class: "photo-flat-index-secondaire") %>
-        </div>
-        <div class="col px-0">
-          <%= image_tag("191546988.jpg", crop: :fill, class: "photo-flat-index-secondaire") %>
-        </div>
-      </div>
-      <div class="row py-2">
-        <div class="col px-0">
-          <%= image_tag("191546988.jpg", crop: :fill, class: "photo-flat-index-secondaire") %>
-        </div>
-        <div class="col px-0">
-          <%= image_tag("191546988.jpg", crop: :fill, class: "photo-flat-index-secondaire") %>
-        </div>
-        <div class="col px-0">
-          <%= image_tag("191546988.jpg", crop: :fill, class: "photo-flat-index-secondaire") %>
-        </div>
+        <% end %>
       </div>
     </div>
     </div>
   </div>
   <div class="description-booking">
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-8 mt-4">
         <div class="description-show-flat">
           <div class="description-flat-show">
             <h3 class="titles-description-flat pt-4 pb-2 mx-3">Description de l'appartement</h3>
@@ -90,9 +72,45 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 mt-4">
         <div class="booking-show-flat">
-          <p><%= @flat.price_per_day %>€/nuit</p>
+          <div class="d-flex d-print-inline justify-content-center pt-4">
+            <p id="price-per-day-show"><%= @flat.price_per_day %>€</p><p>/nuit</p>
+          </div>
+          <div class="form-booking px-4">
+            <%= simple_form_for @booking do |f| %>
+              <% if @booking.errors.any? %>
+                <div class="errors-container">
+                  <ul>
+                    <% @booking.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              <% end %>
+              <%= f.input :start_date,
+                          as: :string,
+                          required: false,
+                          # input_html: {id: "datepicker"},
+                          label: 'Dates d\'arrivée' %>
+              <%= f.input :end_date,
+                          as: :string,
+                          required: false,
+                          # input_html: {class: "end_date"},
+                          label: 'Date de départ' %>
+
+              <%= f.input :travellers,
+                          as: :select,
+                          collection: Booking::TRAVELLERS,
+                          input_html: {class: "select2"},
+                          label: 'Nombre de Voyageurs' %>
+
+                          <p>30€ x 7 nuits = 210€</p>
+              <div class="d-flex flex-row-reverse mt-4 justify-content-center">
+                <%= f.submit "Réservez", class: "button-booking" %>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
