@@ -1,9 +1,9 @@
 class FlatsController < ApplicationController
     skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
-    @flats = Flat.where(capacity: params[:capacity_response])
-    # Je veux afficher les appartements
-    # Les appartements qui n'ont pas de
+  #query_flats = Flat.where(capacity: params[:capacity_response])
+  @flats = Flat.where(capacity: params[:capacity_response]) #.joins(:bookings).where.not('bookings.start_date >= ? AND bookings.end_date <=  ?', params[:start_date_response], params[:end_date_response])
 
     @flat_place = Flat.geocoded
       @markers = @flats.map do |event|
@@ -16,6 +16,7 @@ class FlatsController < ApplicationController
 
   def show
     @flat = Flat.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
