@@ -11,11 +11,18 @@
             <%= f.input :start_date,
                         as: :string,
                         required: false,
+                        # input_html: {id: "datepicker"},
                         label: 'Dates d\'arrivée' %>
             <%= f.input :end_date,
                         as: :string,
                         required: false,
+                        # input_html: {class: "end_date"},
                         label: 'Date de départ' %>
+            <%= f.input :travellers,
+                        as: :select,
+                        collection: Booking::TRAVELLERS,
+                        input_html: {class: "select2"},
+                        label: 'Nombre de Voyageurs' %>
 
               <div class="d-flex flex-row-reverse mt-4">
                 <%= f.submit "Réservez" %>
@@ -23,8 +30,4 @@
             </div>
         <% end %>
 
-            <%= f.input :travellers,
-                        as: :select,
-                        collection: Booking::TRAVELLERS,
-                        input_html: {class: "select2"},
-                        label: 'Nombre de Voyageurs' %>
+

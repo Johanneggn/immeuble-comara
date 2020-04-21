@@ -1,7 +1,9 @@
 class FlatsController < ApplicationController
     skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @flats = Flat.all
+    @flats = Flat.where(capacity: params[:capacity_response])
+    # Je veux afficher les appartements
+    # Les appartements qui n'ont pas de
 
     @flat_place = Flat.geocoded
       @markers = @flats.map do |event|

@@ -1,0 +1,45 @@
+.form-home-booking {
+  background-color: $white;
+  border: none;
+  margin: 0px;
+  padding: 45px 30px;
+  font-family: 'mukta';
+  font-size: 18px;
+  text-align: center;
+}
+
+.submit-home-booking {
+  background-color: $green;
+  padding: 45px 30px;
+  font-size: 24px;
+  color: $light-dark;
+
+}
+
+.submit-index-show {
+  background-color: $light-dark;
+  padding: 45px 30px;
+  font-size: 24px;
+  color: $white;
+}
+
+
+.index-show-search-bar {
+  background-color: $white;
+  display: inline;
+  font-family: 'Staatliches';
+  z-index: 9;
+  margin-top: -50px;
+  color: $light-dark;
+  position: absolute; /*or fixed*/
+  right: 0px;
+}
+
+.home-search-bar {
+  background-color: $white;
+  display: inline;
+  font-family: 'Staatliches';
+  z-index: 9;
+  margin-top: -50px;
+  color: $light-dark;
+}

@@ -9,12 +9,35 @@
       </div>
     </div>
   </div>
+<div class="row">
+  <div class="home-search-bar">
+    <div class="d-flex">
+      <%= form_tag flats_path, method: :get do %>
+        <%= text_field_tag :start_date_response,
+              params[:start_date_response],
+              class: "form-home-booking",
+              placeholder: "Date de départ" %>
+        <%= text_field_tag :end_date_response,
+              params[:end_date_response],
+              class: "form-home-booking",
+              placeholder: "Date de fin" %>
+        <%= text_field_tag :capacity_response,
+              params[:capacity_response],
+              class: "form-home-booking",
+              placeholder: "Nombre de voyageurs" %>
+        <%= submit_tag 'Recherchez',
+        class: "submit-home-booking"%>
+      <% end %>
+    </div>
+  </div>
+</div>
  <div class="container-fluid">
   <div class="presentation-home m-5">
     <div class=" row d-flex">
-      <div class="col">
+      <div class="col-md-5">
+        <%= image_tag "photo_home.jpg", class: "photo-home" %>
       </div>
-      <div class="col">
+      <div class="col-md-7">
         <h1 class="title-presentation-immeuble pb-2">Immeuble commara</h1>
         <p class="pt-4">Bonjour, Je suis Comara Ibrahim Architecte Franco-Ivoirien à la retraite.
         Je propose un service simple et fonctionnel de location de vacances, du
