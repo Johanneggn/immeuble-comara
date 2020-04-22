@@ -31,3 +31,11 @@
 
 en:
   hello: "Hello world"
+
+
+fr:
+  date:
+    formats:
+      default: "%d-%m-%Y"
+      short: "%b %B"
+      long: "%d %B %Y"

@@ -186,7 +186,7 @@ appart_chambres = Flat.new(
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   price_per_day: 25,
   address: "Abidjan",
-  capacity: 4)
+  capacity: 2)
 appart_chambres.photos.attach(io: appart_chambres_image_1, filename: "photo_1.jpg", content_type: 'image/jpg')
 appart_chambres.photos.attach(io: appart_chambres_image_2, filename: "photo_2.jpg", content_type: 'image/jpg')
 appart_chambres.photos.attach(io: appart_chambres_image_3, filename: "photo_3.jpg", content_type: 'image/jpg')
@@ -212,7 +212,32 @@ puts "Seeding bookings"
 booking_1 = Booking.new(total_price: 130, start_date: '30-06-2020', end_date: '05-07-2020')
 booking_1.flat = studio
 booking_1.client = cedric
-booking_1.save!
+booking_1.save! #2
+
+booking_2 = Booking.new(total_price: 130, start_date: '10-06-2020', end_date: '15-06-2020')
+booking_2.flat = studio_terrasse
+booking_2.client = cedric
+booking_2.save! #2
+
+booking_3 = Booking.new(total_price: 130, start_date: '10-06-2020', end_date: '18-06-2020')
+booking_3.flat = appartement_chambre
+booking_3.client = cedric
+booking_3.save! # 4
+
+booking_4 = Booking.new(total_price: 130, start_date: '30-06-2020', end_date: '05-07-2020')
+booking_4.flat = appartement_chambres
+booking_4.client = cedric
+booking_4.save! # 4
+
+booking_5 = Booking.new(total_price: 130, start_date: '10-07-2020', end_date: '17-07-2020')
+booking_5.flat = appart_chambres
+booking_5.client = cedric
+booking_5.save! # 2
+
+booking_6 = Booking.new(total_price: 130, start_date: '30-06-2020', end_date: '05-07-2020')
+booking_6.flat = studio_balcon
+booking_6.client = cedric
+booking_6.save! # 4
 
 puts puts "Done seeding bookings"
 puts "__________________________________________________________"

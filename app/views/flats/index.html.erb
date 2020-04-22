@@ -3,18 +3,24 @@
               <div class="index-show-search-bar">
                 <div class="d-flex">
                   <%= form_tag flats_path, method: :get do %>
+
                     <%= text_field_tag :start_date_response,
                           params[:start_date_response],
-                          class: "form-home-booking",
+                          input_html: {class: "datepicker"},
+                          class: "datepicker-query",
                           placeholder: "Date de départ" %>
+
                     <%= text_field_tag :end_date_response,
                           params[:end_date_response],
-                          class: "form-home-booking",
+                          input_html: {class: "end_date"},
+                          class: "end-date-query",
                           placeholder: "Date de fin" %>
+
                     <%= text_field_tag :capacity_response,
                           params[:capacity_response],
                           class: "form-home-booking",
                           placeholder: "Nombre de voyageurs" %>
+
                     <%= submit_tag 'Modifiez',
                     class: "submit-index-show"%>
                   <% end %>
