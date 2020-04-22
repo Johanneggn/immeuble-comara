@@ -41,9 +41,9 @@ studio = Flat.new(
   price_per_day: 30,
   address: "Abidjan",
   capacity: 2)
-studio.photos.attach(io: studio_photo_1, filename: "photo_1.jpg", content_type: 'image/jpg')
+studio.photos.attach(io: studio_photo_1, filename: "photo_3.jpg", content_type: 'image/jpg')
 studio.photos.attach(io: studio_photo_2, filename: "photo_2.jpg", content_type: 'image/jpg')
-studio.photos.attach(io: studio_photo_3, filename: "photo_3.jpg", content_type: 'image/jpg')
+studio.photos.attach(io: studio_photo_3, filename: "photo_1.jpg", content_type: 'image/jpg')
 studio.photos.attach(io: studio_photo_4, filename: "photo_4.jpg", content_type: 'image/jpg')
 studio.photos.attach(io: studio_photo_5, filename: "photo_5.jpg", content_type: 'image/jpg')
 studio.photos.attach(io: studio_photo_6, filename: "photo_6.jpg", content_type: 'image/jpg')
@@ -72,14 +72,14 @@ studio_terrasse = Flat.new(
   capacity: 2)
 studio_terrasse.photos.attach(io: studio_terrasse_photo_1, filename: "photo_1.jpg", content_type: 'image/jpg')
 studio_terrasse.photos.attach(io: studio_terrasse_photo_2, filename: "photo_2.jpg", content_type: 'image/jpg')
-studio_terrasse.photos.attach(io: studio_terrasse_photo_3, filename: "photo_3.jpg", content_type: 'image/jpg')
+studio_terrasse.picture.attach(io: studio_terrasse_photo_3, filename: "photo_3.jpg", content_type: 'image/jpg')
 studio_terrasse.photos.attach(io: studio_terrasse_photo_4, filename: "photo_4.jpg", content_type: 'image/jpg')
 studio_terrasse.photos.attach(io: studio_terrasse_photo_5, filename: "photo_5.jpg", content_type: 'image/jpg')
 studio_terrasse.photos.attach(io: studio_terrasse_photo_6, filename: "photo_6.jpg", content_type: 'image/jpg')
 studio_terrasse.photos.attach(io: studio_terrasse_photo_7, filename: "photo_7.jpg", content_type: 'image/jpg')
 studio_terrasse.photos.attach(io: studio_terrasse_photo_8, filename: "photo_8.jpg", content_type: 'image/jpg')
 studio_terrasse.photos.attach(io: studio_terrasse_photo_9, filename: "photo_9.jpg", content_type: 'image/jpg')
-studio_terrasse.picture.attach(io: studio_terrasse_photo_10, filename: "photo_10.jpg", content_type: 'image/jpg')
+studio_terrasse.photos.attach(io: studio_terrasse_photo_10, filename: "photo_10.jpg", content_type: 'image/jpg')
 studio_terrasse.user = johanne
 studio_terrasse.save!
 
@@ -103,12 +103,12 @@ studio_balcon.photos.attach(io: studio_balcon_photo_1, filename: "photo_1.jpg", 
 studio_balcon.photos.attach(io: studio_balcon_photo_2, filename: "photo_2.jpg", content_type: 'image/jpg')
 studio_balcon.photos.attach(io: studio_balcon_photo_3, filename: "photo_3.jpg", content_type: 'image/jpg')
 studio_balcon.photos.attach(io: studio_balcon_photo_4, filename: "photo_4.jpg", content_type: 'image/jpg')
-studio_balcon.photos.attach(io: studio_balcon_photo_5, filename: "photo_5.jpg", content_type: 'image/jpg')
+studio_balcon.picture.attach(io: studio_balcon_photo_5, filename: "photo_5.jpg", content_type: 'image/jpg')
 studio_balcon.photos.attach(io: studio_balcon_photo_6, filename: "photo_6.jpg", content_type: 'image/jpg')
 studio_balcon.photos.attach(io: studio_balcon_photo_7, filename: "photo_7.jpg", content_type: 'image/jpg')
 studio_balcon.photos.attach(io: studio_balcon_photo_8, filename: "photo_8.jpg", content_type: 'image/jpg')
 studio_balcon.photos.attach(io: studio_balcon_photo_9, filename: "photo_9.jpg", content_type: 'image/jpg')
-studio_balcon.picture.attach(io: studio_balcon_photo_10, filename: "photo_10.jpg", content_type: 'image/jpg')
+studio_balcon.photos.attach(io: studio_balcon_photo_10, filename: "photo_10.jpg", content_type: 'image/jpg')
 studio_balcon.user = johanne
 studio_balcon.save!
 
@@ -133,11 +133,11 @@ appartement_chambre.photos.attach(io: appartement_chambre_image_2, filename: "ph
 appartement_chambre.photos.attach(io: appartement_chambre_image_3, filename: "photo_3.jpg", content_type: 'image/jpg')
 appartement_chambre.photos.attach(io: appartement_chambre_image_4, filename: "photo_4.jpg", content_type: 'image/jpg')
 appartement_chambre.photos.attach(io: appartement_chambre_image_5, filename: "photo_5.jpg", content_type: 'image/jpg')
-appartement_chambre.photos.attach(io: appartement_chambre_image_6, filename: "photo_6.jpg", content_type: 'image/jpg')
+appartement_chambre.picture.attach(io: appartement_chambre_image_6, filename: "photo_6.jpg", content_type: 'image/jpg')
 appartement_chambre.photos.attach(io: appartement_chambre_image_7, filename: "photo_7.jpg", content_type: 'image/jpg')
 appartement_chambre.photos.attach(io: appartement_chambre_image_8, filename: "photo_8.jpg", content_type: 'image/jpg')
 appartement_chambre.photos.attach(io: appartement_chambre_image_9, filename: "photo_9.jpg", content_type: 'image/jpg')
-appartement_chambre.picture.attach(io: appartement_chambre_image_10, filename: "photo_10.jpg", content_type: 'image/jpg')
+appartement_chambre.photos.attach(io: appartement_chambre_image_10, filename: "photo_10.jpg", content_type: 'image/jpg')
 appartement_chambre.user = johanne
 appartement_chambre.save!
 
@@ -164,10 +164,10 @@ appartement_chambres.photos.attach(io: appartement_chambres_image_3, filename: "
 appartement_chambres.photos.attach(io: appartement_chambres_image_4, filename: "photo_4.jpg", content_type: 'image/jpg')
 appartement_chambres.photos.attach(io: appartement_chambres_image_5, filename: "photo_5.jpg", content_type: 'image/jpg')
 appartement_chambres.photos.attach(io: appartement_chambres_image_6, filename: "photo_6.jpg", content_type: 'image/jpg')
-appartement_chambres.photos.attach(io: appartement_chambres_image_7, filename: "photo_7.jpg", content_type: 'image/jpg')
+appartement_chambres.picture.attach(io: appartement_chambres_image_7, filename: "photo_7.jpg", content_type: 'image/jpg')
 appartement_chambres.photos.attach(io: appartement_chambres_image_8, filename: "photo_8.jpg", content_type: 'image/jpg')
 appartement_chambres.photos.attach(io: appartement_chambres_image_9, filename: "photo_9.jpg", content_type: 'image/jpg')
-appartement_chambres.picture.attach(io: appartement_chambres_image_10, filename: "photo_10.jpg", content_type: 'image/jpg')
+appartement_chambres.photos.attach(io: appartement_chambres_image_10, filename: "photo_10.jpg", content_type: 'image/jpg')
 appartement_chambres.user = johanne
 appartement_chambres.save!
 
@@ -194,9 +194,9 @@ appart_chambres.photos.attach(io: appart_chambres_image_4, filename: "photo_4.jp
 appart_chambres.photos.attach(io: appart_chambres_image_5, filename: "photo_5.jpg", content_type: 'image/jpg')
 appart_chambres.photos.attach(io: appart_chambres_image_6, filename: "photo_6.jpg", content_type: 'image/jpg')
 appart_chambres.photos.attach(io: appart_chambres_image_7, filename: "photo_7.jpg", content_type: 'image/jpg')
-appart_chambres.photos.attach(io: appart_chambres_image_8, filename: "photo_8.jpg", content_type: 'image/jpg')
+appart_chambres.picture.attach(io: appart_chambres_image_8, filename: "photo_8.jpg", content_type: 'image/jpg')
 appart_chambres.photos.attach(io: appart_chambres_image_9, filename: "photo_9.jpg", content_type: 'image/jpg')
-appart_chambres.picture.attach(io: appart_chambres_image_10, filename: "photo_10.jpg", content_type: 'image/jpg')
+appart_chambres.photos.attach(io: appart_chambres_image_10, filename: "photo_10.jpg", content_type: 'image/jpg')
 appart_chambres.user = johanne
 appart_chambres.save!
 

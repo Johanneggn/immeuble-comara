@@ -33,12 +33,12 @@
 </div>
  <div class="container-fluid">
   <div class="presentation-home m-5">
-    <div class=" row d-flex">
-      <div class="col-md-5">
+    <div class=" row">
+      <div class="col-md-5 d-flex justify-content-center">
         <%= image_tag "photo_home.jpg", class: "photo-home" %>
       </div>
       <div class="col-md-7">
-        <h1 class="title-presentation-immeuble pb-2">Immeuble Comara</h1>
+        <h1 class="title-presentation-immeuble py-3">Immeuble Comara</h1>
         <p class="pt-4">Bonjour, Je suis Comara Ibrahim Architecte Franco-Ivoirien à la retraite.
         Je propose un service simple et fonctionnel de location de vacances, du
         studio au 3 pièces. Tous les appartements sont sécurisés et climatisés. Après
@@ -82,13 +82,15 @@
       <div class="row">
         <% @flats.each do |flat| %>
           <%= link_to flat_path(flat), class: "link-show-flat" do %>
-            <div class="col-md-12 ">
-              <div class="card-home-flat bg-white mt-5 mx-3 px-0">
-                <div class="photo-flat">
-                    <p class="w-100 text-right flat-capacity"><%= flat.capacity %></p>
-                    <i class="fas fa-user i-user-flat-home"></i>
+            <div class="row">
+              <div class="col">
+                <div class="card-home-flat bg-white mt-5 mx-3 px-0">
+                  <div class="photo-flat" style="background-image: url('<%= cl_image_path flat.picture.key, height: 205, width: 255, crop: :fill %>')">
+                      <p class="w-100 text-right flat-capacity"><%= flat.capacity %></p>
+                      <i class="fas fa-user i-user-flat-home"></i>
+                  </div>
+                  <h3 class="flat-name-home text-center py-3"><%= flat.name %></h3>
                 </div>
-                <h3 class="flat-name-home text-center py-3"><%= flat.name %></h3>
               </div>
             </div>
           <% end %>
