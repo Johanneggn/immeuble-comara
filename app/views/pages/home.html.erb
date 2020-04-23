@@ -86,8 +86,9 @@
               <div class="col">
                 <div class="card-home-flat bg-white mt-5 mx-3 px-0">
                   <div class="photo-flat">
-                      <p class="w-100 text-right flat-capacity"><%= flat.capacity %></p>
-                      <i class="fas fa-user i-user-flat-home"></i>
+                    <%= cl_image_tag flat.picture.key, crop: :thumb, class: "photo-flat-home" %>
+                    <p class="w-100 text-right flat-capacity"><%= flat.capacity %></p>
+                    <i class="fas fa-user i-user-flat-home"></i>
                   </div>
                   <h3 class="flat-name-home text-center py-3"><%= flat.name %></h3>
                 </div>
