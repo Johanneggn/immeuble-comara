@@ -16,10 +16,9 @@
                           class: "end-date-query",
                           placeholder: "Date de fin" %>
 
-                    <%= text_field_tag :capacity_response,
-                          params[:capacity_response],
-                          class: "form-home-booking",
-                          placeholder: "Nombre de voyageurs" %>
+                    <%= select_tag :capacity_response,
+                          options_for_select([ "1", "2", "3", "4" ], params[:capacity_response]),
+                          class: "form-home-booking" %>
 
                     <%= submit_tag 'Modifiez',
                     class: "submit-index-show"%>
@@ -55,7 +54,7 @@
                     <div class="block-info">
                       <div class="d-flex">
                         <i class="fas fa-user mt-1 mr-2 pl-3 user-solid-index"></i>
-                        <p  id="capacity-flat"><%= flat.capacity %> personnes</p>
+                        <p  id="capacity-flat"><%= flat.max_capacity %> personnes</p>
                       </div>
                     </div>
                   </div>

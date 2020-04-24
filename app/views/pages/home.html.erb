@@ -21,10 +21,9 @@
               params[:end_date_response],
               class: "end-date-query",
               placeholder: "Date de fin" %>
-        <%= text_field_tag :capacity_response,
-              params[:capacity_response],
-              class: "form-home-booking",
-              placeholder: "Nombre de voyageurs" %>
+        <%= select_tag :capacity_response,
+              options_for_select([ "1", "2", "3", "4" ], params[:capacity_response]),
+              class: "form-home-booking" %>
         <%= submit_tag 'Recherchez',
         class: "submit-home-booking"%>
       <% end %>
@@ -55,22 +54,25 @@
       <div class="col d-flex justify-content-center">
         <div class="review m-3 p-4">
           <p>
-          Je n’irai pas chercher plus loin pour mon prochain voyage en Côte d'Ivoire.
+          <i class="fas fa-quote-left pr-2"></i>Je n’irai pas chercher plus loin pour mon prochain voyage en Côte d'Ivoire.
           </p>
+          <p> Sonia - France</p>
       </div>
       </div>
       <div class="col d-flex justify-content-center">
         <div class="review m-3 p-4">
           <p>
-          L'appartement était équipé (Wifi, cuisine, ...), propre et bien localisé.
+          <i class="fas fa-quote-left pr-2"></i>L'appartement était équipé (Wifi, cuisine, ...), propre et bien localisé.
           Seulement 15min de l'aéroport et du centre des affaires.
           L'accueil était conviviale, j'y ai passé un excellent séjour !
           </p>
+          <p> Vitrac - France </p>
         </div>
       </div>
       <div class="col d-flex justify-content-center">
         <div class="review m-3 p-4">
-          <p>Bon accueil, logement propre et bien situé, et bien desservi.</p>
+          <p><i class="fas fa-quote-left pr-2"></i>Bon accueil, logement propre et bien situé, et bien desservi.</p>
+          <p> Christophe - France</p>
         </div>
       </div>
     </div>
@@ -87,7 +89,7 @@
                 <div class="card-home-flat bg-white mt-5 mx-3 px-0">
                   <div class="photo-flat">
                     <%= cl_image_tag flat.picture.key, crop: :thumb, class: "photo-flat-home" %>
-                    <p class="w-100 text-right flat-capacity"><%= flat.capacity %></p>
+                    <p class="w-100 text-right flat-capacity"><%= flat.max_capacity %></p>
                     <i class="fas fa-user i-user-flat-home"></i>
                   </div>
                   <h3 class="flat-name-home text-center py-3"><%= flat.name %></h3>
