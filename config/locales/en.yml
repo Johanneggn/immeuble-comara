@@ -31,6 +31,28 @@
 
 en:
   hello: "Hello world"
+  kitchen: "Cuisine"
+  air_conditioner: "Climatisation"
+  hangers: "Cintres"
+  washing_machine: "Machine à laver"
+  television: "Télévision"
+  private_entrance: "Entrée privée"
+  sheets: "Draps"
+  work_space: "Espace de travail"
+  fridge: "Refrigirateur"
+  dishes: "Vaisselles"
+  utensil: "Ustensils de cuisine"
+  cooker: "Gazinière"
+  balcony: "Balcon"
+  backyard: "Arrière-cour"
+  carbon_monoxide_detector: "Détecteur de monoxyde de carbone"
+  hot_water: "Eau chaude"
+  parking: "Parking"
+  long_stay: "Séjours longs acceptés"
+  tumble_dryer: "Sèche-linge"
+  wi_fi: "Wi-fi"
+  store: "Store ou rideaux"
+  luggage: "Bagagerie"
 
 
 fr:
