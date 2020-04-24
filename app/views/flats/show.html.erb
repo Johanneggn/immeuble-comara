@@ -4,24 +4,23 @@
         <%= form_tag flats_path, method: :get do %>
         <div class="row">
           <div class="col">
-          <%= text_field_tag :start_date_response,
-                params[:start_date_response],
-                input_html: {class: "datepicker"},
-                class: "datepicker-query",
-                placeholder: "Date de d'arrivée" %>
+            <%= text_field_tag :start_date_response,
+                  params[:start_date_response],
+                  input_html: {class: "datepicker"},
+                  class: "datepicker-query",
+                  placeholder: "Date de d'arrivée" %>
           </div>
           <div class="col">
-          <%= text_field_tag :end_date_response,
-                params[:end_date_response],
-                input_html: {class: "end_date"},
-                class: "end-date-query",
-                placeholder: "Date de départ" %>
+            <%= text_field_tag :end_date_response,
+                  params[:end_date_response],
+                  input_html: {class: "end_date"},
+                  class: "end-date-query",
+                  placeholder: "Date de départ" %>
           </div>
           <div class="col">
-          <%= text_field_tag :capacity_response,
-                params[:capacity_response],
-                class: "form-home-booking",
-                placeholder: "Nombre de voyageurs" %>
+            <%= select_tag :capacity_response,
+                  options_for_select([ "1", "2", "3", "4" ], params[:capacity_response]),
+                  class: "form-home-booking" %>
           </div>
           <div class="col">
           <%= submit_tag 'Modifiez',
@@ -62,7 +61,110 @@
           <div class="equipement-flat-show">
             <h3 class="titles-description-flat pb-2 mx-3">Équipements de l'appartement</h3>
               <div class="list-equipements px-3">
+                <div class="row">
+                  <div class="col">
+                    <div class="row">
+                      <% @flat.equipments.each do |equipment| %>
+                        <% if equipment.available == true %>
+                          <div class="col-md-6">
+                            <% if equipment.name == 'kitchen'%>
+                              <div class="d-flex">
+                                <i class="fas fa-user"></i>
+                                <p class="pl-3"><%= t(equipment.name) %></p>
+                              </div>
+                            <% elsif equipment.name == 'air_conditioner '%>
+                              <div class="d-flex">
 
+                                <p class="pl-3"><%= t(equipment.name) %></p>
+                              </div>
+                                <% elsif equipment.name == 'hangers'%>
+                              <div class="d-flex">
+                                <i class="far fa-hat-chef"></i>
+                                <p class="pl-3"><%= t(equipment.name) %></p>
+                              </div>
+                            <% elsif equipment.name == 'washing_machine'%>
+                              <div class="d-flex">
+                                <p class="pl-3"><%= t(equipment.name) %></p>
+                              </div>
+                            <% elsif equipment.name == 'television'%>
+                              <div class="d-flex">
+                                <p class="pl-3"><%= t(equipment.name) %></p>
+                              </div>
+                            <% elsif equipment.name == 'private_entrance'%>
+                              <div class="d-flex">
+                                <p class="pl-3"><%= t(equipment.name) %></p>
+                              </div>
+                            <% elsif equipment.name == 'sheets'%>
+                              <div class="d-flex">
+                                <p class="pl-3"><%= t(equipment.name) %></p>
+                              </div>
+                              <% elsif equipment.name == 'work_space'%>
+                              <div class="d-flex">
+                                <p class="pl-3"><%= t(equipment.name) %></p>
+                              </div>
+                              <% elsif equipment.name == 'fridge'%>
+                              <div class="d-flex">
+                                <p class="pl-3"><%= t(equipment.name) %></p>
+                              </div>
+                              <% elsif equipment.name == 'dishes'%>
+                              <div class="d-flex">
+                                <p class="pl-3"><%= t(equipment.name) %></p>
+                              </div>
+                              <% elsif equipment.name == 'utensil'%>
+                              <div class="d-flex">
+                                <p class="pl-3"><%= t(equipment.name) %></p>
+                              </div>
+                              <% elsif equipment.name == 'cooker'%>
+                              <div class="d-flex">
+                                <p class="pl-3"><%= t(equipment.name) %></p>
+                              </div>
+                              <% elsif equipment.name == 'balcony'%>
+                              <div class="d-flex">
+                                <p class="pl-3"><%= t(equipment.name) %></p>
+                              </div>
+                              <% elsif equipment.name == 'backyard'%>
+                              <div class="d-flex">
+                                <p class="pl-3"><%= t(equipment.name) %></p>
+                              </div>
+                              <% elsif equipment.name == 'carbon_monoxide_detector'%>
+                              <div class="d-flex">
+                                <p class="pl-3"><%= t(equipment.name) %></p>
+                              </div>
+                              <% elsif equipment.name == 'hot_water'%>
+                              <div class="d-flex">
+                                <p class="pl-3"><%= t(equipment.name) %></p>
+                              </div>
+                              <% elsif equipment.name == 'parking'%>
+                              <div class="d-flex">
+                                <p class="pl-3"><%= t(equipment.name) %></p>
+                              </div>
+                              <% elsif equipment.name == 'long_stay'%>
+                              <div class="d-flex">
+                                <p class="pl-3"><%= t(equipment.name) %></p>
+                              </div>
+                              <% elsif equipment.name == 'tumble_dryer'%>
+                              <div class="d-flex">
+                                <p class="pl-3"><%= t(equipment.name) %></p>
+                              </div>
+                              <% elsif equipment.name == 'wi_fi'%>
+                              <div class="d-flex">
+                                <p class="pl-3"><%= t(equipment.name) %></p>
+                              </div>
+                              <% elsif equipment.name == 'store'%>
+                              <div class="d-flex">
+                                <p class="pl-3"><%= t(equipment.name) %></p>
+                              </div>
+                              <% elsif equipment.name == 'luggage'%>
+                              <div class="d-flex">
+                                <p class="pl-3"><%= t(equipment.name) %></p>
+                              </div>
+                            <% end %>
+                          </div>
+                        <% end %>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
               </div>
           </div>
           <div class="accessibility-hours">
@@ -79,41 +181,7 @@
           <div class="d-flex d-print-inline justify-content-center pt-4">
             <p id="price-per-day" data-price="<%= @flat.price_per_day %>"><%= @flat.price_per_day %> €/<span id="price-day-word">jour</span></p>
           </div>
-          <div class="form-booking px-4">
-            <%= simple_form_for @booking do |f| %>
-              <% if @booking.errors.any? %>
-                <div class="errors-container">
-                  <ul>
-                    <% @booking.errors.full_messages.each do |message| %>
-                      <li><%= message %></li>
-                    <% end %>
-                  </ul>
-                </div>
-              <% end %>
-              <%= f.input :start_date,
-                          as: :string,
-                          required: true,
-                          input_html: {id: "range_start"},
-                          label: 'Dates d\'arrivée' %>
-              <%= f.input :end_date,
-                          as: :string,
-                          required: true,
-                          input_html: {id: "range_end"},
-                          label: 'Date de départ' %>
-
-              <%= f.input :travellers,
-                          as: :select,
-                          collection: Booking::TRAVELLERS,
-                          input_html: {class: "select2"},
-                          label: 'Nombre de Voyageurs' %>
-                        <div class="text-center">
-                         <p class="total-price-content pt-5 pb-1">Prix total<span class="pl-5 ml-5" id="total-price"></span>€</p>
-                        </div>
-              <div class="d-flex flex-row-reverse mt-4 justify-content-center">
-                <%= f.submit "Réservez", class: "button-booking" %>
-              </div>
-            <% end %>
-          </div>
+           <%= render 'bookings/form', flat: @flat, booking: @booking %>
         </div>
       </div>
     </div>
