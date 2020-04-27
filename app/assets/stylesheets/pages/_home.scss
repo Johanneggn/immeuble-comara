@@ -2,7 +2,7 @@
 .cover {
   min-height: 500px;
   width: 100vw;
-  background-image: linear-gradient(rgba(0,0,0,.02), rgba(0,0,0,.02)), asset-url('test-cover-4.png');
+  background-image: linear-gradient(rgba(0,0,0,.02), rgba(0,0,0,.02)), asset-url('cover-comara.jpg');
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -15,8 +15,12 @@
 
 #Title-home {
   font-size: 96px;
-  color: $white !important;
+  color: $light-dark !important;
   text-shadow: 2px 2px 2px $dark-gray;
+}
+
+#catch-phrase-home {
+  color: $dark-gray;
 }
 
 // presentation

@@ -11,3 +11,14 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar-menu {
+  color: $light-dark;
+  font-family: 'mukta';
+  font-size: 24px;
+}
+
+.navbar-menu:hover {
+  text-decoration: none;
+  color: $light-dark;
+}

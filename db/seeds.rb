@@ -54,7 +54,7 @@ studio.photos.attach(io: studio_photo_7, filename: "photo_7.jpg", content_type: 
 studio.photos.attach(io: studio_photo_8, filename: "photo_8.jpg", content_type: 'image/jpg')
 studio.picture.attach(io: studio_photo_9, filename: "photo_10.jpg", content_type: 'image/jpg')
 studio.photos.attach(io: studio_photo_10, filename: "photo_9.jpg", content_type: 'image/jpg')
-# studio.user = johanne
+studio.user = johanne
 studio.save!
 
 studio_terrasse_photo_1 = File.open(Rails.root.join("db/fixtures/photo_1.jpg"))
@@ -84,7 +84,7 @@ studio_terrasse.photos.attach(io: studio_terrasse_photo_7, filename: "photo_7.jp
 studio_terrasse.photos.attach(io: studio_terrasse_photo_8, filename: "photo_8.jpg", content_type: 'image/jpg')
 studio_terrasse.photos.attach(io: studio_terrasse_photo_9, filename: "photo_9.jpg", content_type: 'image/jpg')
 studio_terrasse.photos.attach(io: studio_terrasse_photo_10, filename: "photo_10.jpg", content_type: 'image/jpg')
-# studio_terrasse.user = johanne
+studio_terrasse.user = johanne
 studio_terrasse.save!
 
 studio_balcon_photo_1 = File.open(Rails.root.join("db/fixtures/photo_1.jpg"))
@@ -114,7 +114,7 @@ studio_balcon.photos.attach(io: studio_balcon_photo_7, filename: "photo_7.jpg", 
 studio_balcon.photos.attach(io: studio_balcon_photo_8, filename: "photo_8.jpg", content_type: 'image/jpg')
 studio_balcon.photos.attach(io: studio_balcon_photo_9, filename: "photo_9.jpg", content_type: 'image/jpg')
 studio_balcon.photos.attach(io: studio_balcon_photo_10, filename: "photo_10.jpg", content_type: 'image/jpg')
-# studio_balcon.user = johanne
+studio_balcon.user = johanne
 studio_balcon.save!
 
 appartement_chambre_image_1 = File.open(Rails.root.join("db/fixtures/photo_1.jpg"))
@@ -144,7 +144,7 @@ appartement_chambre.photos.attach(io: appartement_chambre_image_7, filename: "ph
 appartement_chambre.photos.attach(io: appartement_chambre_image_8, filename: "photo_8.jpg", content_type: 'image/jpg')
 appartement_chambre.photos.attach(io: appartement_chambre_image_9, filename: "photo_9.jpg", content_type: 'image/jpg')
 appartement_chambre.photos.attach(io: appartement_chambre_image_10, filename: "photo_10.jpg", content_type: 'image/jpg')
-# appartement_chambre.user = johanne
+appartement_chambre.user = johanne
 appartement_chambre.save!
 
 
@@ -175,7 +175,7 @@ appartement_chambres.picture.attach(io: appartement_chambres_image_7, filename: 
 appartement_chambres.photos.attach(io: appartement_chambres_image_8, filename: "photo_8.jpg", content_type: 'image/jpg')
 appartement_chambres.photos.attach(io: appartement_chambres_image_9, filename: "photo_9.jpg", content_type: 'image/jpg')
 appartement_chambres.photos.attach(io: appartement_chambres_image_10, filename: "photo_10.jpg", content_type: 'image/jpg')
-# appartement_chambres.user = johanne
+appartement_chambres.user = johanne
 appartement_chambres.save!
 
 appart_chambres_image_1 = File.open(Rails.root.join("db/fixtures/photo_1.jpg"))
@@ -205,7 +205,7 @@ appart_chambres.photos.attach(io: appart_chambres_image_7, filename: "photo_7.jp
 appart_chambres.picture.attach(io: appart_chambres_image_8, filename: "photo_8.jpg", content_type: 'image/jpg')
 appart_chambres.photos.attach(io: appart_chambres_image_9, filename: "photo_9.jpg", content_type: 'image/jpg')
 appart_chambres.photos.attach(io: appart_chambres_image_10, filename: "photo_10.jpg", content_type: 'image/jpg')
-# appart_chambres.user = johanne
+appart_chambres.user = johanne
 appart_chambres.save!
 
 puts "Done seeding flats"

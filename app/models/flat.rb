@@ -1,5 +1,5 @@
 class Flat < ApplicationRecord
-  # belongs_to :user
+  belongs_to :user
   has_one_attached :picture
   has_many_attached :photos
   has_many :bookings

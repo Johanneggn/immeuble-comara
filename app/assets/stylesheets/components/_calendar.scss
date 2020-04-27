@@ -1,0 +1,86 @@
+.simple-calendar {
+  .day {
+    height: 75px;
+    width: 75px;
+    border: 1px solid $light-dark;
+    text-align: right;
+  }
+
+  .wday-0 {
+    background-color: $white;
+  }
+  .wday-1 {
+    background-color: $white;
+  }
+  .wday-2 {
+    background-color: $white;
+  }
+  .wday-3 {
+    background-color: $white;
+  }
+  .wday-4 {
+    background-color: $white;
+  }
+  .wday-5 {
+    background-color: $white;
+  }
+  .wday-6 {
+    background-color: $white;
+  }
+
+  .today {}
+  .past {
+    background-color: $lm-gray;
+  }
+  .future {}
+
+  .start-date {
+    color: $green;
+  }
+
+  .prev-month {
+    background-color: $dm-gray;
+  }
+  .next-month {
+    background-color: $dm-gray;
+  }
+  .current-month {}
+
+  .has-events {
+
+  }
+}
+
+.booking-waiting {
+  margin: 75px;
+}
+
+.calendar-view {
+  margin: 75px;
+}
+
+.calendar-title {
+  color: $light-dark;
+  font-family: 'Mukta';
+  font-size: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.calendar-content-text {
+  background-color: $lm-gray;
+}
+
+.calendar-text {
+  margin: 50px;
+}
+
+.add-booking {
+  background-color: $green;
+  padding: 0px 15px;
+  border-radius: 50%;
+}
+
+.link-to-new-booking:hover {
+text-decoration: none;
+}

@@ -1,0 +1,74 @@
+<div class="container-fluid">
+  <div class="booking-waiting">
+    <h1 class="ml-4">Demandes en attente</h1>
+    <% @bookings.each do |booking| %>
+      <% if booking.status == 'pending' %>
+        <div class="row">
+          <div class="col">
+            <div class="card-user-booking-wait bg-white p-2 my-2">
+              <div class="row">
+                <div class="col">
+                  <p><%= booking.flat.name %> </p>
+                  <p><%= l(booking.start_date, format: '%d %B') %> - <%= l(booking.end_date, format: '%d %B %Y') %></p>
+                  <p><%= booking.total_price %>€</p>
+                </div>
+                <div class="col d-flex justify-content-center align-items-center">
+                  <i class="fas fa-times-circle"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card-booking-client bg-white my-2 p-2">
+              <p><%= booking.client.first_name %> <%= booking.client.last_name %></p>
+              <p><%= booking.client.phone_number %></p>
+              <p><%= booking.client.address %></p>
+              <p><%= booking.client.email %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="calendar bg-white">
+    <div class="calendar-view pt-3">
+      <div class="row my-3">
+        <h1>Calendrier</h1>
+        <%= link_to new_booking_path, class: "link-to-new-booking" do  %>
+          <h1 class="add-booking mx-3">+</h1>
+        <% end %>
+      </div>
+      <%= month_calendar do |date| %>
+        <%= l(date, format: '%d', class: "date-calendar") %>
+      <% end %>
+    </div>
+    <div class="calendar-text">
+        <div class="row">
+          <div class="col m-4">
+            <div class="calendar-content-text d-flex justify-content-center w-100">
+              <h3>Départ</h3>
+
+            </div>
+          </div>
+          <div class="col m-4">
+            <div class="calendar-content-text d-flex justify-content-center w-100">
+              <h3>En cours</h3>
+
+            </div>
+          </div>
+          <div class="col m-4">
+            <div class="calendar-content-text ">
+              <div class="title-calendar-text d-flex justify-content-center w-100">
+              <h3>Arrivée</h3>
+              </div>
+              <div>
+
+             </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
