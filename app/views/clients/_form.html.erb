@@ -1,0 +1,23 @@
+<div class="form-client px-4">
+  <%= simple_form_for new_client_path do |f| %>
+    <%= f.input :first_name,
+                as: :string,
+                required: true %>
+    <%= f.input :last_name,
+                as: :string,
+                required: true %>
+
+    <%= f.input :address,
+                as: :string,
+                required: true %>
+    <%= f.input :phone_number,
+                as: :string,
+                required: true %>
+    <%= f.input :email,
+                as: :string,
+                required: true %>
+    <div class="d-flex flex-row-reverse mt-4 justify-content-center">
+      <%= f.submit "Réservez", class: "button-client" %>
+    </div>
+  <% end %>
+</div>

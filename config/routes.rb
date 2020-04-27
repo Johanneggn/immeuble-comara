@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'clients/new'
+  get 'clients/create'
   get 'flats/index'
   get 'flats/show'
   get 'flats/new'
@@ -23,6 +25,13 @@ Rails.application.routes.draw do
     end
   end
 
- resources :flats
- resources :bookings, only: [:new, :create]
+  resources :flats do
+    resources :bookings, only: [:create]
+  end
+
+  resources :client, only: [:new, :create] do
+    resources :bookings, only: [:create]
+  end
+
+ resources :bookings, only: [:new, :create, :show]
 end

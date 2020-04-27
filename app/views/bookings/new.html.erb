@@ -1,2 +1,30 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+<div class="container-fluid">
+  <div class="recap-new-client">
+    <div class="reminder-booking">
+      <div class="row">
+
+        <div class="col-md-3">
+          <%= cl_image_tag @flat.picture.key, crop: :thumb, height: 200, width: 200, class: "photo-flat-remind"%>
+        </div>
+        <div class="col-md-9">
+          <div class="row">
+            <h3><%= @flat.name %></h3>
+          </div>
+          <div class="row">
+            <p><%= l(@booking.start_date, format: '%d %B') %></p>
+          </div>
+          <div class="row">
+            <p><%= l(@booking.end_date, format: '%d %B %Y') %></p>
+          </div>
+          <div class="row">
+            <p><%= @booking.total_price %></p>
+          </div>
+        </div>
+      </div>
+      <div class="form-client-new">
+        <%= render 'clients/form', flat: @flat, client: @client, booking: @booking %>
+      </div>
+    </div>
+  </div>
+</div>
+
