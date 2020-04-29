@@ -13,8 +13,8 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @flat = Flat.find(params[:flat_id])
     @booking.flat = @flat
-    # @client = Client.find(params[:client_id])
-    # @booking.client = @client
+    @client = Client.new
+    @booking.client = @client
     @booking.total_price = @booking.flat.price_per_day*((@booking.end_date - @booking.start_date).to_i)
     @booking.status = 'pending'
     if @booking.save

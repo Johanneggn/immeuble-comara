@@ -1,6 +1,6 @@
 class User::BookingsController < ApplicationController
   def index
-    # @bookings = current_user.bookings
+    @bookings = current_user.bookings
     # calendar_day = '2020-06-30'
     # @begin_bookings = current_user.bookings.group_by(&:start_date)
     # @end_bookings = current_user.bookings.group_by(&:end_date)
