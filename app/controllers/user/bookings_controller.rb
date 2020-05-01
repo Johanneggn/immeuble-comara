@@ -1,8 +1,10 @@
 class User::BookingsController < ApplicationController
   def index
-    @bookings = current_user.bookings
-    # calendar_day = '2020-06-30'
-    # @begin_bookings = current_user.bookings.group_by(&:start_date)
+    @bookings = Booking.all
+    @dates = (Date.today..Date.today.next_year(5))
+
+    # calendar_day = (start_date..end_date)
+    # @begin_bookings = @bookings.group_by(&:start_date)
     # @end_bookings = current_user.bookings.group_by(&:end_date)
     # @booking_in_progress = current_user.bookings.where('start_date > ? AND end_date < ?', calendar_day, calendar_day)
   end

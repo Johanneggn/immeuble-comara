@@ -35,13 +35,13 @@
   <div class="photo-show-flat">
     <div class="row">
     <div class="col-md-6 d-flex justify-content-center py-4">
-      <%= cl_image_tag @flat.picture.key, crop: :thumb, class: "photo-flat-index-principale" %>
+      <%= cl_image_tag @flat.picture.key, crop: :fit, class: "photo-flat-index-principale" %>
     </div>
     <div class="col-md-6">
       <div class="row pt-3 pb-2">
         <% @flat.photos.each do |photo| %>
         <div class="col p-2">
-          <%= cl_image_tag photo.key, crop: :fit, class: "photo-flat-index-secondaire" %>
+          <%= cl_image_tag photo.key, crop: :thumb, class: "photo-flat-index-secondaire" %>
         </div>
         <% end %>
       </div>
@@ -84,6 +84,7 @@
                               </div>
                             <% elsif equipment.name == 'washing_machine'%>
                               <div class="d-flex">
+                                <i class="fal fa-acorn"></i>
                                 <p class="pl-3"><%= t(equipment.name) %></p>
                               </div>
                             <% elsif equipment.name == 'television'%>

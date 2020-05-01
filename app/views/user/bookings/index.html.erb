@@ -13,13 +13,15 @@
                   <p><%= booking.total_price %>€</p>
                 </div>
                 <div class="col d-flex justify-content-center align-items-center">
-                  <i class="fas fa-times-circle"></i>
+                  <div class="mx-2"><i class="fas fa-check-circle" id="check-circle"></i></div>
+                  <div class="mx-2"><i class="fas fa-times-circle" id="no-circle"></i></div>
+                  <div class="mx-2"><i class="fas fa-user-circle" id="user-circle" data="<%= booking.id %>"></i></div>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-md-6">
-            <div class="card-booking-client bg-white my-2 p-2">
+            <div class="card-booking-client bg-white my-2 p-2 d-none" data="<%= booking.id %>">
               <p><%= booking.client.first_name %> <%= booking.client.last_name %></p>
               <p><%= booking.client.phone_number %></p>
               <p><%= booking.client.address %></p>
@@ -39,35 +41,48 @@
         <% end %>
       </div>
       <%= month_calendar do |date| %>
-        <%= l(date, format: '%d', class: "date-calendar") %>
+        <p class="calday"><%= l(date, format: '%Y-%m-%d', class: "date-calendar") %></p>
       <% end %>
     </div>
     <div class="calendar-text">
-        <div class="row">
-          <div class="col m-4">
-            <div class="calendar-content-text d-flex justify-content-center w-100">
-              <h3>Départ</h3>
-
-            </div>
+      <div class="row">
+        <div class="col m-4">
+          <div class="calendar-content-text d-flex justify-content-center w-100">
+            <h3>Départ</h3>
           </div>
-          <div class="col m-4">
-            <div class="calendar-content-text d-flex justify-content-center w-100">
-              <h3>En cours</h3>
-
-            </div>
-          </div>
-          <div class="col m-4">
-            <div class="calendar-content-text ">
-              <div class="title-calendar-text d-flex justify-content-center w-100">
-              <h3>Arrivée</h3>
-              </div>
-              <div>
-
-             </div>
-            </div>
+          <div class="date-booking-action">
+            <% @dates.each do |date| %>
+              <% @bookings.each do |booking| %>
+                <% if date == booking.start_date %>
+                <div class="card-user-booking" date="<%= booking.start_date %>">
+                  <%= booking.flat.name %>
+                  <p class="date-booking"><%= booking.start_date %></p>
+                  <%= booking.end_date %>
+                </div>
+                <% end %>
+              <% end %>
+            <% end %>
           </div>
         </div>
+        <div class="col m-4">
+          <div class="calendar-content-text d-flex justify-content-center w-100">
+            <h3>En cours</h3>
+          </div>
+          <div class="date-booking-action">
+         </div>
+        </div>
+        <div class="col m-4">
+          <div class="calendar-content-text">
+            <div class="title-calendar-text d-flex justify-content-center w-100">
+            <h3>Arrivée</h3>
+            </div>
+            <div class="date-booking-action" >
+           </div>
+          </div>
+        </div>
+      </div>
     </div>
+
   </div>
 </div>
 

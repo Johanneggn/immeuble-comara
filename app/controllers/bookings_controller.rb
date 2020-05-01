@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @flat = Flat.find(params[:flat_id])
     @booking.flat = @flat
-    @client = Client.new
+    @client = Client.new(client_params)
     @booking.client = @client
     @booking.total_price = @booking.flat.price_per_day*((@booking.end_date - @booking.start_date).to_i)
     @booking.status = 'pending'
@@ -28,6 +28,10 @@ private
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date, :total_price)
+  end
+
+  def client_params
+    params.require(:client).permit(:civilty, :first_name, :last_name, :address, :phone_number, :email)
   end
 
 end

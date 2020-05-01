@@ -9,7 +9,7 @@
       </div>
     </div>
   </div>
-<div class="row">
+<div class="form-inline">
   <div class="home-search-bar">
     <div class="d-flex">
       <%= form_tag flats_path, method: :get do %>
@@ -32,7 +32,7 @@
 </div>
  <div class="container-fluid">
   <div class="presentation-home m-5">
-    <div class=" row">
+    <div class="row">
       <div class="col-md-5 d-flex justify-content-center">
         <%= image_tag "224162916.jpg", class: "photo-home" %>
       </div>
@@ -49,8 +49,8 @@
       </div>
     </div>
   </div>
-  <div class="reviews w-100">
-    <div class="row w-100">
+  <div class="reviews w-100 px-0 mx-0">
+    <div class="form-inline w-100">
       <div class="col d-flex justify-content-center">
         <div class="review m-3 p-4">
           <p>
@@ -84,7 +84,7 @@
       <div class="row">
         <% @flats.each do |flat| %>
           <%= link_to flat_path(flat), class: "link-show-flat" do %>
-            <div class="row">
+            <div class="form-inline">
               <div class="col">
                 <div class="card-home-flat bg-white mt-5 mx-3 px-0">
                   <div class="photo-flat">
