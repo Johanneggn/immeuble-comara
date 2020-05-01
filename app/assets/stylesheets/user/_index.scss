@@ -12,6 +12,8 @@
   border: 2px solid $green;
 }
 
+// booking waiting
+
 #no-circle {
   font-size: 28px;
 }
@@ -22,4 +24,26 @@
 
 #user-circle {
   font-size: 28px;
+}
+
+
+.card-user-booking {
+  border-bottom: 1px solid $dm-gray;
+}
+
+.flat-name-booking {
+  font-family: 'mukta';
+  font-size: 20px;
+}
+
+.start-date-booking {
+
+}
+
+.end-date-booking {
+
+}
+
+.date-booking-action {
+  background-color: $lm-gray;
 }

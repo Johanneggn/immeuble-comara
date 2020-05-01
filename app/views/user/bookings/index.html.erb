@@ -8,7 +8,7 @@
             <div class="card-user-booking-wait bg-white p-2 my-2">
               <div class="row">
                 <div class="col">
-                  <p><%= booking.flat.name %> </p>
+                  <p class="flat-name-booking"><%= booking.flat.name %> </p>
                   <p><%= l(booking.start_date, format: '%d %B') %> - <%= l(booking.end_date, format: '%d %B %Y') %></p>
                   <p><%= booking.total_price %>€</p>
                 </div>
@@ -22,7 +22,7 @@
           </div>
           <div class="col-md-6">
             <div class="card-booking-client bg-white my-2 p-2 d-none" data="<%= booking.id %>">
-              <p><%= booking.client.first_name %> <%= booking.client.last_name %></p>
+              <p class="flat-name-booking"><%= booking.client.first_name %> <%= booking.client.last_name %></p>
               <p><%= booking.client.phone_number %></p>
               <p><%= booking.client.address %></p>
               <p><%= booking.client.email %></p>
@@ -51,16 +51,15 @@
             <h3>Départ</h3>
           </div>
           <div class="date-booking-action">
-            <% @dates.each do |date| %>
-              <% @bookings.each do |booking| %>
-                <% if date == booking.start_date %>
-                <div class="card-user-booking" date="<%= booking.start_date %>">
-                  <%= booking.flat.name %>
-                  <p class="date-booking"><%= booking.start_date %></p>
-                  <%= booking.end_date %>
+            <% @bookings.each do |booking| %>
+              <div class="card-user-booking p-3" date="<%= booking.start_date %>">
+                <p class="flat-name-booking"><%= booking.flat.name %></p>
+                <div class="d-flex">
+                  <p class="start-date-booking"><%= l(booking.start_date, format: '%d %B %Y') %></p>
+                  <p class="mx-2">-</p>
+                  <p class="end-date-booking"><%= l(booking.end_date, format: '%d %B %Y') %></p>
                 </div>
-                <% end %>
-              <% end %>
+              </div>
             <% end %>
           </div>
         </div>
@@ -69,14 +68,35 @@
             <h3>En cours</h3>
           </div>
           <div class="date-booking-action">
-         </div>
+            <% @bookings.each do |booking| %>
+              <div class="card-user-booking p-3" date="<%= booking.start_date..booking.end_date %>">
+                <p class="flat-name-booking"><%= booking.flat.name %></p>
+                <div class="d-flex">
+                  <p class="start-date-booking"><%= l(booking.start_date, format: '%d %B %Y') %></p>
+                  <p class="mx-2">-</p>
+                  <p class="end-date-booking"><%= l(booking.end_date, format: '%d %B %Y') %></p>
+                </div>
+              </div>
+            <% end %>
+          </div>
         </div>
         <div class="col m-4">
           <div class="calendar-content-text">
             <div class="title-calendar-text d-flex justify-content-center w-100">
             <h3>Arrivée</h3>
             </div>
-            <div class="date-booking-action" >
+            <div class="date-booking-action">
+              <% @bookings.each do |booking| %>
+                <div class="card-user-booking p-3" date="<%= booking.end_date %>">
+                  <p class="flat-name-booking"><%= booking.flat.name %></p>
+                  <div class="d-flex">
+                    <p class="start-date-booking"><%= l(booking.start_date, format: '%d %B %Y') %></p>
+                    <p class="mx-2">-</p>
+                    <p class="end-date-booking"><%= l(booking.end_date, format: '%d %B %Y') %></p>
+                  </div>
+                </div>
+              <% end %>
+            </div>
            </div>
           </div>
         </div>
