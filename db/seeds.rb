@@ -215,7 +215,7 @@ cuisine.flat = studio
 # cuisine.flat = appart_chambres
 cuisine.save!
 
-climatisation = Equipment.new(name: 'air_conditioner', available: true, pricing: false )
+climatisation = Equipment.new(name: 'air conditioner', available: true, pricing: false )
 climatisation.flat = studio
 # climatisation.flat = studio_terrasse
 # climatisation.flat = studio_balcon
@@ -234,7 +234,7 @@ cintre.flat = studio
 # cintre.flat = appart_chambres
 cintre.save!
 
-machine_a_laver = Equipment.new(name: 'washing_machine', available: true, pricing: false )
+machine_a_laver = Equipment.new(name: 'washing machine', available: true, pricing: false )
 machine_a_laver.flat = studio
 # machine_a_laver.flat = studio_terrasse
 # machine_a_laver.flat = studio_balcon
@@ -251,7 +251,7 @@ television.flat = studio
 # television.flat = appartement_chambres
 television.save!
 
-entree_privee = Equipment.new(name: 'private_entrance', available: true, pricing: false )
+entree_privee = Equipment.new(name: 'private entrance', available: true, pricing: false )
 entree_privee.flat = studio
 # entree_privee.flat = studio_terrasse
 # entree_privee.flat = studio_balcon
@@ -269,7 +269,7 @@ draps.flat = studio
 # draps.flat = appart_chambres
 draps.save!
 
-espace_de_travail = Equipment.new(name: 'work_space', available: true, pricing: false )
+espace_de_travail = Equipment.new(name: 'work space', available: true, pricing: false )
 espace_de_travail.flat = studio
 # espace_de_travail.flat = studio_balcon
 # espace_de_travail.flat = appartement_chambre
@@ -320,13 +320,13 @@ balcon.save!
 # arriere_cour.flat = appart_chambres
 # arriere_cour.save!
 
-detecteur = Equipment.new(name: 'carbon_monoxide_detector', available: true, pricing: false )
+detecteur = Equipment.new(name: 'carbon monoxide detector', available: true, pricing: false )
 detecteur.flat = studio
 # detecteur.flat = studio_balcon
 # detecteur.flat = appartement_chambre
 detecteur.save!
 
-eau_chaude = Equipment.new(name: 'hot_water', available: true, pricing: false )
+eau_chaude = Equipment.new(name: 'hot water', available: true, pricing: false )
 eau_chaude.flat = studio
 # eau_chaude.flat = studio_terrasse
 # eau_chaude.flat = studio_balcon
@@ -341,7 +341,7 @@ parking.flat = studio
 # parking.flat = appartement_chambre
 parking.save!
 
-sejour_long = Equipment.new(name: 'long_stay', available: true, pricing: false )
+sejour_long = Equipment.new(name: 'long stay', available: true, pricing: false )
 sejour_long.flat = studio
 # sejour_long.flat = studio_terrasse
 # sejour_long.flat = studio_balcon

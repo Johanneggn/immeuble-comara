@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'equipements/new'
+  get 'equipements/create'
   get 'clients/new'
   get 'clients/create'
   get 'flats/index'
