@@ -1,6 +1,8 @@
+// Taille classique
+
 // Cover
 .cover {
-  min-height: 500px;
+  height: 500px;
   width: 100vw;
   background-image: linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.15)), asset-url('cover-comara.jpg');
   background-position: center;
@@ -11,6 +13,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
 #Title-home {
@@ -33,6 +37,10 @@
   border-bottom: 1px solid $lm-gray;
 }
 
+.photo-home {
+  width: 510px;
+  height: 430px;
+}
 
 // review part
 
@@ -46,7 +54,7 @@
 
 .reviews {
   background-color: $white;
-  min-height: 350px;
+  height: 350px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -61,8 +69,8 @@
   border-radius: 3px;
 }
 .cards-flat-home {
-  border-top: 1px solid $lm-gray;
   justify-content: center;
+  margin-left: 100px;
 }
 
 .flat-name-home {
@@ -102,10 +110,158 @@
   width: 100% !important;
 }
 
-
-.photo-home {
-  width: 510px;
-  height: 430px;
+.flat-cards {
+  display: list-item inline;
+  justify-content: center;
 }
 
+.title-flats-home {
+  border-bottom: 1px solid $lm-gray;
+}
+
+// taille grande tablette
+@media(max-width: 1024px) {
+  // review part
+  .reviews {
+    display: none;
+    background-color: $light-gray !important;
+    height: 20px !important;
+  }
+
+    .review {
+      display: none;
+    }
+  // flat part
+  .cards-flat-home {
+    margin-left: 50px;
+  }
+}
+
+// taille tablette
+
+@media(max-width: 768px) {
+
+// review part
+  .reviews {
+    display: none;
+    background-color: $light-gray !important;
+    height: 20px !important;
+  }
+
+    .review {
+      display: none;
+    }
+
+// flat part
+  .cards-flat-home {
+    margin-left: 50px;
+  }
+}
+
+// taille grand téléphone
+
+@media(max-width: 415px) {
+
+  // reviews part
+  .reviews {
+    display: none;
+    background-color: $light-gray !important;
+    height: 20px !important;
+  }
+
+    .review {
+      display: none;
+    }
+
+  // cover part
+  #Title-home {
+    font-size: 46px;
+    color: $white !important;
+    text-shadow: 2px 2px 2px $dark-gray;
+  }
+
+  #catch-phrase-home {
+    color: $white;
+    font-size: 30px
+  }
+
+  .cover {
+    height: 300px;
+  }
+
+  // presentation
+
+  .title-presentation-immeuble {
+    font-size: 20px;
+  }
+
+  .text-presentation-immeuble {
+    font-size: 14px;
+  }
+
+  .photo-home {
+    width: 350px !important;
+  }
+
+  // flat part
+  .title-flats-home {
+    font-size: 20px;
+  }
+  .flat-cards {
+    display: flex;
+  }
+  .cards-flat-home {
+    margin-left: 0px;
+  }
+}
+
+// taille petit téléphone
+
+@media (max-width: 320px) {
+  // reviews part
+  .reviews {
+    display: none;
+    background-color: $light-gray !important;
+    height: 20px !important;
+  }
+
+  .review {
+    display: none;
+  }
+
+  // cover part
+  #Title-home {
+    font-size: 40px;
+    color: $white !important;
+    text-shadow: 2px 2px 2px $dark-gray;
+  }
+
+  #catch-phrase-home {
+    color: $white;
+    font-size: 30px
+  }
+
+  .cover {
+    height: 300px;
+  }
+
+  // presentation
+
+  .title-presentation-immeuble {
+    font-size: 18px;
+  }
+
+  .text-presentation-immeuble {
+    font-size: 12px;
+  }
+
+  .photo-home {
+    width: 300px !important;
+  }
+
+  // part flat
+  .flat-cards {
+    margin: 0px;
+  }
+}
 

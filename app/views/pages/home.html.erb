@@ -9,36 +9,35 @@
       </div>
     </div>
   </div>
-<div class="form-inline">
-  <div class="home-search-bar">
-    <div class="d-flex">
-      <%= form_tag flats_path, method: :get do %>
-        <%= text_field_tag :start_date_response,
-              params[:start_date_response],
-              class: "datepicker-query",
-              placeholder: "Date de départ" %>
-        <%= text_field_tag :end_date_response,
-              params[:end_date_response],
-              class: "end-date-query",
-              placeholder: "Date de fin" %>
-        <%= select_tag :capacity_response,
-              options_for_select([ "1", "2", "3", "4" ], params[:capacity_response]),
-              class: "form-home-booking" %>
-        <%= submit_tag 'Recherchez',
-        class: "submit-home-booking"%>
-      <% end %>
+  <div class="form-inline">
+    <div class="home-search-bar">
+      <div class="d-flex">
+        <%= form_tag flats_path, method: :get do %>
+          <%= text_field_tag :start_date_response,
+                params[:start_date_response],
+                class: "datepicker-query",
+                placeholder: "Date de départ" %>
+          <%= text_field_tag :end_date_response,
+                params[:end_date_response],
+                class: "end-date-query",
+                placeholder: "Date de fin" %>
+          <%= select_tag :capacity_response,
+                options_for_select([ "1", "2", "3", "4" ], params[:capacity_response]),
+                class: "form-home-booking" %>
+          <%= submit_tag 'Recherchez',
+          class: "submit-home-booking"%>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
- <div class="container-fluid">
   <div class="presentation-home m-5">
     <div class="row">
-      <div class="col-md-5 d-flex justify-content-center">
+      <div class="col d-flex justify-content-center">
         <%= image_tag "224162916.jpg", class: "photo-home" %>
       </div>
-      <div class="col-md-7">
-        <h1 class="title-presentation-immeuble py-3">Immeuble Comara</h1>
-        <p class="pt-4">Bonjour, Je suis Comara Ibrahim Architecte Franco-Ivoirien à la retraite.
+      <div class="col">
+        <h1 class="title-presentation-immeuble pt-3 pb-2">Immeuble Comara</h1>
+        <p class="text-presentation-immeuble pt-3">Bonjour, Je suis Comara Ibrahim Architecte Franco-Ivoirien à la retraite.
         Je propose un service simple et fonctionnel de location de vacances, du
         studio au 3 pièces. Tous les appartements sont sécurisés et climatisés. Après
         avoir confirmé la demande de réservation, nous vous guidons pas à pas jusqu'à
@@ -77,16 +76,15 @@
       </div>
     </div>
   </div>
-
   <div class="flat-index-home m-5">
-    <h1 class="mb-2 ml-4">Nos appartements</h1>
-    <div class="cards-flat-home mx-4">
+    <h1 class="title-flats-home pb-2">Nos appartements</h1>
+    <div class="cards-flat-home">
       <div class="row">
         <% @flats.each do |flat| %>
           <%= link_to flat_path(flat), class: "link-show-flat" do %>
             <div class="form-inline">
               <div class="col">
-                <div class="card-home-flat bg-white mt-5 mx-3 px-0">
+                <div class="card-home-flat bg-white mt-4 px-0">
                   <div class="photo-flat">
                     <%= cl_image_tag flat.picture.key, crop: :thumb, class: "photo-flat-home" %>
                     <p class="w-100 text-right flat-capacity"><%= flat.max_capacity %></p>
@@ -101,4 +99,4 @@
       </div>
     </div>
   </div>
-</div>
+

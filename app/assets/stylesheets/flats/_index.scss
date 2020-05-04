@@ -7,14 +7,21 @@
 
 // chaque appartement
 
+.title-page-index-flats {
+  margin-top: 100px !important;
+}
+
 .flat-list{
   background-color: $white;
   box-shadow: 0 0 15px rgba(0,0,0,0.05);
   border-radius: 5px;
+  max-height: 137px;
+  margin-top: 30px !important;
 }
 
 .flat-list:hover {
   border : 2px solid $green;
+
 }
 
 .flat-list:hover h3 {
@@ -22,12 +29,12 @@
 }
 
 .block-info {
-  min-height: 45px;
+  height: 45px;
 }
 
 .photo-flat-index {
-height: 137px;
-min-width: 80px;
+max-height: 150px;
+width: 179px;
 }
 
 .link-show-flat:hover {
@@ -73,6 +80,165 @@ min-width: 80px;
   font-weight: 600;
 }
 
+// taille tablette
+@media(max-width: 1024px) {
+  .photo-flat-index {
+    width : 120px !important;
+  }
+  .block-info {
+  height: 40px;
+  }
+  .flat-list{
+  background-color: $white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+  border-radius: 5px;
+  max-height: 137px;
+  margin-top: 30px !important;
+  }
+  .title-page-index-flats {
+    margin-top: 110px !important;
+  }
+}
+//taille petite tablette
+@media(max-width: 768px) {
+  .title-index-flat {
+    font-size: 22px;
+  }
+
+  .title-page-index-flats {
+    margin-top: 100px !important;
+  }
+
+  #flat-name-index {
+    font-size: 18px !important;
+    color: $light-dark;
+    font-weight: 600;
+  }
+
+  #capacity-flat {
+    font-size: 14px;
+    color: $dm-gray;
+  }
+
+  .user-solid-index {
+    font-size: 12px !important;
+    color: $dm-gray;
+  }
+
+  #price-per-day-index {
+    font-size: 14px;
+    color: $dm-gray;
+  }
+
+  #total-price-flat-index {
+    font-size: 14px;
+    font-family: "mukta";
+    font-weight: 600;
+  }
+
+  .photo-flat-index {
+    width : 100px !important;
+  }
+
+  .block-info {
+  height: 25px;
+  }
+
+}
+
+
+// taille grand téléphone
+
+@media(max-width: 415px) {
+
+  .title-page-index-flats {
+    margin-top: 60px !important;
+  }
+
+  .title-index-flat {
+    font-size: 16px;
+  }
+
+  #flat-name-index {
+    font-size: 14px !important;
+    color: $light-dark;
+    font-weight: 600;
+  }
+
+  #capacity-flat {
+    font-size: 10px;
+    color: $dm-gray;
+  }
+
+  .user-solid-index {
+    font-size: 9px !important;
+    color: $dm-gray;
+  }
+
+  #price-per-day-index {
+    font-size: 10px;
+    color: $dm-gray;
+  }
+
+  #total-price-flat-index {
+    font-size: 10px;
+    font-family: "mukta";
+    font-weight: 600;
+  }
+
+  .photo-flat-index {
+    width : 65px !important;
+  }
+
+  .block-info {
+  height: 30px;
+  }
+}
+
+// taille petit téléphone
+
+@media(max-width: 320px) {
+  .title-page-index-flats {
+    margin-top: 40px !important;
+  }
+  .title-index-flat {
+    font-size: 12px;
+  }
+
+  #flat-name-index {
+    font-size: 12px !important;
+    color: $light-dark;
+    font-weight: 600;
+  }
+
+  #capacity-flat {
+    font-size: 10px;
+    color: $dm-gray;
+  }
+
+  .user-solid-index {
+    font-size: 9px !important;
+    color: $dm-gray;
+  }
+
+  #price-per-day-index {
+    font-size: 10px;
+    color: $dm-gray;
+  }
+
+  #total-price-flat-index {
+    font-size: 10px;
+    font-family: "mukta";
+    font-weight: 600;
+  }
+  .photo-flat-index {
+    width : 65px !important;
+  }
+
+  .block-info {
+  height: 30px;
+  }
+}
 // MAP
 
 #map {
