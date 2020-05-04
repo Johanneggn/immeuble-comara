@@ -1,6 +1,6 @@
 class FlatsController < ApplicationController
     skip_before_action :authenticate_user!, only: [:index, :show]
-    before_action :set_flat, only: %i[show edit update]
+    before_action :set_flat, only: %i[show edit update destroy]
 
   def index
   @flats = Flat.where('max_capacity = ? OR min_capacity = ?', params[:capacity_response], params[:capacity_response]).joins(:bookings)
@@ -42,6 +42,8 @@ class FlatsController < ApplicationController
   end
 
   def destroy
+    @flat.destroy
+    redirect_to user_flats_path
   end
 
   private
