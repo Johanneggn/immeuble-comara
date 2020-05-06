@@ -1,5 +1,10 @@
 <div class="form-client px-4">
-  <%= simple_form_for new_client_path do |f| %>
+  <%= simple_form_for @client, url: flat_bookings_path(@flat) do |f| %>
+    <%= f.simple_fields_for :booking do |b| %>
+      <%= b.input :start_date, as: :hidden %>
+      <%= b.input :end_date, as: :hidden %>
+      <%= b.input :travellers, as: :hidden %>
+    <% end %>
     <%= f.input :first_name,
                 as: :string,
                 required: true %>

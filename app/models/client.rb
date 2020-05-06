@@ -1,3 +1,4 @@
 class Client < ApplicationRecord
-  has_many :bookings
+  has_one :booking
+  accepts_nested_attributes_for :booking
 end

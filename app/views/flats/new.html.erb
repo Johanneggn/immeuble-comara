@@ -29,13 +29,16 @@
                     as: :file,
                     input_html: { multiple: true },
                     label: 'Photos secondaires' %>
+          <%= f.simple_fields_for :equipment do |c| %>
+            <%= c.object.name %>
+            <%= c.input :name, as: :hidden %>
+            <%= c.input :available, as: :boolean %>
+            <%= c.input :pricing, as: :boolean %>
+          <% end %>
           <div class="d-flex flex-row-reverse mt-4">
             <%= f.submit "Réservez" %>
           </div>
         </div>
     <% end %>
 </div>
-      <%#= f.simple_fields_for @airconditioner do |c| %>
-        <%#= c.input :available, as: :boolean %>
-        <%#= c.input :pricing, as: :boolean %>
-        <%# end %>
+

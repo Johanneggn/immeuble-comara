@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   end
 
   resources :flats do
-    resources :bookings, only: [:create]
+    resources :bookings, only: [:new, :create]
   end
 
   resources :client, only: [:new, :create] do

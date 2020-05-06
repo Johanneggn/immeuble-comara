@@ -19,13 +19,18 @@ if (bookingWaiting) {
 
 if (calendar) {
   const days = document.querySelectorAll(".calday")
-  const bookingsStart = document.querySelectorAll(".date-booking")
-  const actions = document.querySelectorAll(".card-user-booking")
-  // const matchDay = day.textContent === start.textContent
+  const bookings = document.querySelectorAll(".card-user-booking")
 
   days.forEach((day) => {
     day.addEventListener("click", (event) => {
-      // actions.classList.toggle("d-none");
+      console.log(day.dataset.date)
+      const matchBookings = document.querySelectorAll(`.card-user-booking[data-date*="${day.dataset.date}"]`)
+      bookings.forEach((booking) => {
+        booking.classList.add("d-none");
+      })
+      matchBookings.forEach((matchBooking) =>{
+        matchBooking.classList.remove("d-none");
+      })
     });
   });
 }

@@ -41,7 +41,7 @@
         <% end %>
       </div>
       <%= month_calendar do |date| %>
-        <p class="calday"><%= l(date, format: '%Y-%m-%d', class: "date-calendar") %></p>
+        <p class="calday"  data-date="<%= l(date, format: '%Y-%m-%d') %>"><%= l(date, format: '%d', class: "date-calendar") %></p>
       <% end %>
     </div>
     <div class="calendar-text">
@@ -52,7 +52,7 @@
           </div>
           <div class="date-booking-action">
             <% @bookings.each do |booking| %>
-              <div class="card-user-booking p-3" date="<%= booking.start_date %>">
+              <div class="card-user-booking p-3" data-date="<%= booking.start_date %>">
                 <p class="flat-name-booking"><%= booking.flat.name %></p>
                 <div class="d-flex">
                   <p class="start-date-booking"><%= l(booking.start_date, format: '%d %B %Y') %></p>
@@ -69,7 +69,7 @@
           </div>
           <div class="date-booking-action">
             <% @bookings.each do |booking| %>
-              <div class="card-user-booking p-3" date="<%= booking.start_date..booking.end_date %>">
+              <div class="card-user-booking p-3" data-date="<%= (booking.start_date..booking.end_date).to_a.map{|date| l(date, format: '%Y-%m-%d')} %>">
                 <p class="flat-name-booking"><%= booking.flat.name %></p>
                 <div class="d-flex">
                   <p class="start-date-booking"><%= l(booking.start_date, format: '%d %B %Y') %></p>
@@ -87,7 +87,7 @@
             </div>
             <div class="date-booking-action">
               <% @bookings.each do |booking| %>
-                <div class="card-user-booking p-3" date="<%= booking.end_date %>">
+                <div class="card-user-booking p-3" data-date="<%= booking.end_date %>">
                   <p class="flat-name-booking"><%= booking.flat.name %></p>
                   <div class="d-flex">
                     <p class="start-date-booking"><%= l(booking.start_date, format: '%d %B %Y') %></p>

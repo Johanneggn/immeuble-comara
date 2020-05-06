@@ -1,5 +1,5 @@
 <div class="form-booking px-4">
-  <%= simple_form_for [ @flat, @booking ] do |f| %>
+  <%= simple_form_for [ @flat, @booking ], url: new_flat_booking_path(@flat), method: :get do |f| %>
     <% if @booking.errors.any? %>
       <div class="errors-container">
         <ul>
