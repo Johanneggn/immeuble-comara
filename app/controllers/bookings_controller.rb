@@ -1,8 +1,11 @@
 
 class BookingsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:new, :create]
+  skip_before_action :authenticate_user!, only: [:show, :new, :create]
   before_action :set_flat, only: [:new, :create]
 
+  def show
+    @booking = Booking.find(params[:id])
+  end
 
   def new
     @client = Client.new
@@ -14,7 +17,6 @@ class BookingsController < ApplicationController
     @client = Client.new(client_params)
     @booking = @client.booking
     @booking.flat = @flat
-    # @booking.client = @client
     @booking.total_price = @booking.flat.price_per_day*((@booking.end_date - @booking.start_date).to_i)
     @booking.status = 'pending'
 

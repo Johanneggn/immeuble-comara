@@ -1,0 +1,19 @@
+.show-booking {
+  min-height: 400px;
+  margin: 100px 0px;
+  border-radius: 5px;
+}
+
+.back-to-home-link {
+  background-color: $green;
+  padding: 10px 30px;
+  border-radius: 5px;
+  color: $light-dark;
+  font-family: 'Staatliches';
+  font-size: 24px;
+}
+
+.back-to-home-link:hover {
+  text-decoration: none !important;
+  color: $light-dark;
+}
