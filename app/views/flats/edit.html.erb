@@ -1,2 +1,56 @@
-<h1>Flats#edit</h1>
-<p>Find me in app/views/flats/edit.html.erb</p>
+<div class="container bg-white my-5">
+  <h1 class="p-4">Créer une annonce</h1>
+    <%= simple_form_for @flat do |f| %>
+      <% if @flat.errors.any? %>
+        <div class="errors-container">
+          <ul>
+            <% @flat.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+        <%= f.input :name,
+                    as: :string,
+                    required: false,
+                    label: 'Nom' %>
+        <%= f.input :price_per_day,
+                    as: :integer,
+                    required: false,
+                    label: 'Prix par nuit' %>
+        <%= f.input :description,
+                    as: :text,
+                    required: false,
+                    label: 'Description' %>
+        <%= f.input :picture,
+                    as: :file,
+                    label: 'Photo principale' %>
+        <%= f.input :photos,
+                    as: :file,
+                    input_html: { multiple: true },
+                    label: 'Photos secondaires' %>
+                    <div class="row">
+          <%= f.simple_fields_for :equipment do |c| %>
+            <div class="col-md-6 my-3">
+              <div class="row ml-2">
+                <div class="col-md-5">
+                  <p class="equipment-name"><%= t(c.object.name) %></p>
+                </div>
+                <%= c.input :name, as: :hidden %>
+                <%= c.input :icon, as: :hidden %>
+                <div class="col-md-3">
+                  <%= c.input :available, as: :boolean, label: 'Disponible' %>
+                </div>
+                <div class="col-md-4">
+                  <%= c.input :pricing, as: :boolean, label: 'Disponible (payant)' %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+          </div>
+          <div class="d-flex justify-content-center">
+            <%= f.submit "Modifier", class: 'back-to-home-link my-5' %>
+          </div>
+        </div>
+    <% end %>
+</div>

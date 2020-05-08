@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="booking-waiting">
-    <h1 class="ml-4">Demandes en attente</h1>
+    <h1>Demandes en attente</h1>
     <% @bookings.each do |booking| %>
       <% if booking.status == 'pending' %>
         <div class="row">
@@ -13,9 +13,19 @@
                   <p><%= booking.total_price %>€</p>
                 </div>
                 <div class="col d-flex justify-content-center align-items-center">
-                  <div class="mx-2"><i class="fas fa-check-circle" id="check-circle"></i></div>
-                  <div class="mx-2"><i class="fas fa-times-circle" id="no-circle"></i></div>
-                  <div class="mx-2"><i class="fas fa-user-circle" id="user-circle" data="<%= booking.id %>"></i></div>
+                  <div class="mx-2">
+                    <%= link_to accepted_user_booking_path(booking), method: :patch do %>
+                      <i class="fas fa-check-circle" id="check-circle"></i>
+                    <% end %>
+                  </div>
+                  <div class="mx-2">
+                    <%= link_to refused_user_booking_path(booking), method: :patch do %>
+                      <i class="fas fa-times-circle" id="no-circle"></i>
+                    <% end %>
+                  </div>
+                  <div class="mx-2">
+                    <i class="fas fa-user-circle" id="user-circle" data="<%= booking.id %>"></i>
+                  </div>
                 </div>
               </div>
             </div>
@@ -35,20 +45,22 @@
   <div class="calendar bg-white">
     <div class="calendar-view pt-3">
       <div class="row my-3">
-        <h1>Calendrier</h1>
-        <%= link_to new_booking_path, class: "link-to-new-booking" do  %>
+        <h1 class="ml-4">Calendrier</h1>
+        <%= link_to new_user_booking_path, class: "link-to-new-booking" do  %>
           <h1 class="add-booking mx-3">+</h1>
         <% end %>
       </div>
       <%= month_calendar do |date| %>
-        <p class="calday"  data-date="<%= l(date, format: '%Y-%m-%d') %>"><%= l(date, format: '%d', class: "date-calendar") %></p>
+      <div class="text-right">
+        <p class="calday text-center"  data-date="<%= l(date, format: '%Y-%m-%d') %>"><%= l(date, format: '%d', class: "date-calendar") %></p>
+      </div>
       <% end %>
     </div>
     <div class="calendar-text">
       <div class="row">
         <div class="col m-4">
           <div class="calendar-content-text d-flex justify-content-center w-100">
-            <h3>Départ</h3>
+            <h3>Arrivée</h3>
           </div>
           <div class="date-booking-action">
             <% @bookings.each do |booking| %>
@@ -69,7 +81,7 @@
           </div>
           <div class="date-booking-action">
             <% @bookings.each do |booking| %>
-              <div class="card-user-booking p-3" data-date="<%= (booking.start_date..booking.end_date).to_a.map{|date| l(date, format: '%Y-%m-%d')} %>">
+              <div class="card-user-booking p-3" data-date="<%= (booking.start_date+1..booking.end_date-1).to_a.map{|date| l(date, format: '%Y-%m-%d')} %>">
                 <p class="flat-name-booking"><%= booking.flat.name %></p>
                 <div class="d-flex">
                   <p class="start-date-booking"><%= l(booking.start_date, format: '%d %B %Y') %></p>
@@ -83,10 +95,10 @@
         <div class="col m-4">
           <div class="calendar-content-text">
             <div class="title-calendar-text d-flex justify-content-center w-100">
-            <h3>Arrivée</h3>
+            <h3>Départ</h3>
             </div>
             <div class="date-booking-action">
-              <% @bookings.each do |booking| %>
+              <% @bookings_accepted.each do |booking| %>
                 <div class="card-user-booking p-3" data-date="<%= booking.end_date %>">
                   <p class="flat-name-booking"><%= booking.flat.name %></p>
                   <div class="d-flex">

@@ -9,6 +9,10 @@ Rails.application.routes.draw do
 
   namespace :user do
     resources :bookings, only: [:index, :new, :create, :edit, :update, :destroy] do
+      member do
+        patch :accepted
+        patch :refused
+      end
     end
     resources :flats, only: [:index] do
     end

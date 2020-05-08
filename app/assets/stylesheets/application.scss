@@ -18,4 +18,25 @@
 @import "bookings/new";
 @import "fontawesome/fontawesome";
 @import "simple_calendar";
-@import "bookings/show"
+@import "bookings/show";
+
+@import "fontawesome/solid";
+@import "fontawesome/brands";
+
+.user {
+  @extend %fa-icon;
+  @extend .fas;
+
+  &:before {
+    content: fa-content($fa-var-user);
+  }
+}
+
+.twitter {
+  @extend %fa-icon;
+  @extend .fab;
+
+  &:before {
+    content: fa-content($fa-var-twitter);
+  }
+}

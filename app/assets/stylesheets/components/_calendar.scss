@@ -84,3 +84,14 @@
 .link-to-new-booking:hover {
 text-decoration: none;
 }
+
+.calday {
+  height: 35px;
+  width: 35px;
+  margin-left: 130px;
+  padding-top: 5px;
+}
+.green-actif-day {
+  background-color: $green;
+  border-radius: 50%;
+}

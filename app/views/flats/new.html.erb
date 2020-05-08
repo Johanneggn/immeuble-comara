@@ -29,14 +29,27 @@
                     as: :file,
                     input_html: { multiple: true },
                     label: 'Photos secondaires' %>
+                    <div class="row">
           <%= f.simple_fields_for :equipment do |c| %>
-            <%= c.object.name %>
-            <%= c.input :name, as: :hidden %>
-            <%= c.input :available, as: :boolean %>
-            <%= c.input :pricing, as: :boolean %>
+            <div class="col-md-6 my-3">
+              <div class="row ml-2">
+                <div class="col-md-5">
+                  <p class="equipment-name"><%= t(c.object.name) %></p>
+                </div>
+                <%= c.input :name, as: :hidden %>
+                <%= c.input :icon, as: :hidden %>
+                <div class="col-md-3">
+                  <%= c.input :available, as: :boolean, label: 'Disponible' %>
+                </div>
+                <div class="col-md-4">
+                  <%= c.input :pricing, as: :boolean, label: 'Disponible (payant)' %>
+                </div>
+              </div>
+            </div>
           <% end %>
-          <div class="d-flex flex-row-reverse mt-4">
-            <%= f.submit "Réservez" %>
+          </div>
+          <div class="d-flex justify-content-center">
+            <%= f.submit "Créer", class: 'back-to-home-link my-5' %>
           </div>
         </div>
     <% end %>

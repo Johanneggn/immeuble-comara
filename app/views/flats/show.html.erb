@@ -66,97 +66,14 @@
                     <div class="row">
                       <% @flat.equipment.each do |equipment| %>
                         <% if equipment.available == true %>
-                          <div class="col-md-6">
-                            <% if equipment.name == 'kitchen'%>                              <div class="d-flex">
-                                <i class="fas fa-user"></i>
-                                <p class="pl-3"><%= t(equipment.name) %></p>
-                              </div>
-                            <% elsif equipment.name == 'air conditioner '%>
-                                <p class="pl-3"><%= t(equipment.name) %></p>
-
-                                <% elsif equipment.name == 'hangers'%>
-                              <div class="d-flex">
-                                <i class="far fa-hat-chef"></i>
-                                <p class="pl-3"><%= t(equipment.name) %></p>
-                              </div>
-                            <% elsif equipment.name == 'washing machine'%>
-                              <div class="d-flex">
-                                <i class="fal fa-acorn"></i>
-                                <p class="pl-3"><%= t(equipment.name) %></p>
-                              </div>
-                            <% elsif equipment.name == 'television'%>
-                              <div class="d-flex">
-                                <p class="pl-3"><%= t(equipment.name) %></p>
-                              </div>
-                            <% elsif equipment.name == 'private entrance'%>
-                              <div class="d-flex">
-                                <p class="pl-3"><%= t(equipment.name) %></p>
-                              </div>
-                            <% elsif equipment.name == 'sheets'%>
-                              <div class="d-flex">
-                                <p class="pl-3"><%= t(equipment.name) %></p>
-                              </div>
-                              <% elsif equipment.name == 'work space'%>
-                              <div class="d-flex">
-                                <p class="pl-3"><%= t(equipment.name) %></p>
-                              </div>
-                              <% elsif equipment.name == 'fridge'%>
-                              <div class="d-flex">
-                                <p class="pl-3"><%= t(equipment.name) %></p>
-                              </div>
-                              <% elsif equipment.name == 'dishes'%>
-                              <div class="d-flex">
-                                <p class="pl-3"><%= t(equipment.name) %></p>
-                              </div>
-                              <% elsif equipment.name == 'utensil'%>
-                              <div class="d-flex">
-                                <p class="pl-3"><%= t(equipment.name) %></p>
-                              </div>
-                              <% elsif equipment.name == 'cooker'%>
-                              <div class="d-flex">
-                                <p class="pl-3"><%= t(equipment.name) %></p>
-                              </div>
-                              <% elsif equipment.name == 'balcony'%>
-                              <div class="d-flex">
-                                <p class="pl-3"><%= t(equipment.name) %></p>
-                              </div>
-                              <% elsif equipment.name == 'backyard'%>
-                              <div class="d-flex">
-                                <p class="pl-3"><%= t(equipment.name) %></p>
-                              </div>
-                              <% elsif equipment.name == 'carbon monoxide detector'%>
-                              <div class="d-flex">
-                                <p class="pl-3"><%= t(equipment.name) %></p>
-                              </div>
-                              <% elsif equipment.name == 'hot water'%>
-                              <div class="d-flex">
-                                <p class="pl-3"><%= t(equipment.name) %></p>
-                              </div>
-                              <% elsif equipment.name == 'parking'%>
-                              <div class="d-flex">
-                                <p class="pl-3"><%= t(equipment.name) %></p>
-                              </div>
-                              <% elsif equipment.name == 'long stay'%>
-                              <div class="d-flex">
-                                <p class="pl-3"><%= t(equipment.name) %></p>
-                              </div>
-                              <% elsif equipment.name == 'tumble dryer'%>
-                              <div class="d-flex">
-                                <p class="pl-3"><%= t(equipment.name) %></p>
-                              </div>
-                              <% elsif equipment.name == 'wifi'%>
-                              <div class="d-flex">
-                                <p class="pl-3"><%= t(equipment.name) %></p>
-                              </div>
-                              <% elsif equipment.name == 'store'%>
-                              <div class="d-flex">
-                                <p class="pl-3"><%= t(equipment.name) %></p>
-                              </div>
-                              <% elsif equipment.name == 'luggage'%>
-                              <div class="d-flex">
-                                <p class="pl-3"><%= t(equipment.name) %></p>
-                              </div>
-                            <% end %>
+                          <div class="col-md-6 d-flex">
+                            <i class="<%= equipment.icon %>"></i>
+                            <p class="ml-2"><%= t(equipment.name) %></p>
+                          </div>
+                         <% elsif equipment.pricing == true %>
+                          <div class="col-md-6 d-flex">
+                            <i class="<%= equipment.icon %>"></i>
+                            <p class="ml-2"><%= t(equipment.name) %> (payant)</p>
                           </div>
                         <% end %>
                       <% end %>

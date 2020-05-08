@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     @booking.flat = @flat
     @booking.total_price = @booking.flat.price_per_day*((@booking.end_date - @booking.start_date).to_i)
     @booking.status = 'pending'
-
+    @booking.origin = 'website'
     if @client.save
       redirect_to booking_path(@booking)
     else

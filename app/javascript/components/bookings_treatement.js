@@ -22,15 +22,25 @@ if (calendar) {
   const bookings = document.querySelectorAll(".card-user-booking")
 
   days.forEach((day) => {
+    const matchBookings = document.querySelectorAll(`.card-user-booking[data-date*="${day.dataset.date}"]`)
+
+    bookings.forEach((booking) => {
+    booking.classList.add("d-none");
+    })
     day.addEventListener("click", (event) => {
       console.log(day.dataset.date)
-      const matchBookings = document.querySelectorAll(`.card-user-booking[data-date*="${day.dataset.date}"]`)
+      // const matchBookings = document.querySelectorAll(`.card-user-booking[data-date*="${day.dataset.date}"]`)
       bookings.forEach((booking) => {
         booking.classList.add("d-none");
+
       })
       matchBookings.forEach((matchBooking) =>{
         matchBooking.classList.remove("d-none");
       })
     });
+
+    matchBookings.forEach((matchb) => {
+      day.classList.add("green-actif-day");
+    })
   });
 }
