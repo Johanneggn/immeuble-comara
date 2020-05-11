@@ -1,105 +1,113 @@
-<div class="container">
-  <div class="row text-right">
-    <div class="index-show-search-bar">
-        <%= form_tag flats_path, method: :get do %>
-        <div class="row">
-          <div class="col">
-            <%= text_field_tag :start_date_response,
-                  params[:start_date_response],
-                  input_html: {class: "datepicker"},
-                  class: "datepicker-query",
-                  placeholder: "Date de d'arrivée" %>
-          </div>
-          <div class="col">
-            <%= text_field_tag :end_date_response,
-                  params[:end_date_response],
-                  input_html: {class: "end_date"},
-                  class: "end-date-query",
-                  placeholder: "Date de départ" %>
-          </div>
-          <div class="col">
-            <%= select_tag :capacity_response,
-                  options_for_select([ "1", "2", "3", "4" ], params[:capacity_response]),
-                  class: "form-home-booking" %>
-          </div>
-          <div class="col">
-          <%= submit_tag 'Modifiez',
-          class: "submit-index-show"%>
-          </div>
-         </div>
-        <% end %>
-    </div>
-  </div>
-  <div class="contenu-show mt-5 pt-3">
-  <h1 class="title-index-flat mt-5"><%= @flat.name %></h1>
-  <div class="photo-show-flat">
-    <div class="row">
-    <div class="col-md-6 d-flex justify-content-center py-4">
-      <%= cl_image_tag @flat.picture.key, crop: :fit, class: "photo-flat-index-principale" %>
-    </div>
-    <div class="col-md-6">
-      <div class="row pt-3 pb-2">
-        <% @flat.photos.each do |photo| %>
-        <div class="col p-2">
-          <%= cl_image_tag photo.key, crop: :thumb, class: "photo-flat-index-secondaire" %>
-        </div>
-        <% end %>
+<div id="show-flat">
+  <div class="container px-0">
+    <div class="row text-right">
+      <div class="index-show-search-bar">
+          <%= form_tag flats_path, method: :get do %>
+          <div class="row">
+            <div class="col">
+              <%= text_field_tag :start_date_response,
+                    params[:start_date_response],
+                    input_html: {class: "datepicker"},
+                    class: "datepicker-query",
+                    placeholder: "Date de d'arrivée" %>
+            </div>
+            <div class="col">
+              <%= text_field_tag :end_date_response,
+                    params[:end_date_response],
+                    input_html: {class: "end_date"},
+                    class: "end-date-query",
+                    placeholder: "Date de départ" %>
+            </div>
+            <div class="col">
+              <%= select_tag :capacity_response,
+                    options_for_select([ "1", "2", "3", "4" ], params[:capacity_response]),
+                    class: "form-home-booking" %>
+            </div>
+            <div class="col">
+            <%= submit_tag 'Modifiez',
+            class: "submit-index-show"%>
+            </div>
+           </div>
+          <% end %>
       </div>
     </div>
-    </div>
-  </div>
-  <div class="description-booking mb-5">
-    <div class="row">
-      <div class="col-md-8 mt-4">
-        <div class="description-show-flat">
-          <div class="description-flat-show">
-            <h3 class="titles-description-flat pt-4 pb-2 mx-3">Description de l'appartement</h3>
-            <div class="text-description-flat mx-3">
-              <p><%= @flat.description %></p>
+          <div class="display-photos w-100">
+        <div class="display-photos-container d-none">
+          <%= render 'photos' %>
+        </div>
+      </div>
+    <div class="contenu-show mt-5 pt-3">
+      <h1 class="title-index-flat mt-5"><%= @flat.name %></h1>
+      <div class="photo-show-flat" id="photo-show-flat">
+        <div class="row">
+          <div class="col-md-6 d-flex justify-content-center py-4">
+            <%= cl_image_tag @flat.picture.key, crop: :fit, class: "photo-flat-index-principale" %>
+          </div>
+          <div class="col-md-6">
+            <div class="row pt-3 pb-2">
+              <% @flat.photos.each do |photo| %>
+                <div class="col p-2">
+                  <%= cl_image_tag photo.key, crop: :fill_pad, class: "photo-flat-index-secondaire" %>
+                </div>
+              <% end %>
             </div>
           </div>
-          <div class="equipement-flat-show">
-            <h3 class="titles-description-flat pb-2 mx-3">Équipements de l'appartement</h3>
-              <div class="list-equipements px-3">
-                <div class="row">
-                  <div class="col">
-                    <div class="row">
-                      <% @flat.equipment.each do |equipment| %>
-                        <% if equipment.available == true %>
-                          <div class="col-md-6 d-flex">
-                            <i class="<%= equipment.icon %>"></i>
-                            <p class="ml-2"><%= t(equipment.name) %></p>
-                          </div>
-                         <% elsif equipment.pricing == true %>
-                          <div class="col-md-6 d-flex">
-                            <i class="<%= equipment.icon %>"></i>
-                            <p class="ml-2"><%= t(equipment.name) %> (payant)</p>
-                          </div>
-                        <% end %>
-                      <% end %>
-                    </div>
-                  </div>
+        </div>
+      </div>
+
+      <div class="description-booking mb-5">
+        <div class="row">
+          <div class="col-md-8 mt-4">
+            <div class="description-show-flat">
+              <div class="description-flat-show">
+                <h3 class="titles-description-flat pt-4 pb-2 mx-3">Description de l'appartement</h3>
+                <div class="text-description-flat mx-3">
+                  <p><%= @flat.description %></p>
                 </div>
               </div>
+              <div class="equipement-flat-show">
+                <h3 class="titles-description-flat pb-2 mx-3">Équipements de l'appartement</h3>
+                  <div class="list-equipements px-3">
+                    <div class="row">
+                      <div class="col">
+                        <div class="row">
+                          <% @flat.equipment.each do |equipment| %>
+                            <% if equipment.available == true %>
+                              <div class="col-md-6 d-flex">
+                                <i class="<%= equipment.icon %>"></i>
+                                <p class="ml-2"><%= t(equipment.name) %></p>
+                              </div>
+                             <% elsif equipment.pricing == true %>
+                              <div class="col-md-6 d-flex">
+                                <i class="<%= equipment.icon %>"></i>
+                                <p class="ml-2"><%= t(equipment.name) %> (payant)</p>
+                              </div>
+                            <% end %>
+                          <% end %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="accessibility-hours">
+                <h3 class="titles-description-flat pb-2 mx-3">Accessibilité et horaire</h3>
+                <div class="text-hours-accessibility mx-3">
+                  <p>Heure d'arrivée</p>
+                  <p>Heure de départ</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="accessibility-hours">
-            <h3 class="titles-description-flat pb-2 mx-3">Accessibilité et horaire</h3>
-            <div class="text-hours-accessibility mx-3">
-              <p>Heure d'arrivée</p>
-              <p>Heure de départ</p>
+          <div class="col-md-4 mt-4">
+            <div class="booking-show-flat">
+              <div class="d-flex d-print-inline justify-content-center pt-4">
+                <p id="price-per-day" data-price="<%= @flat.price_per_day %>"><%= @flat.price_per_day %> €/<span id="price-day-word">jour</span></p>
+              </div>
+               <%= render 'bookings/form', flat: @flat, booking: @booking %>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-md-4 mt-4">
-        <div class="booking-show-flat">
-          <div class="d-flex d-print-inline justify-content-center pt-4">
-            <p id="price-per-day" data-price="<%= @flat.price_per_day %>"><%= @flat.price_per_day %> €/<span id="price-day-word">jour</span></p>
-          </div>
-           <%= render 'bookings/form', flat: @flat, booking: @booking %>
-        </div>
-      </div>
     </div>
-  </div>
   </div>
 </div>

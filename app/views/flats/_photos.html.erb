@@ -1,0 +1,22 @@
+<div class="container-fluid mx-0 px-0">
+  <div class="dotnav-container mx-0 px-0">
+    <div class="row">
+      <div class="col-11">
+
+      </div>
+      <div class="col-1">
+       <i class="fas fa-times mt-2 close-photos"></i>
+      </div>
+    </div>
+    <ul>
+      <% @flat.photos.each do |photo| %>
+      <li>
+          <%= cl_image_tag photo.key, crop: :thumb, class: "grande-photo" %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+
+
