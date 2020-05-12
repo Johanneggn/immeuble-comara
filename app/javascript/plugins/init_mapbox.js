@@ -1,5 +1,8 @@
 import mapboxgl from 'mapbox-gl';
-const initMapbox = () => {
+
+const flatIndex = document.querySelector('.index-flat')
+
+if (flatIndex) {
   const mapElement = document.getElementById('map');
   console.log(mapElement)
   const fitMapToMarkers = (map, markers) => {
@@ -21,5 +24,4 @@ const initMapbox = () => {
     });
     fitMapToMarkers(map, markers);
   }
-};
-export { initMapbox };
+}

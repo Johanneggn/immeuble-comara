@@ -1,3 +1,4 @@
+<div class="index-flat">
 <div class="container-fluid">
   <div class="row text-right">
               <div class="index-show-search-bar">
@@ -28,14 +29,14 @@
             </div>
   <% if @flats.count != 0 %>
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-8 mb-5">
         <div class="title-page-index-flats mt-2">
           <h1 class="ml-5 mt-5 title-index-flat">Résultats de votre recherche</h1>
         </div>
         <div class="index-flats ml-4">
           <% @flats.each do |flat| %>
             <%= link_to flat_path(flat), class: "link-show-flat" do %>
-            <div class="flat-list m-2">
+            <div class="flat-list m-4">
               <div class="d-flex">
                 <div class="col-3 px-0 d-flex align-items-center">
                   <%= cl_image_tag flat.picture.key, crop: :fill, class: "photo-flat-index" %>
@@ -66,13 +67,13 @@
                   </div>
                   <div class="row">
                     <div class="block-info">
-                      <p class="text-center" id="total-price-flat-index">130€</p>
+                      <p class="text-center" id="total-price-flat-index"><span class="total-price pr-1" data-price="<%= flat.price_per_day %>" data-flat="<%= flat.id %>"></span>€</p>
                     </div>
                   </div>
                   <div class="row">
                     <div class="block-info">
                       <div class="price-flat-index">
-                        <p id="price-per-day-index"><%= flat.price_per_day %>€/jour</p>
+                        <p class="price-per-day-index" data-price="<%= flat.price_per_day %>" data-flat="<%= flat.id %>"><%= flat.price_per_day %>€/jour</p>
                       </div>
                     </div>
                   </div>
@@ -95,4 +96,5 @@
 
   <% end %>
 
+</div>
 </div>

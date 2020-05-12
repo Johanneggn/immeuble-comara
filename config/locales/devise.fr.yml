@@ -168,6 +168,11 @@ fr:
   luggage: "Bagagerie"
   available: "Disponible"
   princing: "Disponible (payant)"
+  first name: "Prénom"
+  Last name: "Nom de famille"
+  Address: "Adresse"
+  Phone number: "Numéro de téléphone"
+  Email: "Adresse e-mail"
 
 
    # date:

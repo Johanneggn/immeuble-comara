@@ -1,4 +1,4 @@
-<div class="form-client px-4">
+<div class="form-client p-4">
   <%= simple_form_for @client, url: flat_bookings_path(@flat) do |f| %>
     <%= f.simple_fields_for :booking do |b| %>
       <%= b.input :start_date, as: :hidden %>
@@ -7,22 +7,27 @@
     <% end %>
     <%= f.input :first_name,
                 as: :string,
-                required: true %>
+                required: true,
+                label: "Prénom" %>
     <%= f.input :last_name,
                 as: :string,
-                required: true %>
+                required: true,
+                label: "Nom de Famille" %>
 
     <%= f.input :address,
                 as: :string,
-                required: true %>
+                required: true,
+                label: "Adresse postale" %>
     <%= f.input :phone_number,
                 as: :string,
-                required: true %>
+                required: true,
+                label: "Numéro de téléphone" %>
     <%= f.input :email,
                 as: :string,
-                required: true %>
+                required: true,
+                label: "Adresse e-mail" %>
     <div class="d-flex flex-row-reverse mt-4 justify-content-center">
-      <%= f.submit "Réservez", class: "button-client" %>
+      <%= f.submit "Réservez", class: "back-to-home-link" %>
     </div>
   <% end %>
 </div>
