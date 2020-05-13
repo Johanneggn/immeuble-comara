@@ -2,17 +2,18 @@
   background-color: $white;
   border: none;
   margin: 0px;
-  margin: 45px 30px !important;
+  margin: 45px 20px !important;
   font-family: 'mukta';
   font-size: 18px;
   text-align: center;
+  border: none !important;
 }
 
 .datepicker-query {
   background-color: $white;
   border: none;
   margin: 0px;
-  padding: 45px 30px;
+  padding: 45px 0px;
   font-family: 'mukta';
   font-size: 18px;
   text-align: center;
@@ -22,7 +23,7 @@
   background-color: $white;
   border: none;
   margin: 0px;
-  padding: 45px 30px;
+  padding: 45px 0px;
   font-family: 'mukta';
   font-size: 18px;
   text-align: center;
@@ -63,6 +64,7 @@
   z-index: 9;
   margin-top: -50px;
   color: $light-dark;
+  width: 500px;
 }
 
 @media (max-width: 1024px) {

@@ -9,21 +9,29 @@ if (indexSearchBar) {
 
   const startDate = $(".datepicker-query").flatpickr({
     minDate: "today",
-    // dateFormat: "d/m/Y"
+    altInput: true,
+    altFormat: "d/m/Y",
+    dateFormat: "Y-m-d",
   });
   const endDate = $(".end-date-query").flatpickr({
     minDate: "today",
-    // dateFormat: "d/m/Y"
+    altInput: true,
+    altFormat: "d/m/Y",
+    dateFormat: "Y-m-d",
   });
 }
 
 if (homeSearchBar) {
   const startDate = $(".datepicker-query").flatpickr({
     minDate: "today",
-    // dateFormat: "d/m/Y"
+    altInput: true,
+    altFormat: "d/m/Y",
+    dateFormat: "Y-m-d",
   });
   const endDate = $(".end-date-query").flatpickr({
     minDate: "today",
-    // dateFormat: "d/m/Y"
+    altInput: true,
+    altFormat: "d/m/Y",
+    dateFormat: "Y-m-d",
   });
 }

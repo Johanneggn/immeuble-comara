@@ -1,32 +1,32 @@
 <div class="index-flat">
 <div class="container-fluid">
   <div class="row text-right">
-              <div class="index-show-search-bar">
-                <div class="d-flex">
-                  <%= form_tag flats_path, method: :get do %>
+    <div class="index-show-search-bar">
+      <%= form_tag flats_path, method: :get do %>
+        <div class="d-flex">
+          <div class="d-flex align-items-center">
+            <%= text_field_tag :start_date_response,
+                  params[:start_date_response],
+                  input_html: {class: "datepicker"},
+                  class: "datepicker-query bg-white",
+                  placeholder: "Date de départ" %>
 
-                    <%= text_field_tag :start_date_response,
-                          params[:start_date_response],
-                          input_html: {class: "datepicker"},
-                          class: "datepicker-query",
-                          placeholder: "Date de départ" %>
+            <%= text_field_tag :end_date_response,
+                  params[:end_date_response],
+                  input_html: {class: "end_date"},
+                  class: "end-date-query bg-white",
+                  placeholder: "Date de fin" %>
+          </div>
+        <%= select_tag :capacity_response,
+              options_for_select([ "1", "2", "3", "4" ], params[:capacity_response]),
+              class: "form-home-booking" %>
 
-                    <%= text_field_tag :end_date_response,
-                          params[:end_date_response],
-                          input_html: {class: "end_date"},
-                          class: "end-date-query",
-                          placeholder: "Date de fin" %>
-
-                    <%= select_tag :capacity_response,
-                          options_for_select([ "1", "2", "3", "4" ], params[:capacity_response]),
-                          class: "form-home-booking" %>
-
-                    <%= submit_tag 'Modifiez',
-                    class: "submit-index-show"%>
-                  <% end %>
-                </div>
-              </div>
-            </div>
+        <%= submit_tag 'Modifiez',
+        class: "submit-index-show"%>
+        </div>
+      <% end %>
+    </div>
+  </div>
   <% if @flats.count != 0 %>
     <div class="row">
       <div class="col-md-8 mb-5">
@@ -73,7 +73,7 @@
                   <div class="row">
                     <div class="block-info">
                       <div class="price-flat-index">
-                        <p class="price-per-day-index" data-price="<%= flat.price_per_day %>" data-flat="<%= flat.id %>"><%= flat.price_per_day %>€/jour</p>
+                        <p class="price-per-day-index" data-price="<%= flat.price_per_day %>" data-flat="<%= flat.id %>"><%= flat.price_per_day %>€/nuit</p>
                       </div>
                     </div>
                   </div>

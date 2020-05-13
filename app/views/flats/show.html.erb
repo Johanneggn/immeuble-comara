@@ -1,39 +1,37 @@
 <div id="show-flat">
   <div class="container px-0">
     <div class="row text-right">
-      <div class="index-show-search-bar">
-          <%= form_tag flats_path, method: :get do %>
-          <div class="row">
-            <div class="col">
-              <%= text_field_tag :start_date_response,
-                    params[:start_date_response],
-                    class: "datepicker-query",
-                    placeholder: "Date de d'arrivée" %>
-            </div>
-            <div class="col">
-              <%= text_field_tag :end_date_response,
-                    params[:end_date_response],
-                    class: "end-date-query",
-                    placeholder: "Date de départ" %>
-            </div>
-            <div class="col">
-              <%= select_tag :capacity_response,
-                    options_for_select([ "1", "2", "3", "4" ], params[:capacity_response]),
-                    class: "form-home-booking" %>
-            </div>
-            <div class="col">
-            <%= submit_tag 'Modifiez',
-            class: "submit-index-show"%>
-            </div>
-           </div>
-          <% end %>
+    <div class="index-show-search-bar">
+      <%= form_tag flats_path, method: :get do %>
+        <div class="d-flex">
+          <div class="d-flex align-items-center">
+            <%= text_field_tag :start_date_response,
+                  params[:start_date_response],
+                  input_html: {class: "datepicker"},
+                  class: "datepicker-query bg-white",
+                  placeholder: "Date de départ" %>
+
+            <%= text_field_tag :end_date_response,
+                  params[:end_date_response],
+                  input_html: {class: "end_date"},
+                  class: "end-date-query bg-white",
+                  placeholder: "Date de fin" %>
+          </div>
+        <%= select_tag :capacity_response,
+              options_for_select([ "1", "2", "3", "4" ], params[:capacity_response]),
+              class: "form-home-booking" %>
+
+        <%= submit_tag 'Modifiez',
+        class: "submit-index-show"%>
+        </div>
+      <% end %>
+    </div>
+    </div>
+    <div class="display-photos w-100">
+      <div class="display-photos-container d-none">
+        <%= render 'photos' %>
       </div>
     </div>
-          <div class="display-photos w-100">
-        <div class="display-photos-container d-none">
-          <%= render 'photos' %>
-        </div>
-      </div>
     <div class="contenu-show mt-5 pt-3">
       <h1 class="title-index-flat mt-5"><%= @flat.name %></h1>
       <div class="photo-show-flat" id="photo-show-flat">
