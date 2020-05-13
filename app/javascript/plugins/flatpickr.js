@@ -9,10 +9,9 @@ const bookFlat = document.querySelector(".booking-show-flat");
 
 if (bookFlat) {
 flatpickr("#range_start", {
-  // altInput: true,
-  // altFormat: "F j, Y",
-  // dateFormat: "Y-m-d",
-  dateFormat: "d/m/Y",
+  altInput: true,
+  altFormat: "d/m/Y",
+  dateFormat: "Y-m-d",
   plugins: [new rangePlugin({ input: "#range_end"})],
   onChange: (selectedDates, dateStr, instance) => {
     calcTotalPrice(selectedDates[0], selectedDates[1]);

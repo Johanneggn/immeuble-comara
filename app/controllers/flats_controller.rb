@@ -3,11 +3,13 @@ class FlatsController < ApplicationController
     before_action :set_flat, only: %i[show edit update destroy]
 
   def index
-  @flats = Flat.where('max_capacity = ? OR min_capacity = ?', params[:capacity_response], params[:capacity_response]).joins(:bookings)
-  .where.not('bookings.start_date > ? AND bookings.end_date < ?', params[:start_date_response], params[:end_date_response])
-  .where.not('bookings.start_date < ? AND bookings.end_date > ?', params[:end_date_response], params[:start_date_response])
-  # .where.not('bookings.start_date BETWEEN ? AND ?', params[:start_date_response], params[:end_date_response])
-  # .where.not('bookings.end_date BETWEEN ? AND ?', params[:start_date_response], params[:end_date_response])
+  @booked_flat_ids= Booking.where(status: 'confirmed')
+    .where('(start_date BETWEEN :start_date AND :end_date) OR (end_date BETWEEN :start_date AND :end_date)', start_date: params[:start_date_response], end_date: params[:end_date_response])
+    .pluck(:flat_id)
+
+  @flats = Flat.where.not(id: @booked_flat_ids)
+    .where('max_capacity = ? OR min_capacity = ?', params[:capacity_response], params[:capacity_response])
+
     @flat_place = Flat.geocoded
       @markers = @flats.map do |event|
         {
@@ -65,7 +67,7 @@ class FlatsController < ApplicationController
       :price_per_day,
       :address,
       :picture,
-      :photos,
+      photos: [],
       equipment_attributes: [:name, :available, :pricing, :icon])
   end
 

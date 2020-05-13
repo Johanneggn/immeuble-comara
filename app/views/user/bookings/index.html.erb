@@ -63,7 +63,7 @@
             <h3>Arrivée</h3>
           </div>
           <div class="date-booking-action">
-            <% @bookings.each do |booking| %>
+            <% @bookings_accepted.each do |booking| %>
               <div class="card-user-booking p-3" data-date="<%= booking.start_date %>">
                 <p class="flat-name-booking"><%= booking.flat.name %></p>
                 <div class="d-flex">
@@ -80,7 +80,7 @@
             <h3>En cours</h3>
           </div>
           <div class="date-booking-action">
-            <% @bookings.each do |booking| %>
+            <% @bookings_accepted.each do |booking| %>
               <div class="card-user-booking p-3" data-date="<%= (booking.start_date+1..booking.end_date-1).to_a.map{|date| l(date, format: '%Y-%m-%d')} %>">
                 <p class="flat-name-booking"><%= booking.flat.name %></p>
                 <div class="d-flex">
