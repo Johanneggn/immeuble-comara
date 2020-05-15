@@ -24,7 +24,7 @@
                   placeholder: "Date de fin" %>
           </div>
           <%= select_tag :capacity_response,
-                options_for_select([ "1", "2", "3", "4" ], params[:capacity_response]),
+                options_for_select([ "1", "2", "3", "4", "5", "6" ], params[:capacity_response]),
                 class: "form-home-booking" %>
           <%= submit_tag 'Recherchez',
           class: "submit-home-booking"%>
@@ -32,13 +32,13 @@
       <% end %>
     </div>
   </div>
-  <div class="presentation-home m-5">
+  <div class="presentation-home">
     <div class="row">
       <div class="col d-flex justify-content-center">
         <%= image_tag "224162916.jpg", class: "photo-home" %>
       </div>
       <div class="col">
-        <h1 class="title-presentation-immeuble pt-3 pb-2">Immeuble Comara</h1>
+        <h1 class="title-presentation-immeuble mt-5">Immeuble Comara</h1>
         <p class="text-presentation-immeuble pt-3">Bonjour, Je suis Comara Ibrahim Architecte Franco-Ivoirien à la retraite.
         Je propose un service simple et fonctionnel de location de vacances, du
         studio au 3 pièces. Tous les appartements sont sécurisés et climatisés. Après
@@ -53,52 +53,67 @@
   <div class="reviews w-100 px-0 mx-0">
     <div class="form-inline w-100">
       <div class="col d-flex justify-content-center">
-        <div class="review m-3 p-4">
-          <p>
-          <i class="fas fa-quote-left pr-2"></i>Je n’irai pas chercher plus loin pour mon prochain voyage en Côte d'Ivoire.
-          </p>
-          <p> Sonia - France</p>
-      </div>
-      </div>
+
+        <div class="total-review">
+          <div class="sup-review"></div>
+          <div class="review p-4">
+            <p class="comment-review">
+            <i class="fas fa-quote-left pr-2"></i>Je n’irai pas chercher plus loin pour mon prochain voyage en Côte d'Ivoire.
+            </p>
+            <p> Sonia - France</p>
+          </div>
+          <div class="sub-review"></div>
+          </div>
+        </div>
+
       <div class="col d-flex justify-content-center">
-        <div class="review m-3 p-4">
-          <p>
-          <i class="fas fa-quote-left pr-2"></i>L'appartement était équipé (Wifi, cuisine, ...), propre et bien localisé.
-          Seulement 15min de l'aéroport et du centre des affaires.
-          L'accueil était conviviale, j'y ai passé un excellent séjour !
-          </p>
-          <p> Vitrac - France </p>
+        <div class="total-review">
+          <div class="sup-review"></div>
+          <div class="review p-4">
+            <p class="comment-review">
+            <i class="fas fa-quote-left pr-2"></i>L'appartement était équipé (Wifi, cuisine, ...), propre et bien localisé.
+            Seulement 15min de l'aéroport et du centre des affaires.
+            L'accueil était conviviale, j'y ai passé un excellent séjour !
+            </p>
+            <p> Vitrac - France </p>
+          </div>
+          <div class="sub-review"></div>
         </div>
       </div>
       <div class="col d-flex justify-content-center">
-        <div class="review m-3 p-4">
-          <p><i class="fas fa-quote-left pr-2"></i>Bon accueil, logement propre et bien situé, et bien desservi.</p>
-          <p> Christophe - France</p>
+        <div class="total-review">
+          <div class="sup-review"></div>
+          <div class="review p-4">
+            <p class="comment-review">
+              <i class="fas fa-quote-left pr-2"></i>Bon accueil, logement propre et bien situé, et bien desservi.</p>
+            <p> Christophe - France</p>
+          </div>
+          <div class="sub-review"></div>
         </div>
       </div>
     </div>
   </div>
-  <div class="flat-index-home m-5">
+  <div class="flat-index-home">
     <h1 class="title-flats-home pb-2">Nos appartements</h1>
-    <div class="cards-flat-home">
-      <div class="row">
+    <div class="cards-flat-home row justify-content-center">
+
         <% @flats.each do |flat| %>
           <%= link_to flat_path(flat), class: "link-show-flat" do %>
             <div class="form-inline">
               <div class="col">
-                <div class="card-home-flat bg-white mt-4 px-0">
+                <div class="card-home-flat bg-white">
                   <div class="photo-flat">
                     <%= cl_image_tag flat.picture.key, crop: :thumb, class: "photo-flat-home" %>
                     <p class="w-100 text-right flat-capacity"><%= flat.max_capacity %></p>
                     <i class="fas fa-user i-user-flat-home"></i>
                   </div>
-                  <h3 class="flat-name-home text-center py-3"><%= flat.name %></h3>
+                  <h3 class="flat-name-home text-center"><%= flat.name %></h3>
                 </div>
               </div>
             </div>
           <% end %>
         <% end %>
-      </div>
+
     </div>
   </div>
 

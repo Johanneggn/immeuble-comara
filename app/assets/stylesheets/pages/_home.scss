@@ -2,9 +2,9 @@
 
 // Cover
 .cover {
-  height: 500px;
+  height: 600px;
   width: 100vw;
-  background-image: linear-gradient(rgba(0,0,0,.07), rgba(0,0,0,.07)), asset-url('photo-cover.jpg');
+  background-image: linear-gradient(rgba(0,0,0,.01), rgba(0,0,0,.01)), asset-url('immeuble-comara-presentation.jpg');
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -30,7 +30,9 @@
 // presentation
 
 .presentation-home {
+
   min-height: 300px;
+  padding: 100px 70px;
 }
 
 .title-presentation-immeuble {
@@ -40,6 +42,7 @@
 .photo-home {
   width: 510px;
   height: 430px;
+  border-radius: 5px;
 }
 
 // review part
@@ -49,28 +52,50 @@
   height: 250px;
   width: 285px;
   // margin: 50px;
-  border-radius: 3px;
+}
+
+.sup-review {
+  height: 0;
+  width: 0;
+  border-bottom: 30px solid $green;
+  border-right: 285px solid transparent;
+}
+
+.sub-review {
+  height: 0;
+  width: 0;
+  border-top: 30px solid $green;
+  border-left: 285px solid transparent;
 }
 
 .reviews {
-  background-color: $white;
-  height: 350px;
+  height: 400px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background-color: $white;
 }
 
+.comment-review {
+  font-weight: 500;
+  font-size: 16px;
+}
 
 //card home
 
+.flat-index-home {
+  padding: 100px 70px;
+}
+
 .card-home-flat {
   height: 290px;
-  max-width: 255px;
+  max-width: 300px;
   border-radius: 3px;
+  margin: 10px;
 }
 .cards-flat-home {
   justify-content: center;
-  margin-left: 100px;
+  margin: 50px 20px;
 }
 
 .flat-name-home {
@@ -90,12 +115,12 @@
 }
 .photo-flat {
   display: flex;
-  height: 205px;
-  width: 255px;
+  height: 255px;
+  width: 300px;
 }
 
 .photo-flat p {
-  z-index: 200;
+  z-index: 1;
   margin-left: -100px;
 }
 
@@ -106,7 +131,7 @@
 .photo-flat-home {
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
-  height: 205px !important;
+  height: 255px !important;
   width: 100% !important;
 }
 
@@ -118,7 +143,6 @@
 
 .title-flats-home {
   border-bottom: 1px solid $lm-gray;
-  margin-left: 60px;
 }
 
 // taille grande tablette

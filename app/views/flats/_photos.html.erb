@@ -9,13 +9,11 @@
       </div>
     </div>
     <div class="text-center">
-    <ul>
       <% @flat.photos.each do |photo| %>
-      <li>
-          <%= cl_image_tag photo.key, crop: :thumb, class: "grande-photo" %>
-      </li>
+        <div>
+            <%= cl_image_tag photo.key, crop: :thumb, class: "grande-photo" %>
+        </div>
       <% end %>
-    </ul>
     </div>
   </div>
 </div>
