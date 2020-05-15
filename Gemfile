@@ -21,6 +21,7 @@ gem 'cloudinary', '~> 1.12.0'
 gem 'rails-i18n', '~> 5.1'
 gem 'has_scope'
 gem "simple_calendar", "~> 2.0"
+gem "jquery-slick-rails"
 
 group :development do
   gem 'web-console', '>= 3.3.0'

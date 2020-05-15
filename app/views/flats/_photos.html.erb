@@ -1,4 +1,4 @@
-<div class="container-fluid mx-0 px-0">
+<div class="photos mx-0 px-0">
   <div class="dotnav-container mx-0 px-0">
     <div class="row">
       <div class="col-11">
@@ -9,11 +9,27 @@
       </div>
     </div>
     <div class="text-center">
-      <% @flat.photos.each do |photo| %>
-        <div>
-            <%= cl_image_tag photo.key, crop: :thumb, class: "grande-photo" %>
-        </div>
-      <% end %>
+      <div class="carroussel">
+          <% @flat.photos.each do |photo| %>
+            <div class="bla d-flex justify-content-center">
+                <%= cl_image_tag photo.key, crop: :thumb, class: "grande-photo" %>
+            </div>
+          <% end %>
+      </div>
+      <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+      <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+      <script type="text/javascript">
+        $(document).ready(() => {
+          $('.carroussel').slick({
+              dots: true,
+      infinite: true,
+      speed: 500,
+      fade: true,
+      cssEase: 'linear'
+          });
+        });
+      </script>
     </div>
   </div>
 </div>

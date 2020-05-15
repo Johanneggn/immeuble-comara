@@ -24,6 +24,8 @@
 @import "fontawesome/brands";
 @import "fontawesome/light";
 
+@import 'slick';
+@import 'slick-theme';
 .user {
   @extend %fa-icon;
   @extend .fas;

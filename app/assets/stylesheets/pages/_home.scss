@@ -48,7 +48,7 @@
 // review part
 
 .review {
-  background-color: $green;
+  background-color: $white;
   height: 250px;
   width: 285px;
   // margin: 50px;
@@ -57,23 +57,36 @@
 .sup-review {
   height: 0;
   width: 0;
-  border-bottom: 30px solid $green;
+  border-bottom: 30px solid $white;
   border-right: 285px solid transparent;
 }
 
 .sub-review {
   height: 0;
   width: 0;
-  border-top: 30px solid $green;
+  border-top: 30px solid $white;
   border-left: 285px solid transparent;
 }
 
+.sup-reviews {
+  width: 0;
+  height: 0;
+  border-bottom: 75px solid $green;
+  border-left: 100vw solid transparent;
+}
+
+.sub-reviews {
+  width: 0;
+  height: 0;
+  border-top: 75px solid $green;
+  border-right: 100vw solid transparent;
+}
 .reviews {
-  height: 400px;
+  height: 350px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: $white;
+  background-color: $green;
 }
 
 .comment-review {
