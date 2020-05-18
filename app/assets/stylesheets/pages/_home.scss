@@ -43,6 +43,7 @@
   width: 510px;
   height: 430px;
   border-radius: 5px;
+  border: 1px solid black;
 }
 
 // review part
@@ -71,14 +72,14 @@
 .sup-reviews {
   width: 0;
   height: 0;
-  border-bottom: 75px solid $green;
+  border-bottom: 75px solid #7BCAC9;
   border-left: 100vw solid transparent;
 }
 
 .sub-reviews {
   width: 0;
   height: 0;
-  border-top: 75px solid $green;
+  border-top: 75px solid #7BCAC9;
   border-right: 100vw solid transparent;
 }
 .reviews {
@@ -86,7 +87,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: $green;
+  background-color: #7BCAC9;
 }
 
 .comment-review {

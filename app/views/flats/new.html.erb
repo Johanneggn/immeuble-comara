@@ -12,37 +12,54 @@
       <% end %>
         <%= f.input :name,
                     as: :string,
-                    required: false,
+                    required: true,
                     label: 'Nom' %>
         <%= f.input :price_per_day,
                     as: :integer,
-                    required: false,
+                    required: true,
                     label: 'Prix par nuit' %>
         <%= f.input :description,
                     as: :text,
-                    required: false,
+                    required: true,
                     label: 'Description' %>
+        <div class="row">
+          <div class="col">
+        <%= f.input :max_capacity,
+                    as: :integer,
+                    required: true,
+                    label: "Nombre de personnes maximum"%>
+          </div>
+          <div class="col">
+        <%= f.input :min_capacity,
+                    as: :integer,
+                    required: true,
+                    label: "Nombre de personnes minimum"%>
+           </div>
+        </div>
         <%= f.input :picture,
                     as: :file,
+                    required: true,
                     label: 'Photo principale' %>
         <%= f.input :photos,
                     as: :file,
                     input_html: { multiple: true },
                     label: 'Photos secondaires' %>
-                    <div class="row">
+          <div class="row">
           <%= f.simple_fields_for :equipment do |c| %>
-            <div class="col-md-6 my-3">
-              <div class="row ml-2">
-                <div class="col-md-5">
-                  <p class="equipment-name"><%= t(c.object.name) %></p>
-                </div>
-                <%= c.input :name, as: :hidden %>
-                <%= c.input :icon, as: :hidden %>
-                <div class="col-md-3">
-                  <%= c.input :available, as: :boolean, label: 'Disponible' %>
-                </div>
-                <div class="col-md-4">
-                  <%= c.input :pricing, as: :boolean, label: 'Disponible (payant)' %>
+            <div class="col-md-6">
+              <div class="row">
+                <div class="equipment-new w-100 m-3">
+                  <div class="col-md-4">
+                    <p class="equipment-name w-100"><%= t(c.object.name) %></p>
+                  </div>
+                  <%= c.input :name, as: :hidden %>
+                  <%= c.input :icon, as: :hidden %>
+                  <div class="col-md-3">
+                    <%= c.input :available, as: :boolean, label: 'Disponible' %>
+                  </div>
+                  <div class="col-md-5">
+                    <%= c.input :pricing, as: :boolean, label: 'Disponible (payant)' %>
+                  </div>
                 </div>
               </div>
             </div>

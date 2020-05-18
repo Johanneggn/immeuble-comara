@@ -4,7 +4,6 @@ const flatIndex = document.querySelector('.index-flat')
 
 if (flatIndex) {
   const mapElement = document.getElementById('map');
-  console.log(mapElement)
   const fitMapToMarkers = (map, markers) => {
     const bounds = new mapboxgl.LngLatBounds();
     markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));

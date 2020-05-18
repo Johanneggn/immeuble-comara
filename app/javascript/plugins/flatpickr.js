@@ -2,7 +2,7 @@ import flatpickr from "flatpickr"
 import "flatpickr/dist/flatpickr.min.css" // Note this is important!
 import rangePlugin from "flatpickr/dist/plugins/rangePlugin"
 import { calcTotalPrice } from '../components/total_price_calculation';
-require("flatpickr/dist/themes/material_green.css");
+require("flatpickr/dist/themes/material_blue.css");
 
 const bookFlat = document.querySelector(".booking-show-flat");
 

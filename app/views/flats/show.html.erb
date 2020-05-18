@@ -1,5 +1,5 @@
 <div id="show-flat">
-  <div class="container px-0">
+  <div class="container px-0 w-100">
     <div class="row text-right">
     <div class="index-show-search-bar">
       <%= form_tag flats_path, method: :get do %>
@@ -97,7 +97,7 @@
           <div class="col-md-4 mt-4">
             <div class="booking-show-flat">
               <div class="d-flex d-print-inline justify-content-center pt-4">
-                <p id="price-per-day" data-price="<%= @flat.price_per_day %>"><%= @flat.price_per_day %> €/<span id="price-day-word">jour</span></p>
+                <p id="price-per-day" data-price="<%= @flat.price_per_day %>"><%= @flat.price_per_day %> €/<span id="price-day-word">nuit</span></p>
               </div>
                <%= render 'bookings/form', flat: @flat, booking: @booking %>
             </div>
