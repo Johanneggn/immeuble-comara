@@ -28,7 +28,6 @@ if (calendar) {
     booking.classList.add("d-none");
     })
     day.addEventListener("click", (event) => {
-      console.log(day.dataset.date)
       // const matchBookings = document.querySelectorAll(`.card-user-booking[data-date*="${day.dataset.date}"]`)
       bookings.forEach((booking) => {
         booking.classList.add("d-none");
@@ -43,4 +42,37 @@ if (calendar) {
       day.classList.add("green-actif-day");
     })
   });
+
+
+
+ const clients = document.querySelectorAll('.client-info');
+
+  bookings.forEach((booking) =>{
+   clients.forEach((client) => {
+    booking.addEventListener("click", (event) => {
+      const matchingBookingClient = booking.getAttribute("data-booking") === client.getAttribute("data-booking");
+        matchingBookingClient.classList.toggle("d-none");
+
+     });
+    });
+  });
+
+//   bookings.forEach((booking) => {
+//     const matchsClient = document.querySelectorAll(`.client-info[data-booking*="${booking.dataset.booking}"]`)
+
+//     clients.forEach((client) => {
+//       client.classList.add('d-none');
+//     });
+
+//     booking.addEventListener("click", (event) => {
+
+//       clients.forEach((client) => {
+//         client.classList.remove('d-none');
+//       });
+//       matchsClient.forEach((matchClient) => {
+//         matchClient.classList.remove('d-none');
+//       })
+//     })
+// })
+
 }

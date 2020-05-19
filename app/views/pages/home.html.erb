@@ -16,16 +16,22 @@
           <div class="d-flex align-items-center">
             <%= text_field_tag :start_date_response,
                   params[:start_date_response],
+                  input_html: {class: "datepicker"},
                   class: "datepicker-query bg-white",
                   placeholder: "Date de départ" %>
             <%= text_field_tag :end_date_response,
                   params[:end_date_response],
+                  input_html: {class: "end_date"},
                   class: "end-date-query bg-white",
                   placeholder: "Date de fin" %>
           </div>
+          <div class="user-query align-items-center">
+            <i class="fas fa-user-friends"></i>
           <%= select_tag :capacity_response,
                 options_for_select([ "1", "2", "3", "4", "5", "6" ], params[:capacity_response]),
                 class: "form-home-booking" %>
+
+           </div>
           <%= submit_tag 'Recherchez',
           class: "submit-home-booking"%>
         </div>

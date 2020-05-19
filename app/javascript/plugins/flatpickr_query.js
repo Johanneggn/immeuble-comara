@@ -23,6 +23,7 @@ if (indexSearchBar) {
 }
 
 if (homeSearchBar) {
+
   const startDate = $(".datepicker-query").flatpickr({
     minDate: "today",
     altInput: true,

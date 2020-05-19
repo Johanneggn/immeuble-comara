@@ -64,13 +64,22 @@
           </div>
           <div class="date-booking-action">
             <% @bookings_accepted.each do |booking| %>
-              <div class="card-user-booking p-3" data-date="<%= booking.start_date %>">
+              <div class="card-user-booking p-3" data-date="<%= booking.start_date %>" data-booking="booking.client_id">
                 <p class="flat-name-booking"><%= booking.flat.name %></p>
                 <div class="d-flex">
                   <p class="start-date-booking"><%= l(booking.start_date, format: '%d %B %Y') %></p>
                   <p class="mx-2">-</p>
                   <p class="end-date-booking"><%= l(booking.end_date, format: '%d %B %Y') %></p>
                 </div>
+            <div class="card-client-booking">
+              <% @clients.each do |client| %>
+                <div class="client-info d-none" data-booking="<%= client.id %>">
+                  <%= client.first_name %> <%= client.last_name %>
+                  <%= client.email %>
+                  <%= client.phone_number %>
+                </div>
+              <% end %>
+            </div>
               </div>
             <% end %>
           </div>

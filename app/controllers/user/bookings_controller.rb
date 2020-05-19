@@ -3,6 +3,7 @@ class User::BookingsController < ApplicationController
   def index
     @bookings = Booking.all
     @bookings_accepted = Booking.where(status: 'confirmed')
+    @clients = Client.all
   end
   def new
   end
