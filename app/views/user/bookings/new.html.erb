@@ -1,1 +1,75 @@
-<h1>HEYYYY</h1>
+<div class="container bg-white p-5 my-5">
+   <%= simple_form_for @booking do |f| %>
+      <% if @booking.errors.any? %>
+        <div class="errors-container">
+          <ul>
+            <% @flat.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <%= f.association :flat,
+            required: false,
+            input_html: {class: "select2"},
+            label: 'Appartement',
+            collection: @display_flat_names %>
+      <%= f.input :total_price,
+            as: :integer,
+            required: true,
+            label: 'Prix Total' %>
+      <%= f.input :start_date,
+            as: :string,
+            required: true,
+            input_html: {id: "range_start"},
+            label: 'Dates d\'arrivée' %>
+      <%= f.input :end_date,
+            as: :string,
+            required: true,
+            input_html: {id: "range_end"},
+            label: 'Date de départ' %>
+      <%= f.input :travellers,
+            as: :select,
+            collection: Booking::TRAVELLERS,
+            input_html: {class: "select2"},
+            label: 'Nombre de Voyageurs' %>
+      <%= f.input :status,
+            as: :select,
+            collection: Booking::STATUS,
+            input_html: {class: "select2"},
+            required: true,
+            label: 'Statut de la réservation' %>
+    <%= f.input :origin,
+            as: :string,
+            required: true,
+            label: "Origine de réservation" %>
+    <%= f.simple_fields_for :client do |c| %>
+      <%= c.input :first_name,
+                as: :string,
+                required: true,
+                label: "Prénom" %>
+      <%= c.input :last_name,
+                as: :string,
+                required: true,
+                label: "Nom de Famille" %>
+      <%= c.input :address,
+                as: :string,
+                required: true,
+                label: "Adresse postale" %>
+      <%= c.input :phone_number,
+                as: :string,
+                required: true,
+                label: "Numéro de téléphone"  %>
+      <%= c.input :email,
+                as: :string,
+                required: true,
+                label: "Adresse e-mail" %>
+    <% end %>
+
+          <div class="d-flex justify-content-center">
+            <%= f.submit "Créer", class: 'back-to-home-link my-5' %>
+          </div>
+        </div>
+    <% end %>
+</div>
+</div>
