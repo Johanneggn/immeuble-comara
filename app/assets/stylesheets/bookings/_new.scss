@@ -19,3 +19,14 @@
   display: flex;
   border-radius: 3px;
 }
+
+.booking-client-new {
+  margin: 0 !important;
+  background-image: asset-url('test-cover.jpg');
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
