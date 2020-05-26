@@ -14,9 +14,10 @@ class User::BookingsController < ApplicationController
   end
 
   def create
+    @booking = Booking.new(booking_params)
     @client = Client.new(client_params)
     @booking = @client.booking
-    @booking.flat = Flat.find(params[:id])
+    # @booking.flat = Flat.find(params[:id])
 
     if @booking.save
       redirect_to user_bookings_path

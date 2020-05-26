@@ -8,14 +8,17 @@ const bookFlat = document.querySelector(".booking-show-flat");
 
 
 if (bookFlat) {
-flatpickr("#range_start", {
-  altInput: true,
-  altFormat: "d/m/Y",
-  dateFormat: "Y-m-d",
-  minDate: "today",
-  plugins: [new rangePlugin({ input: "#range_end"})],
-  onChange: (selectedDates, dateStr, instance) => {
-    calcTotalPrice(selectedDates[0], selectedDates[1]);
-  }
-});
+    const startDateInput = document.getElementById("range_start");
+    const endDateInput = document.getElementById("range_end");
+
+    flatpickr(startDateInput, {
+      altInput: true,
+      altFormat: "d/m/Y",
+      dateFormat: "Y-m-d",
+      minDate: "today",
+      plugins: [new rangePlugin({ input: endDateInput})],
+      onChange: (selectedDates, dateStr, instance) => {
+        calcTotalPrice(selectedDates[0], selectedDates[1]);
+      }
+    });
 }
