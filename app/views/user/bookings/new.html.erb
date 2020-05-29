@@ -1,10 +1,10 @@
 <div class="container bg-white p-5 my-5">
   <h1>Nouvelle réservation</h1>
-   <%= simple_form_for @booking do |f| %>
+   <%= simple_form_for @booking, url: user_bookings_path do |f| %>
       <% if @booking.errors.any? %>
         <div class="errors-container">
           <ul>
-            <% @flat.errors.full_messages.each do |message| %>
+            <% @booking.errors.full_messages.each do |message| %>
               <li><%= message %></li>
             <% end %>
           </ul>
@@ -62,6 +62,12 @@
         <h3>Coordonées du client</h3>
         <%= f.simple_fields_for :client do |c| %>
           <div class="row">
+            <div class="col">
+              <%= c.input :civility,
+              as: :string,
+              required: true,
+              label: "Civilité" %>
+            </div>
             <div class="col">
               <%= c.input :first_name,
                         as: :string,

@@ -8,15 +8,19 @@ class User::BookingsController < ApplicationController
   end
   def new
     @booking = Booking.new
+    @client = @booking.build_client
     @display_flat_names = Flat.order(:name).map do | flat |
       [flat.name, flat.id]
     end
+
+
+
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @client = Client.new(client_params)
-    @booking = @client.booking
+
+
     # @booking.flat = Flat.find(params[:id])
 
     if @booking.save
@@ -25,6 +29,7 @@ class User::BookingsController < ApplicationController
       render :new
     end
   end
+
   def edit
   end
   def update
@@ -53,7 +58,17 @@ class User::BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :travellers)
+    params.require(:booking).permit(
+      :start_date,
+      :end_date,
+      :travellers,
+      :flat_id,
+      :total_price,
+      :status,
+      :origin,
+      :client_id,
+      flat_attributes: [:name, :description, :price_per_day, :longitude, :latitude, :address, :max_capacity, :min_capacity],
+      client_attributes: [:civilty, :first_name, :last_name, :address, :phone_number, :email])
   end
 
   def client_params
@@ -63,8 +78,7 @@ class User::BookingsController < ApplicationController
       :last_name,
       :address,
       :phone_number,
-      :email,
-      booking_attributes: [:start_date, :end_date, :travellers])
+      :email)
   end
 
   # def set_flat
