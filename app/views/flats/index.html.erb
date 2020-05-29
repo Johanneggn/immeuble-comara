@@ -1,101 +1,102 @@
 <div class="index-flat">
-<div class="container-fluid">
-  <div class="row text-right">
-    <div class="index-show-search-bar">
-      <%= form_tag flats_path, method: :get do %>
-        <div class="d-flex">
-          <div class="d-flex align-items-center">
-            <%= text_field_tag :start_date_response,
-                  params[:start_date_response],
-                  input_html: {class: "datepicker"},
-                  class: "datepicker-query bg-white",
-                  placeholder: "Date de départ" %>
-            <%= text_field_tag :end_date_response,
-                  params[:end_date_response],
-                  input_html: {class: "end_date"},
-                  class: "end-date-query bg-white",
-                  placeholder: "Date de fin" %>
+  <div class="container-fluid">
+    <div class="row text-right">
+      <div class="index-show-search-bar">
+        <%= form_tag flats_path, method: :get do %>
+          <div class="d-flex">
+            <div class="d-flex align-items-center">
+              <%= text_field_tag :start_date_response,
+                    params[:start_date_response],
+                    input_html: {class: "datepicker"},
+                    class: "datepicker-query bg-white",
+                    placeholder: "Date de départ" %>
+              <%= text_field_tag :end_date_response,
+                    params[:end_date_response],
+                    input_html: {class: "end_date"},
+                    class: "end-date-query bg-white",
+                    placeholder: "Date de fin" %>
+            </div>
+            <div class="user-query align-items-center">
+              <i class="fas fa-user-friends"></i>
+          <%= select_tag :capacity_response,
+                options_for_select([ "1", "2", "3", "4" ], params[:capacity_response]),
+                class: "form-home-booking" %>
+            </div>
+          <%= submit_tag 'Modifiez',
+          class: "submit-index-show"%>
           </div>
-          <div class="user-query align-items-center">
-            <i class="fas fa-user-friends"></i>
-        <%= select_tag :capacity_response,
-              options_for_select([ "1", "2", "3", "4" ], params[:capacity_response]),
-              class: "form-home-booking" %>
-          </div>
-        <%= submit_tag 'Modifiez',
-        class: "submit-index-show"%>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
-  </div>
-  <% if @flats.count != 0 %>
-    <div class="row">
-      <div class="col-md-8 mb-5">
-        <div class="title-page-index-flats mt-2">
-          <h1 class="ml-5 mt-5 title-index-flat">Résultats de votre recherche</h1>
-        </div>
-        <div class="index-flats ml-4">
-          <% @flats.each do |flat| %>
-            <%= link_to flat_path(flat), class: "link-show-flat" do %>
-            <div class="flat-list m-4">
-              <div class="d-flex">
-                <div class="col-3 px-0 d-flex align-items-center">
-                  <%= cl_image_tag flat.picture.key, crop: :fill, class: "photo-flat-index" %>
-                </div>
-                <div class="col-7">
-                  <div class="row">
-                    <div class="block-info">
-                      <h3 class="pl-2 pt-2" id="flat-name-index"><%= flat.name %></h3>
-                    </div>
+    <% if @flats.count != 0 %>
+      <div class="row">
+        <div class="col-md-8 mb-5">
+          <div class="title-page-index-flats mt-2">
+            <h1 class="ml-5 mt-5 title-index-flat">Résultats de votre recherche</h1>
+          </div>
+          <div class="index-flats ml-4">
+            <% @flats.each do |flat| %>
+              <%= link_to flat_path(flat), class: "link-show-flat" do %>
+              <div class="flat-list m-4">
+                <div class="d-flex">
+                  <div class="col-3 px-0 d-flex align-items-center">
+                    <%= cl_image_tag flat.picture.key, crop: :fill, class: "photo-flat-index" %>
                   </div>
-                  <div class="row">
-                    <div class="block-info">
+                  <div class="col-7">
+                    <div class="row">
+                      <div class="block-info">
+                        <h3 class="pl-2 pt-2" id="flat-name-index"><%= flat.name %></h3>
+                      </div>
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="block-info">
-                      <div class="d-flex">
-                        <i class="fas fa-user mt-1 mr-2 pl-3 user-solid-index"></i>
-                        <p  id="capacity-flat"><%= flat.max_capacity %> personnes</p>
+                    <div class="row">
+                      <div class="block-info">
+                        <div class="d-flex">
+                          <i class="fas fa-user mt-1 mr-2 pl-3 user-solid-index"></i>
+                          <p  id="capacity-flat"><%= flat.max_capacity %> personnes</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="block-info">
+                        <div class="price-flat-index d-flex">
+                          <p class="price-per-day-index mt-1 mr-2 pl-3" data-price="<%= flat.price_per_day %>" data-flat="<%= flat.id %>"><%= flat.price_per_day %>€/nuit</p>
+                          <p class="price-per-day-xof" data-price="<%= flat.price_xof %>" data-flat="<%= flat.id %>"></p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="col-2">
-                  <div class="row">
-                    <div class="block-info">
+                  <div class="col-2">
+                    <div class="row">
+                      <div class="block-info">
+                      </div>
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="block-info">
-                      <p class="text-center" id="total-price-flat-index"><span class="total-price pr-1" data-price="<%= flat.price_per_day %>" data-flat="<%= flat.id %>"></span>€</p>
+                    <div class="row">
+                      <div class="block-info">
+                        <p class="text-center" id="total-price-flat-index"><span class="total-price pr-1" data-price="<%= flat.price_per_day %>" data-flat="<%= flat.id %>"></span>€</p>
+                      </div>
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="block-info">
-                      <div class="price-flat-index">
-                        <p class="price-per-day-index" data-price="<%= flat.price_per_day %>" data-flat="<%= flat.id %>"><%= flat.price_per_day %>€/nuit</p>
+                    <div class="row">
+                      <div class="block-info">
+                        <p>soit <span class="total-price-xof pr-1"data-price="<%= flat.price_per_day %>" data-flat="<%= flat.id %>"></span> XOF</p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
         </div>
+          <div class="col-md-4">
+            <div
+              id="map"
+              data-markers="<%= @markers.to_json %>"
+              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+            ></div>
+          </div>
       </div>
-        <div class="col-md-4">
-          <div
-            id="map"
-            data-markers="<%= @markers.to_json %>"
-            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-          ></div>
-        </div>
-    </div>
-  <% else %>
-
-  <% end %>
-
-</div>
+    <% else %>
+      <h1 class="ml-5 mt-5 title-index-flat">Nous n'avons pas d'appartements disponibles selon vos critères de recheche</h1>
+    <% end %>
+  </div>
 </div>

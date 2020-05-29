@@ -13,7 +13,10 @@ const calcTotalPrice = (startDate, endDate) => {
 
   const pricePerDay = document.getElementById("price-per-day").dataset.price; // string
 
+  const pricePerDayXof = document.getElementById("price-per-day-xof").dataset.price;
+
   const totalPrice = Number.parseInt(pricePerDay, 10) * rangeDate; // renvoie NaN
+  const totalPriceXof = Number.parseInt(pricePerDayXof, 10) * rangeDate;
 
   const totalPriceBox = document.querySelector("#total-price");
   if (totalPrice > 0) {
@@ -21,6 +24,13 @@ const calcTotalPrice = (startDate, endDate) => {
   } else {
     console.log(0);
   };
+
+  const totalPriceXofBox = document.querySelector("#total-price-xof");
+  if (totalPriceXof > 0) {
+    totalPriceXofBox.innerHTML = totalPriceXof
+  } else {
+    totalPriceXofBox.innerHTML = console.log(0)
+  }
 };
 
 export { calcTotalPrice };
@@ -36,6 +46,7 @@ if (indexFlat) {
     const searchRangeDate = searchEndMoment.diff(searchStartMoment, 'days');
 
     const searchPricesPerDay = document.querySelectorAll(".price-per-day-index");
+    const searchPricesXofDay = document.querySelectorAll(".price-per-day-xof");
 
     searchPricesPerDay.forEach((price) => {
 
@@ -52,5 +63,21 @@ if (indexFlat) {
         console.log(0);
       };
 
+    })
+
+    searchPricesXofDay.forEach((price) => {
+
+      const searchPricePerDay = price.dataset.price;
+      const searchFlat = price.dataset.flat;
+
+      const totalPriceSearch = Number.parseInt(searchPricePerDay, 10) * searchRangeDate;
+
+      const matchPrices = document.querySelector(`.total-price-xof[data-flat*="${searchFlat}"]`);
+
+      if (totalPriceSearch > 0) {
+        matchPrices.innerHTML = totalPriceSearch
+      } else {
+        console.log(0);
+      };
     })
 }
