@@ -17,7 +17,11 @@
         <%= f.input :price_per_day,
                     as: :integer,
                     required: true,
-                    label: 'Prix par nuit' %>
+                    label: 'Prix par nuit en euro' %>
+        <%= f.input :price_xof,
+                    as: :integer,
+                    required: true,
+                    label: 'Prix par nuit en XOF' %>
         <%= f.input :description,
                     as: :text,
                     required: true,
@@ -28,17 +32,18 @@
                     as: :hidden %>
         <div class="row">
           <div class="col">
-        <%= f.input :max_capacity,
-                    as: :integer,
-                    required: true,
-                    label: "Nombre de personnes maximum"%>
-          </div>
+
           <div class="col">
         <%= f.input :min_capacity,
                     as: :integer,
                     required: true,
                     label: "Nombre de personnes minimum"%>
            </div>
+        <%= f.input :max_capacity,
+                    as: :integer,
+                    required: true,
+                    label: "Nombre de personnes maximum"%>
+          </div>
         </div>
         <%= f.input :picture,
                     as: :file,
