@@ -67,6 +67,7 @@ class FlatsController < ApplicationController
       :name,
       :description,
       :price_per_day,
+      :price_xof,
       :address,
       :picture,
       :longitude,

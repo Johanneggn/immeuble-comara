@@ -7,7 +7,7 @@
   height: 130px;
   width: 50px;
   margin-right: 20px;
-   box-shadow: 0 0 0 0rem rgba(22, 127, 251, 0.25) !important;
+  box-shadow: 0 0 0 0rem rgba(22, 127, 251, 0.25) !important;
 }
 
 form:focus {
@@ -45,6 +45,7 @@ form:focus {
   width: 180px;
   font-size: 20px;
   color: $light-dark;
+  border: none !important;
 }
 
 .submit-index-show {
