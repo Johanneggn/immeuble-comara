@@ -31,6 +31,8 @@ class FlatsController < ApplicationController
   def create
     @flat= Flat.new(flat_params)
 
+
+
     if @flat.save
 
       redirect_to user_flats_path
@@ -67,6 +69,11 @@ class FlatsController < ApplicationController
       :price_per_day,
       :address,
       :picture,
+      :longitude,
+      :latitude,
+      :max_capacity,
+      :min_capacity,
+      :belonging,
       photos: [],
       equipment_attributes: [:name, :available, :pricing, :icon])
   end

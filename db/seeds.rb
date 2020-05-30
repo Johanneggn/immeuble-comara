@@ -42,7 +42,7 @@ studio = Flat.new(
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   price_per_day: 30,
   price_xof: 10000,
-  belonging: "Immeuble Comara",
+  belonging: true,
   address: "Abidjan",
   min_capacity: 1,
   max_capacity: 2)
@@ -73,7 +73,7 @@ studio_terrasse = Flat.new(
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   price_per_day: 25,
   price_xof: 10000,
-  belonging: "Immeuble Comara",
+  belonging: true,
   address: "Abidjan",
   min_capacity: 1,
   max_capacity: 2)
@@ -104,7 +104,7 @@ studio_balcon = Flat.new(
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   price_per_day: 40,
   price_xof: 10000,
-  belonging: "Immeuble Comara",
+  belonging: true,
   address: "Abidjan",
   min_capacity: 3,
   max_capacity: 4)
@@ -136,7 +136,7 @@ appartement_chambre = Flat.new(
   price_per_day: 25,
   price_xof: 10000,
   address: "Abidjan",
-  belonging: "Immeuble Comara",
+  belonging: true,
   min_capacity: 3,
   max_capacity: 4)
 appartement_chambre.photos.attach(io: appartement_chambre_image_1, filename: "photo_1.jpg", content_type: 'image/jpg')
@@ -168,7 +168,7 @@ appartement_chambres = Flat.new(
   price_per_day: 25,
   price_xof: 10000,
   address: "Abidjan",
-  belonging: "Partenaire",
+  belonging: false,
   min_capacity: 3,
   max_capacity: 4)
 appartement_chambres.photos.attach(io: appartement_chambres_image_1, filename: "photo_1.jpg", content_type: 'image/jpg')
@@ -199,6 +199,7 @@ appart_chambres = Flat.new(
   price_per_day: 25,
   price_xof: 10000,
   address: "Abidjan",
+  belonging: false,
   min_capacity: 1,
   max_capacity: 2)
 appart_chambres.photos.attach(io: appart_chambres_image_1, filename: "photo_1.jpg", content_type: 'image/jpg')

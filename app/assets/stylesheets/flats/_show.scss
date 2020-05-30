@@ -37,8 +37,9 @@
 }
 
 .text-hours-accessibility {
-  min-height: 100px;
+  min-height: 50px;
 }
+
 // partie réservation
 
 .booking-show-flat {
@@ -54,6 +55,12 @@
   font-size: 24px;
   border-radius: 5px;
   margin-bottom: 20px;
+  color: $light-dark;
+}
+
+.button-booking:hover {
+  color: $light-dark;
+  text-decoration: none !important;
 }
 
 #price-per-day {

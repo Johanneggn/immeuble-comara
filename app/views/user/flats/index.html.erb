@@ -1,44 +1,78 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-11">
-      <h1 class="ml-4 mt-4">Les appartements</h1>
-    </div>
-    <div class="col-md-1">
-      <%= link_to new_flat_path, class: "link-to-new-booking" do  %>
-        <h1 class="add-flat mt-4">+</h1>
-      <% end %>
-    </div>
-  </div>
 
-  <% @flats.each do |flat| %>
     <div class="row">
-      <div class="list-flat-user bg-white m-4 w-100 d-flex">
-        <div class="col-md-10 px-0">
-          <%= link_to flat_path(flat), class: "link-show-flat" do %>
-            <div class="d-flex">
-              <div class="col-md-3 px-0">
-                <%= cl_image_tag flat.picture.key, crop: :thumb, height: 150, width: 150%>
-              </div>
-              <div class="col-md-9 p-4">
-                <div class="row">
-                  <h3><%= flat.name %></h3>
+      <div class="col-md-11">
+        <h1 class="ml-2 mt-4">Les appartements</h1>
+      </div>
+      <div class="col-md-1">
+        <%= link_to new_flat_path, class: "link-to-new-booking" do  %>
+          <h1 class="add-flat mt-4">+</h1>
+        <% end %>
+      </div>
+    </div>
+
+  <% @flats_comara.each do |flat| %>
+      <div class="row">
+        <div class="list-flat-user bg-white m-4 w-100 d-flex">
+          <div class="col-md-10 px-0">
+            <%= link_to flat_path(flat), class: "link-show-flat" do %>
+              <div class="d-flex">
+                <div class="col-md-3 px-0">
+                  <%= cl_image_tag flat.picture.key, crop: :thumb, height: 150, width: 150%>
                 </div>
-                <div class="row">
-                  <p><%= flat.price_per_day %>€/nuit</p>
+                <div class="col-md-9 p-4">
+                  <div class="row">
+                    <h3><%= flat.name %></h3>
+                  </div>
+                  <div class="row">
+                    <p><%= flat.price_per_day %>€/nuit</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          <% end %>
-        </div>
-        <div class="col-md-2 p-4">
-          <div class="row">
-            <%= link_to 'Modifier', edit_flat_path(flat), class: 'link-flat'  %>
+            <% end %>
           </div>
-          <div class="row">
-            <%= link_to 'Supprimer',flat_path(flat), method: 'delete', class: 'link-flat'  %>
+          <div class="col-md-2 p-4">
+            <div class="row">
+              <%= link_to 'Modifier', edit_flat_path(flat), class: 'link-flat'  %>
+            </div>
+            <div class="row">
+              <%= link_to 'Supprimer',flat_path(flat), method: 'delete', class: 'link-flat'  %>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+  <% end %>
+
+  <h1>Nos partenaires</h1>
+  <% @flats_partners.each do |flat| %>
+      <div class="row">
+        <div class="list-flat-user bg-white m-4 w-100 d-flex">
+          <div class="col-md-10 px-0">
+            <%= link_to flat_path(flat), class: "link-show-flat" do %>
+              <div class="d-flex">
+                <div class="col-md-3 px-0">
+                  <%= cl_image_tag flat.picture.key, crop: :thumb, height: 150, width: 150%>
+                </div>
+                <div class="col-md-9 p-4">
+                  <div class="row">
+                    <h3><%= flat.name %></h3>
+                  </div>
+                  <div class="row">
+                    <p><%= flat.price_per_day %>€/nuit</p>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <div class="col-md-2 p-4">
+            <div class="row">
+              <%= link_to 'Modifier', edit_flat_path(flat), class: 'link-flat'  %>
+            </div>
+            <div class="row">
+              <%= link_to 'Supprimer',flat_path(flat), method: 'delete', class: 'link-flat'  %>
+            </div>
+          </div>
+        </div>
+      </div>
   <% end %>
 </div>

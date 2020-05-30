@@ -22,6 +22,10 @@
                     as: :text,
                     required: true,
                     label: 'Description' %>
+        <%= f.input :longitude,
+                    as: :hidden %>
+        <%= f.input :latitude,
+                    as: :hidden %>
         <div class="row">
           <div class="col">
         <%= f.input :max_capacity,
@@ -44,6 +48,12 @@
                     as: :file,
                     input_html: { multiple: true },
                     label: 'Photos secondaires' %>
+        <%= f.collection_radio_buttons :belonging,
+                    [[true, 'Immeuble Comara'],
+                    [false, 'Partenaire']],
+                    :first, :last,
+                    label: "Appartenance" %>
+
           <div class="row">
           <%= f.simple_fields_for :equipment do |c| %>
             <div class="col-md-6">
