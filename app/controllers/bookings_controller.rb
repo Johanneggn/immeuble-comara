@@ -11,6 +11,7 @@ class BookingsController < ApplicationController
     @client = Client.new
     @booking = @client.build_booking(booking_params)
     @booking.total_price = @flat.price_per_day*((@booking.end_date - @booking.start_date).to_i)
+    @booking.total_price_xof = @flat.price_xof*((@booking.end_date - @booking.start_date).to_i)
   end
 
   def create
@@ -18,6 +19,7 @@ class BookingsController < ApplicationController
     @booking = @client.booking
     @booking.flat = @flat
     @booking.total_price = @booking.flat.price_per_day*((@booking.end_date - @booking.start_date).to_i)
+    @booking.total_price_xof = @booking.flat.price_xof*((@booking.end_date - @booking.start_date).to_i)
     @booking.status = 'pending'
     @booking.origin = 'website'
     #UserMailer.with(client: @client).welcome

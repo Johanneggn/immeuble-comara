@@ -59,7 +59,7 @@
                     <div class="row">
                       <div class="block-info">
                         <div class="price-flat-index d-flex">
-                          <p class="price-per-day-index mt-1 mr-2 pl-3" data-price="<%= flat.price_per_day %>" data-flat="<%= flat.id %>"><%= flat.price_per_day %>€/nuit</p>
+                          <p class="price-per-day-index mt-1 mr-2 pl-3" data-price="<%= flat.price_per_day %>" data-flat="<%= flat.id %>"><%= flat.price_xof %> XOF/nuit</p>
                           <p class="price-per-day-xof" data-price="<%= flat.price_xof %>" data-flat="<%= flat.id %>"></p>
                         </div>
                       </div>
@@ -72,12 +72,12 @@
                     </div>
                     <div class="row">
                       <div class="block-info">
-                        <p class="text-center" id="total-price-flat-index"><span class="total-price pr-1" data-price="<%= flat.price_per_day %>" data-flat="<%= flat.id %>"></span>€</p>
+                        <p class="text-center" id="total-price-flat-index"><span class="total-price-xof pr-1"data-price="<%= flat.price_per_day %>" data-flat="<%= flat.id %>"></span> XOF</p>
                       </div>
                     </div>
                     <div class="row">
                       <div class="block-info">
-                        <p>soit <span class="total-price-xof pr-1"data-price="<%= flat.price_per_day %>" data-flat="<%= flat.id %>"></span> XOF</p>
+                        <p>soit<span class="total-price px-1" data-price="<%= flat.price_per_day %>" data-flat="<%= flat.id %>"></span>€</p>
                       </div>
                     </div>
                   </div>
@@ -97,7 +97,7 @@
       </div>
     <% else %>
 
-    <div class="d-flex align-items-center justify-content-center">
+    <div class="d-flex align-items-center justify-content-center pt-5 mt-5">
       <h1 class="title-index-flat">Nous n'avons pas d'appartements disponibles selon vos critères de recheche</h1>
     </div>
     <% end %>
