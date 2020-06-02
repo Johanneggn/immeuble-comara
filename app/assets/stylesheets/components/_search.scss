@@ -1,3 +1,8 @@
+// taille normal
+
+.search-bar {
+  display: flex;
+}
 .form-home-booking {
   background-color: $white;
   border: none;
@@ -82,49 +87,57 @@ form:focus {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+
+
+
+// taille grand tablette
+
 @media (max-width: 1024px) {
-  .form-home-booking {
+
+.form-home-booking {
   background-color: $white;
   border: none;
-  margin: 0px;
-  margin: 25px 10px !important;
   font-family: 'mukta';
-  font-size: 16px;
+  font-size: 18px;
   text-align: center;
+  height: 90px;
+  width: 70px;
+  padding-top: 0px;
+  margin-right: 20px;
+  box-shadow: 0 0 0 0rem rgba(22, 127, 251, 0.25) !important;
+}
+
+
+.user-query {
+  padding-top: 25px;
 }
 
 .datepicker-query {
   background-color: $white;
   border: none;
-  margin: 0px;
-  padding: 25px 10px;
   font-family: 'mukta';
   font-size: 16px;
   text-align: center;
+
 }
 
 .end-date-query {
   background-color: $white;
   border: none;
-  margin: 0px;
-  padding: 25px 10px;
   font-family: 'mukta';
   font-size: 16px;
   text-align: center;
+  margin-right: 20px;
 }
 
 .submit-home-booking {
   background-color: $green;
-  padding: 25px 10px;
   font-size: 18px;
   color: $light-dark;
-
 }
 
 .submit-index-show {
   background-color: $light-dark;
-  padding: 25px 10px;
-  font-size: 18px;
   color: $white;
 }
 
@@ -152,70 +165,6 @@ form:focus {
 }
 
 @media(max-width: 415px) {
-  .form-home-booking {
-  background-color: $white;
-  border: none;
-  margin: 0px;
-  margin: 10px 5px !important;
-  font-family: 'mukta';
-  font-size: 10px;
-  text-align: center;
-}
 
-.datepicker-query {
-  background-color: $white;
-  border: none;
-  margin: 0px;
-  padding: 0px 5px;
-  font-family: 'mukta';
-  font-size: 10px;
-  text-align: center;
-}
-
-.end-date-query {
-  background-color: $white;
-  border: none;
-  margin: 0px;
-  padding: 0px 5px;
-  font-family: 'mukta';
-  font-size: 10px;
-  text-align: center;
-}
-
-.submit-home-booking {
-  background-color: $green;
-  padding: 15px 10px;
-  font-size: 10px;
-  color: $light-dark;
-
-}
-
-.submit-index-show {
-  background-color: $light-dark;
-  padding: 15px 10px;
-  font-size: 10px;
-  color: $white;
-}
-
-
-.index-show-search-bar {
-  background-color: $white;
-  display: inline;
-  font-family: 'Staatliches';
-  z-index: 9;
-  margin-top: -30px;
-  color: $light-dark;
-  position: absolute; /*or fixed*/
-  right: 0px;
-}
-
-.home-search-bar {
-  background-color: $white;
-  display: inline;
-  font-family: 'Staatliches';
-  z-index: 9;
-  margin-top: -30px;
-  color: $light-dark;
-}
 
 }

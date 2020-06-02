@@ -169,13 +169,36 @@
     height: 20px !important;
   }
 
-    .review {
-      display: none;
-    }
+  .review {
+    display: none;
+  }
+
+
   // flat part
-  .cards-flat-home {
+
+.cards-flat-home {
     margin-left: 50px;
   }
+
+.card-home-flat {
+  height: 290px;
+  max-width: 240px;
+  border-radius: 3px;
+  margin: 10px;
+}
+
+.photo-flat-home {
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  height: 220px !important;
+  width: 240px !important;
+}
+
+.photo-flat {
+  display: flex;
+  height: 220px;
+  width: 240px;
+}
 }
 
 // taille tablette
@@ -210,9 +233,17 @@
     height: 20px !important;
   }
 
-    .review {
-      display: none;
-    }
+  .review {
+    display: none;
+  }
+
+.photo-home {
+  width: 270px;
+  height: 230px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
 
   // cover part
   #Title-home {

@@ -12,8 +12,8 @@
   <div class="form-inline d-flex justify-content-center">
     <div class="home-search-bar">
       <%= form_tag flats_path, method: :get do %>
-        <div class="d-flex">
-          <div class="d-flex align-items-center">
+        <div class="search-bar">
+          <div class="date-search">
             <%= text_field_tag :start_date_response,
                   params[:start_date_response],
                   input_html: {class: "datepicker"},
@@ -31,9 +31,10 @@
                 options_for_select([ "1", "2", "3", "4", "5", "6" ], params[:capacity_response]),
                 class: "form-home-booking" %>
 
-           </div>
+          </div>
           <%= submit_tag 'Recherchez',
           class: "submit-home-booking"%>
+
         </div>
       <% end %>
     </div>
@@ -45,14 +46,7 @@
       </div>
       <div class="col">
         <h1 class="title-presentation-immeuble mt-5">Immeuble Comara</h1>
-        <p class="text-presentation-immeuble pt-3">Bonjour, Je suis Comara Ibrahim Architecte Franco-Ivoirien à la retraite.
-        Je propose un service simple et fonctionnel de location de vacances, du
-        studio au 3 pièces. Tous les appartements sont sécurisés et climatisés. Après
-        avoir confirmé la demande de réservation, nous vous guidons pas à pas jusqu'à
-         votre arrivée sur les lieux. L'immeuble est bien entretenu, nous sommes
-        situés dans un quartier dynamique d'artisans, commerçants, petits snacks et
-        bars. Géographiquement bien situé, nous sommes à 30 min maximum de tous les
-        points vitaux d'Abidjan en voiture</p>
+        <p class="text-presentation-immeuble pt-3">Voyage de loisir, d’affaire ou petit séjour se loger à Abidjan à bon rapport qualité prix n’est pas toujours simple. A l’immeuble Comara : Le sens du service et de l’accueil est notre priorité. Faites une demande de réservation sur notre site et un membre de notre équipe vous recontactera sous 72h, Profitez-en et faîtes une réservation !</p>
       </div>
     </div>
   </div>
@@ -108,7 +102,7 @@
 
         <% @flats.each do |flat| %>
           <%= link_to flat_path(flat), class: "link-show-flat" do %>
-            <div class="form-inline">
+            <div class="row">
               <div class="col">
                 <div class="card-home-flat bg-white">
                   <div class="photo-flat">
