@@ -31,6 +31,10 @@ class FlatsController < ApplicationController
   def create
     @flat= Flat.new(flat_params)
 
+    if @flat.belonging == true
+      @flat.longitude == -3.9679002709940625
+      @flat.latitude == 5.302209635104108
+    end
 
 
     if @flat.save

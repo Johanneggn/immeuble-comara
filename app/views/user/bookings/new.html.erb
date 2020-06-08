@@ -63,40 +63,22 @@
         <%= f.simple_fields_for :client do |c| %>
           <div class="row">
             <div class="col">
-              <%= c.input :civility,
-              as: :string,
-              required: true,
-              label: "Civilité" %>
+              <%= c.input :civility, as: :string, required: true, label: "Civilité" %>
             </div>
             <div class="col">
-              <%= c.input :first_name,
-                        as: :string,
-                        required: true,
-                        label: "Prénom" %>
+              <%= c.input :first_name, as: :string, required: true, label: "Prénom" %>
             </div>
             <div class="col">
-            <%= c.input :last_name,
-                      as: :string,
-                      required: true,
-                      label: "Nom de Famille" %>
+              <%= c.input :last_name, as: :string, required: true, label: "Nom de Famille" %>
             </div>
           </div>
-          <%= c.input :address,
-                    as: :string,
-                    required: true,
-                    label: "Adresse postale" %>
+          <%= c.input :address, as: :string, required: true, label: "Adresse postale" %>
           <div class="row">
             <div class="col">
-            <%= c.input :phone_number,
-                      as: :string,
-                      required: true,
-                      label: "Numéro de téléphone"  %>
+              <%= c.input :phone_number, as: :string, required: true, label: "Numéro de téléphone"  %>
             </div>
             <div class="col">
-            <%= c.input :email,
-                      as: :string,
-                      required: true,
-                      label: "Adresse e-mail" %>
+              <%= c.input :email, as: :string, required: true, label: "Adresse e-mail" %>
             </div>
           </div>
         <% end %>

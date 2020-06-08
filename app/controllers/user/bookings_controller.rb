@@ -8,19 +8,15 @@ class User::BookingsController < ApplicationController
   end
   def new
     @booking = Booking.new
-    @client = @booking.build_client
-    @display_flat_names = Flat.order(:name).map do | flat |
-      [flat.name, flat.id]
-    end
-
-
+      @display_flat_names = Flat.order(:name).map do | flat |
+        [flat.name, flat.id]
+      end
+    @client = Client.new
 
   end
 
   def create
     @booking = Booking.new(booking_params)
-
-
     # @booking.flat = Flat.find(params[:id])
 
     if @booking.save
