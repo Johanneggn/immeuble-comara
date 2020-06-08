@@ -1,15 +1,22 @@
-<p>Bonjour cher(e) [prénom],</p>
+<p>Bonjour cher(e) <%= @booking.client.first_name %>,</p>
 
 <p>Pour faire le point :</p>
-<p>Vous avez une demande de réservations chez nous, pour [type / et nom du type d’appart] du [tel date à tel date], avec un reste à payer de [SOMME TOTAL= (nombre de nuit) X (tarif journalier associé)] XOF soit …. €.
-Afin de confirmer les dates et sécuriser la demande de réservation de manière définitive,
-nous vous invitons à régler 20 % de la somme total par virement ou autre, au moins 14 jours avant l’arrivée, et le reste sur place.
-Le compte sur lequel vous faites le virement est situé en France, ce qui permet d’avoir un meilleur suivi et de confirmer la réception en 48 heures.
-Pour plus d’informations avant cela, nous allons vous contacter par téléphone ou what’s app afin de confirmer les éléments avec vous, et vous fournir le RIB.
-Une fois le virement effectué nous mettons à votre disposition en 72h la facture ainsi que l’attestation d’hébergement sur demande (pour les démarches à l’ambassade par exemple).</p>
+<p>Vous avez une demande de réservations chez nous, pour <%= @booking.flat.name %>
+  du <%= @booking.start_date %> au <%= @booking.end_date %>, avec un reste à payer de
+  <%= @booking.total_price_xof %> = <%= (@booking.end_date - @booking.start_date).to_i %> X <%= @booking.flat.price_xof %> XOF soit <%= @booking.total_price %> €.
+  Afin de confirmer les dates et sécuriser la demande de réservation de manière définitive,
+  nous vous invitons à régler 20 % de la somme total par virement ou autre, au moins
+  14 jours avant l’arrivée, et le reste sur place.
+  Le compte sur lequel vous faites le virement est situé en France, ce qui permet
+  d’avoir un meilleur suivi et de confirmer la réception en 48 heures.
+  Pour plus d’informations avant cela, nous allons vous contacter par téléphone
+  ou what’s app afin de confirmer les éléments avec vous, et vous fournir le RIB.
+  Une fois le virement effectué nous mettons à votre disposition en 72h la facture
+  ainsi que l’attestation d’hébergement sur demande (pour les démarches à l’ambassade par exemple).</p>
 
 
-<p>Nous vous souhaitons la bienvenue et pour toutes questions vous trouverez les numéros de contact en bas de page.</p>
+<p>Nous vous souhaitons la bienvenue et pour toutes questions vous trouverez les
+ numéros de contact en bas de page.</p>
 <p>Nous vous souhaitons un bon voyage et à bientôt,</p>
 
 <p>M. COMARA AMAR</p>

@@ -6,7 +6,8 @@ class UserMailer < ApplicationMailer
   #   en.user_mailer.welcome.subject
   #
   def welcome
-    mail(to: 'johanne.gueguen@gmail.com', subject: 'Votre réservation')
+    @booking = params[:booking]
+    mail(to: @booking.client.email, subject: 'Votre réservation')
   end
 
 end

@@ -22,9 +22,8 @@ class BookingsController < ApplicationController
     @booking.total_price_xof = @booking.flat.price_xof*((@booking.end_date - @booking.start_date).to_i)
     @booking.status = 'pending'
     @booking.origin = 'website'
-    mail = UserMailer.welcome
-    mail.deliver_now
     if @client.save
+      mail = UserMailer.with(booking: @booking).welcome.deliver_now
       redirect_to booking_path(@booking)
     else
       render :new
