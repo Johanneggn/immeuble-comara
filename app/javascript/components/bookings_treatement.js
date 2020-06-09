@@ -18,8 +18,10 @@ if (bookingWaiting) {
 }
 
 if (calendar) {
-  const days = document.querySelectorAll(".calday")
-  const bookings = document.querySelectorAll(".card-user-booking")
+  const days = document.querySelectorAll(".calday");
+  const bookings = document.querySelectorAll(".card-user-booking");
+  const clients = document.querySelectorAll(".client-info");
+
 
   days.forEach((day) => {
     const matchBookings = document.querySelectorAll(`.card-user-booking[data-date*="${day.dataset.date}"]`)
@@ -35,6 +37,8 @@ if (calendar) {
       })
       matchBookings.forEach((matchBooking) =>{
         matchBooking.classList.remove("d-none");
+
+
       })
     });
 
@@ -45,17 +49,19 @@ if (calendar) {
 
 
 
- const clients = document.querySelectorAll('.client-info');
+  bookings.forEach((booking) => {
+    const matchsBookingClient = document.querySelectorAll(`.client-info[data-booking="${booking.dataset.booking}"]`)
 
-  bookings.forEach((booking) =>{
-   clients.forEach((client) => {
-    booking.addEventListener("click", (event) => {
-      const matchingBookingClient = booking.getAttribute("data-booking") === client.getAttribute("data-booking");
-        matchingBookingClient.classList.toggle("d-none");
-
-     });
+    clients.forEach((client) => {
+      client.classList.add('d-none');
     });
-  });
+
+    booking.addEventListener("click", (event) => {
+      matchsBookingClient.forEach((matchBookingClient) => {
+        matchBookingClient.classList.toggle("d-none");
+      })
+    })
+  })
 
 //   bookings.forEach((booking) => {
 //     const matchsClient = document.querySelectorAll(`.client-info[data-booking*="${booking.dataset.booking}"]`)

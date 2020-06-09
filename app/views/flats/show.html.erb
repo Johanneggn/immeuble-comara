@@ -42,7 +42,7 @@
           <div class="col-md-6">
             <div class="row pt-3 pb-2">
               <% @flat.photos.each do |photo| %>
-                <div class="col p-2">
+                <div class="col-4 p-2">
                   <%= cl_image_tag photo.key, crop: :fill_pad, class: "photo-flat-index-secondaire" %>
                 </div>
               <% end %>

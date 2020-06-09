@@ -17,7 +17,6 @@ class User::BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    # @booking.flat = Flat.find(params[:id])
 
     if @booking.save
       redirect_to user_bookings_path

@@ -46,7 +46,11 @@
       </div>
       <div class="col">
         <h1 class="title-presentation-immeuble mt-5">Immeuble Comara</h1>
-        <p class="text-presentation-immeuble pt-3">Voyage de loisir, d’affaire ou petit séjour se loger à Abidjan à bon rapport qualité prix n’est pas toujours simple. A l’immeuble Comara : Le sens du service et de l’accueil est notre priorité. Faites une demande de réservation sur notre site et un membre de notre équipe vous recontactera sous 72h, Profitez-en et faîtes une réservation !</p>
+        <p class="text-presentation-immeuble pt-3">Voyage de loisir, d’affaire
+        ou petit séjour se loger à Abidjan à bon rapport qualité prix n’est pas
+      toujours simple. A l’immeuble Comara : Le sens du service et de l’accueil
+      est notre priorité.</p>
+      <p>Faites une demande de réservation sur notre site et un membre de notre équipe vous recontactera sous 72h, Profitez-en et faîtes une réservation !</p>
       </div>
     </div>
   </div>
@@ -103,7 +107,7 @@
         <% @flats.each do |flat| %>
           <%= link_to flat_path(flat), class: "link-show-flat" do %>
             <div class="row">
-              <div class="col">
+              <div class="col-12">
                 <div class="card-home-flat bg-white">
                   <div class="photo-flat">
                     <%= cl_image_tag flat.picture.key, crop: :thumb, class: "photo-flat-home" %>

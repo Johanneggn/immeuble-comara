@@ -42,7 +42,7 @@
       <% end %>
     <% end %>
   </div>
-  <div class="calendar bg-white">
+  <div class="calendar bg-white m-4">
     <div class="calendar-view pt-3">
       <div class="row my-3">
         <h1 class="ml-4">Calendrier</h1>
@@ -64,22 +64,14 @@
           </div>
           <div class="date-booking-action">
             <% @bookings_accepted.each do |booking| %>
-              <div class="card-user-booking p-3" data-date="<%= booking.start_date %>" data-booking="booking.client_id">
+              <div class="card-user-booking p-3" data-date="<%= booking.start_date %>" data-booking="<%= booking.client_id %>">
                 <p class="flat-name-booking"><%= booking.flat.name %></p>
                 <div class="d-flex">
                   <p class="start-date-booking"><%= l(booking.start_date, format: '%d %B %Y') %></p>
                   <p class="mx-2">-</p>
                   <p class="end-date-booking"><%= l(booking.end_date, format: '%d %B %Y') %></p>
                 </div>
-            <div class="card-client-booking">
-              <% @clients.each do |client| %>
-                <div class="client-info d-none" data-booking="<%= client.id %>">
-                  <%= client.first_name %> <%= client.last_name %>
-                  <%= client.email %>
-                  <%= client.phone_number %>
-                </div>
-              <% end %>
-            </div>
+                <%= link_to 'Modifier', edit_user_booking_path(booking), class: 'link-flat'  %>
               </div>
             <% end %>
           </div>
@@ -90,13 +82,14 @@
           </div>
           <div class="date-booking-action">
             <% @bookings_accepted.each do |booking| %>
-              <div class="card-user-booking p-3" data-date="<%= (booking.start_date+1..booking.end_date-1).to_a.map{|date| l(date, format: '%Y-%m-%d')} %>">
+              <div class="card-user-booking p-3" data-date="<%= (booking.start_date+1..booking.end_date-1).to_a.map{|date| l(date, format: '%Y-%m-%d')} %>" data-booking="<%= booking.client_id %>">
                 <p class="flat-name-booking"><%= booking.flat.name %></p>
                 <div class="d-flex">
                   <p class="start-date-booking"><%= l(booking.start_date, format: '%d %B %Y') %></p>
                   <p class="mx-2">-</p>
                   <p class="end-date-booking"><%= l(booking.end_date, format: '%d %B %Y') %></p>
                 </div>
+                <%= link_to 'Modifier', edit_user_booking_path(booking), class: 'link-flat'  %>
               </div>
             <% end %>
           </div>
@@ -108,13 +101,14 @@
             </div>
             <div class="date-booking-action">
               <% @bookings_accepted.each do |booking| %>
-                <div class="card-user-booking p-3" data-date="<%= booking.end_date %>">
+                <div class="card-user-booking p-3" data-date="<%= booking.end_date %>" data-booking="<%= booking.client_id %>">
                   <p class="flat-name-booking"><%= booking.flat.name %></p>
                   <div class="d-flex">
                     <p class="start-date-booking"><%= l(booking.start_date, format: '%d %B %Y') %></p>
                     <p class="mx-2">-</p>
                     <p class="end-date-booking"><%= l(booking.end_date, format: '%d %B %Y') %></p>
                   </div>
+                  <%= link_to 'Modifier', edit_user_booking_path(booking), class: 'link-flat'  %>
                 </div>
               <% end %>
             </div>
@@ -122,8 +116,19 @@
           </div>
         </div>
       </div>
+      <div class="client-info-display justify-content-center d-flex align-items-center">
+        <div class="card-client-booking text-center">
+          <% @clients.each do |client| %>
+            <div class="client-info p-2" data-booking="<%= client.id %>">
+              <p><i class="fal fa-user px-2"></i><%= client.first_name %> <%= client.last_name %></p>
+              <p><i class="fal fa-envelope px-2"></i><%= client.email %></p>
+              <p><i class="fal fa-phone px-2"></i><%= client.phone_number %></p>
+              <p><i class="fal fa-house px-2"></i><%= client.address %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
-
   </div>
 </div>
 
