@@ -11,7 +11,7 @@ class User::BookingsController < ApplicationController
       @display_flat_names = Flat.order(:name).map do | flat |
         [flat.name, flat.id]
       end
-    @client = Client.new
+    @client = @booking.build_client
 
   end
 
@@ -61,20 +61,9 @@ class User::BookingsController < ApplicationController
       :total_price,
       :status,
       :origin,
-      :client_id,
-      flat_attributes: [:name, :description, :price_per_day, :longitude, :latitude, :address, :max_capacity, :min_capacity],
       client_attributes: [:civilty, :first_name, :last_name, :address, :phone_number, :email])
   end
 
-  def client_params
-    params.require(:client).permit(
-      :civilty,
-      :first_name,
-      :last_name,
-      :address,
-      :phone_number,
-      :email)
-  end
 
   # def set_flat
   #   @flat = Flat.all

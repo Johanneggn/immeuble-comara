@@ -3,20 +3,21 @@ class FlatsController < ApplicationController
     before_action :set_flat, only: %i[show edit update destroy]
 
   def index
-  @booked_flat_ids= Booking.where(status: 'confirmed')
-    .where('(start_date BETWEEN :start_date AND :end_date) OR (end_date BETWEEN :start_date AND :end_date)', start_date: params[:start_date_response], end_date: params[:end_date_response])
-    .pluck(:flat_id)
+    start_date, end_date = params[:start_date_response].split(' to ')
+    @booked_flat_ids= Booking.where(status: 'confirmed')
+      .where('(start_date BETWEEN :start_date AND :end_date) OR (end_date BETWEEN :start_date AND :end_date)', start_date: start_date, end_date: end_date)
+      .pluck(:flat_id)
 
-  @flats = Flat.where.not(id: @booked_flat_ids)
-    .where('max_capacity = ? OR min_capacity = ?', params[:capacity_response], params[:capacity_response])
+    @flats = Flat.where.not(id: @booked_flat_ids)
+      .where('max_capacity >= ? AND min_capacity <= ?', params[:capacity_response], params[:capacity_response])
 
     @flat_place = Flat.geocoded
-      @markers = @flats.map do |event|
-        {
-          lat: event.latitude,
-          lng: event.longitude
-        }
-      end
+    @markers = @flats.map do |event|
+      {
+        lat: event.latitude,
+        lng: event.longitude
+      }
+    end
   end
 
   def show
@@ -32,8 +33,8 @@ class FlatsController < ApplicationController
     @flat= Flat.new(flat_params)
 
     if @flat.belonging == true
-      @flat.longitude == -3.9679002709940625
-      @flat.latitude == 5.302209635104108
+      @flat.longitude = -3.9679002709940625
+      @flat.latitude = 5.302209635104108
     end
 
 
@@ -80,7 +81,7 @@ class FlatsController < ApplicationController
       :min_capacity,
       :belonging,
       photos: [],
-      equipment_attributes: [:name, :available, :pricing, :icon])
+      equipment_attributes: [:id, :name, :available, :pricing, :icon])
   end
 
   def set_flat

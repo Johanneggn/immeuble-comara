@@ -7,33 +7,62 @@ const indexSearchBar = document.querySelector(".index-show-search-bar");
 const homeSearchBar = document.querySelector(".home-search-bar");
 
 if (indexSearchBar) {
+  const startDate = document.querySelector(".datepicker-query")
+  //.flatpickr({
+  //   minDate: "today",
+  //   altInput: true,
+  //   altFormat: "d/m/Y",
+  //   dateFormat: "Y-m-d",
+  // });
+  const endDate = document.querySelector(".end-date-query")
+  //.flatpickr({
+  //   minDate: "today",
+  //   altInput: true,
+  //   altFormat: "d/m/Y",
+  //   dateFormat: "Y-m-d",
+  // });
 
-  const startDate = $(".datepicker-query").flatpickr({
-    minDate: "today",
+
+  flatpickr(startDate, {
     altInput: true,
     altFormat: "d/m/Y",
     dateFormat: "Y-m-d",
-  });
-  const endDate = $(".end-date-query").flatpickr({
     minDate: "today",
-    altInput: true,
-    altFormat: "d/m/Y",
-    dateFormat: "Y-m-d",
+    plugins: [new rangePlugin({ input: endDate})]
   });
+
 }
 
 if (homeSearchBar) {
 
-  const startDate = $(".datepicker-query").flatpickr({
-    minDate: "today",
+  const startDate = document.querySelector(".datepicker-query")
+  //.flatpickr({
+  //   minDate: "today",
+  //   altInput: true,
+  //   altFormat: "d/m/Y",
+  //   dateFormat: "Y-m-d",
+  // });
+  const endDate = document.querySelector(".end-date-query")
+  //.flatpickr({
+  //   minDate: "today",
+  //   altInput: true,
+  //   altFormat: "d/m/Y",
+  //   dateFormat: "Y-m-d",
+  // });
+
+
+  flatpickr(startDate, {
     altInput: true,
     altFormat: "d/m/Y",
     dateFormat: "Y-m-d",
-  });
-  const endDate = $(".end-date-query").flatpickr({
     minDate: "today",
-    altInput: true,
-    altFormat: "d/m/Y",
-    dateFormat: "Y-m-d",
+    plugins: [new rangePlugin({ input: endDate})]
   });
+
 }
+
+
+
+
+
+

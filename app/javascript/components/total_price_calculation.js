@@ -37,8 +37,8 @@ export { calcTotalPrice };
 
 
 if (indexFlat) {
-    const searchStartDate = document.querySelector('.datepicker-query').value;
-    const searchEndDate = document.querySelector('.end-date-query').value;
+    const searchStartDate = document.querySelector('.datepicker-query').value.split(' to ')[0];
+    const searchEndDate = document.querySelector('.datepicker-query').value.split(' to ')[1];
 
     const searchStartMoment = moment(searchStartDate);
     const searchEndMoment = moment(searchEndDate);

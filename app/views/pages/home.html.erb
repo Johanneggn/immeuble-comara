@@ -102,11 +102,11 @@
   <div class="sub-reviews"></div>
   <div class="flat-index-home">
     <h1 class="title-flats-home pb-2">Nos appartements</h1>
-    <div class="cards-flat-home row justify-content-center">
+    <div class="cards-flat-home row">
 
         <% @flats.each do |flat| %>
           <%= link_to flat_path(flat), class: "link-show-flat" do %>
-            <div class="row">
+
               <div class="col-12">
                 <div class="card-home-flat bg-white">
                   <div class="photo-flat">
@@ -117,7 +117,7 @@
                   <h3 class="flat-name-home text-center"><%= flat.name %></h3>
                 </div>
               </div>
-            </div>
+
           <% end %>
         <% end %>
 
