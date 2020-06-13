@@ -80,6 +80,16 @@ max-width: 179px;
   font-weight: 600;
 }
 
+// MAP
+
+#map {
+  height: 100vh;
+  position: sticky;
+  right: 0px;
+  top: 0;
+  margin-top: 10px;
+}
+
 // taille tablette
 @media(max-width: 1024px) {
   .photo-flat-index {
@@ -141,7 +151,8 @@ max-width: 179px;
   }
 
   .block-info {
-  height: 25px;
+  height: 23px;
+  margin: 10px;
   }
 
 }
@@ -181,7 +192,7 @@ max-width: 179px;
   }
 
   #total-price-flat-index {
-    font-size: 10px;
+    font-size: 12px;
     font-family: "mukta";
     font-weight: 600;
   }
@@ -192,7 +203,28 @@ max-width: 179px;
 
   .block-info {
   height: 30px;
+  margin: 0px;
   }
+  .price-per-day-index {
+    font-size: 10px;
+    color: $dm-gray;
+  }
+  .total-price {
+    font-size: 10px;
+  }
+  .block-result {
+    margin-top: 150px;
+  }
+
+#map {
+  height: 50vh;
+  position: sticky;
+  right: 0px;
+  top: 0;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
 }
 
 // taille petit téléphone
@@ -236,15 +268,10 @@ max-width: 179px;
   }
 
   .block-info {
-  height: 30px;
+  height: 20px;
+  margin: 10px;
   }
-}
-// MAP
-
-#map {
-  height: 100vh;
-  position: sticky;
-  right: 0px;
-  top: 0;
-  margin-top: 10px;
+  .price-per-day-xof {
+    font-size: 12px;
+  }
 }

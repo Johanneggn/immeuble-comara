@@ -15,6 +15,9 @@
   border-top: 1px solid $lm-gray;
 }
 
+.photos-show-flat {
+  display: flex;
+}
 // partie description
 
 .titles-description-flat {
@@ -71,4 +74,45 @@
   font-family: "Mukta";
   font-weight: 500;
   font-size: 24px;
+}
+
+@media(max-width: 1024px) {
+.photos-show-flat {
+  display: grid;
+  text-align: center;
+}
+}
+@media(max-width: 768px) {
+
+.photo-flat-index-principale {
+ height: 400px;
+ width: 350px
+}
+
+.photo-flat-index-secondaire {
+ height: 120px;
+ width: 120px;
+ cursor: pointer;
+}
+
+.photo-show-flat {
+  border-top: 1px solid $lm-gray;
+}
+
+}
+@media(max-width: 415px) {
+.title-index-flat{
+  margin-left: 30px;
+}
+.photo-flat-index-principale {
+ height: 370px;
+ width: 320px
+}
+
+}
+@media (max-width: 320px) {
+.photo-flat-index-principale {
+ height: 300px;
+ width: 280px
+}
 }

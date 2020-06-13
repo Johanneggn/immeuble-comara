@@ -1,3 +1,22 @@
 .photo-presentation-immeuble {
   height: 350px;
 }
+
+
+@media(max-width: 768px) {
+   .photo-presentation-immeuble {
+    height: 400px;
+  }
+}
+
+@media(max-width: 415px) {
+  .photo-presentation-immeuble {
+    height: 250px;
+  }
+}
+
+@media(max-width: 320px) {
+  .photo-presentation-immeuble {
+    height: 200px;
+  }
+}

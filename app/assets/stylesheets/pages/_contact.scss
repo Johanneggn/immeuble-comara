@@ -21,3 +21,10 @@
 .presentation-immeuble {
   border-top: 2px solid $light-gray;
 }
+
+@media(max-width: 415px) {
+.photo-immeuble {
+  height: 300px;
+  border: 1px solid black;
+}
+}
