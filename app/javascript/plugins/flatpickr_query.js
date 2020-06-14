@@ -28,6 +28,7 @@ if (indexSearchBar) {
     altFormat: "d/m/Y",
     dateFormat: "Y-m-d",
     minDate: "today",
+    disableMobile: true,
     plugins: [new rangePlugin({ input: endDate})]
   });
 
@@ -56,6 +57,7 @@ if (homeSearchBar) {
     altFormat: "d/m/Y",
     dateFormat: "Y-m-d",
     minDate: "today",
+    disableMobile: true,
     plugins: [new rangePlugin({ input: endDate})]
   });
 

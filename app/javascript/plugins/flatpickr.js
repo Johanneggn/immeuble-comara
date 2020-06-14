@@ -17,6 +17,7 @@ if (bookFlat) {
       dateFormat: "Y-m-d",
       minDate: "today",
       plugins: [new rangePlugin({ input: endDateInput})],
+      disableMobile: true,
       onChange: (selectedDates, dateStr, instance) => {
         calcTotalPrice(selectedDates[0], selectedDates[1]);
       }
