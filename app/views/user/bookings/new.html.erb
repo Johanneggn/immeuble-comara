@@ -1,4 +1,4 @@
-<div class="container bg-white p-5 my-5">
+<div class="container bg-white p-5 my-5 user-new-booking">
   <h1>Nouvelle réservation</h1>
    <%= simple_form_for @booking, url: user_bookings_path do |f| %>
       <% if @booking.errors.any? %>
@@ -15,10 +15,20 @@
             input_html: {class: "select2"},
             label: 'Appartement',
             collection: @display_flat_names %>
-      <%= f.input :total_price,
-            as: :integer,
-            required: true,
-            label: 'Prix Total' %>
+      <div class="row">
+        <div class="col">
+          <%= f.input :total_price_xof,
+                      as: :integer,
+                      required: true,
+                      label: 'Prix total XOF' %>
+        </div>
+        <div class="col">
+          <%= f.input :total_price,
+                as: :integer,
+                required: true,
+                label: 'Prix Total en Euro' %>
+        </div>
+      </div>
       <div class="row">
         <div class="col">
           <%= f.input :start_date,
@@ -59,7 +69,10 @@
         </div>
       </div>
       <div class="pt-5">
-        <h3>Coordonées du client</h3>
+        <div class="d-flex">
+          <h3 class="mr-3">Coordonées du client</h3>
+          <%= render "bookings/emails/nouvelle_reservation" %>
+        </div>
         <%= f.simple_fields_for :client do |c| %>
           <div class="row">
             <div class="col">

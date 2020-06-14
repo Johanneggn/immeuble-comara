@@ -10,4 +10,8 @@ class UserMailer < ApplicationMailer
     mail(to: @booking.client.email, subject: 'Votre réservation')
   end
 
+  def new_booking
+    mail(to: 'johanne.gueguen@gmail.com', subject: 'Vous avez une nouvelle demande de réservation')
+  end
+
 end

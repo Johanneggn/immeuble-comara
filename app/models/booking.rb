@@ -1,5 +1,5 @@
 class Booking < ApplicationRecord
-  TRAVELLERS = [1, 2, 3, 4]
+  TRAVELLERS = [1, 2, 3, 4, 5, 6]
   STATUS = ["pending", "refused", "confirmed"]
 
   belongs_to :flat

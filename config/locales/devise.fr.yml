@@ -173,6 +173,9 @@ fr:
   Address: "Adresse"
   Phone number: "Numéro de téléphone"
   Email: "Adresse e-mail"
+  pending: "En attente"
+  refused: "refusée"
+  confirmed: "confirmée"
 
 
    # date:
