@@ -1,3 +1,5 @@
+
+// taille classique
 .reminder-booking {
   background-color: $white;
   border-bottom: 1px solid $light-gray;
@@ -20,6 +22,17 @@
   border-radius: 3px;
 }
 
+.photo-remind {
+  width: 250px;
+  text-align: center;
+}
+
+.info-remind {
+  min-width: 250px;
+  text-align: center;
+  margin-left: 50px;
+}
+
 .booking-client-new {
   margin: 0 !important;
   background-image: asset-url('test-cover.jpg');
@@ -34,4 +47,43 @@
 .collection_radio_buttons {
   margin: 20px 70px 20px 30px;
   font-size: 18px;
+}
+
+// taille grande tablette
+@media(max-width: 1024px) {
+  .reminder-booking {
+    background-color: $white;
+    border-bottom: 1px solid $light-gray;
+    padding-top: 50px;
+
+  }
+
+  .recap-new-client {
+    background-color: $white;
+    margin: 100px;
+  }
+
+  .photo-flat-remind {
+    padding-left: 20px;
+  }
+
+}
+
+// taillle tablette
+@media(max-width: 768px) {
+
+}
+
+// taille grand smartphone
+@media(max-width: 415px){
+  .recap-new-client {
+    background-color: $white;
+    margin: 20px;
+  }
+
+}
+
+//taille smartphone
+@media (max-width: 320px){
+
 }

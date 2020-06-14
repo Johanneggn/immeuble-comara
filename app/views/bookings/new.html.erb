@@ -3,10 +3,10 @@
     <div class="reminder-booking">
       <div class="row">
 
-        <div class="col-md-3">
+        <div class="photo-remind">
           <%= cl_image_tag @flat.picture.key, crop: :thumb, height: 200, width: 200, class: "photo-flat-remind"%>
         </div>
-        <div class="col-md-9">
+        <div class="info-remind">
           <div class="row">
             <h3><%= @flat.name %></h3>
           </div>
