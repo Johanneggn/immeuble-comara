@@ -71,7 +71,7 @@
                   <p class="mx-2">-</p>
                   <p class="end-date-booking"><%= l(booking.end_date, format: '%d %B %Y') %></p>
                 </div>
-                <%= link_to 'Modifier', edit_user_booking_path(booking), class: 'link-flat'  %>
+                <%= link_to 'Modifier', edit_booking_path(booking), class: 'link-flat'  %>
               </div>
             <% end %>
           </div>
@@ -89,7 +89,7 @@
                   <p class="mx-2">-</p>
                   <p class="end-date-booking"><%= l(booking.end_date, format: '%d %B %Y') %></p>
                 </div>
-                <%= link_to 'Modifier', edit_user_booking_path(booking), class: 'link-flat'  %>
+                <%= link_to 'Modifier', edit_booking_path(booking), class: 'link-flat'  %>
               </div>
             <% end %>
           </div>
@@ -108,7 +108,7 @@
                     <p class="mx-2">-</p>
                     <p class="end-date-booking"><%= l(booking.end_date, format: '%d %B %Y') %></p>
                   </div>
-                  <%= link_to 'Modifier', edit_user_booking_path(booking), class: 'link-flat'  %>
+                  <%= link_to 'Modifier', edit_booking_path(booking), booking: @booking, class: 'link-flat'  %>
                 </div>
               <% end %>
             </div>

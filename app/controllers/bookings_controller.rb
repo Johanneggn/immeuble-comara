@@ -2,9 +2,9 @@
 class BookingsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :new, :create]
   before_action :set_flat, only: [:new, :create]
+  before_action :set_booking, only: [:show, :edit, :update]
 
   def show
-    @booking = Booking.find(params[:id])
   end
 
   def new
@@ -30,10 +30,34 @@ class BookingsController < ApplicationController
     end
   end
 
+  def edit
+    @display_flat_names = Flat.order(:name).map do | flat |
+      [flat.name, flat.id]
+    end
+  end
+
+  def update
+    @booking.update(booking_params)
+
+    if @booking.save
+      redirect_to user_bookings_path
+    else
+      render :edit
+    end
+  end
+
 private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :travellers)
+    params.require(:booking).permit(
+    :start_date,
+    :end_date,
+    :travellers,
+    :flat_id,
+    :total_price,
+    :status,
+    :origin,
+    client_attributes: [:id, :civilty, :first_name, :last_name, :address, :phone_number, :email])
   end
 
   def client_params
@@ -49,6 +73,10 @@ private
 
   def set_flat
     @flat = Flat.find(params[:flat_id])
+  end
+
+  def set_booking
+    @booking = Booking.find(params[:id])
   end
 
 end

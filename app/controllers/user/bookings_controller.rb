@@ -28,6 +28,13 @@ class User::BookingsController < ApplicationController
   def edit
   end
   def update
+    @booking.update(booking_params)
+
+    if @booking.save
+      redirect_to user_bookings_path
+    else
+      render :edit
+    end
   end
   def destroy
     @booking.destroy
@@ -54,6 +61,7 @@ class User::BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(
+      :id,
       :start_date,
       :end_date,
       :travellers,
@@ -61,7 +69,7 @@ class User::BookingsController < ApplicationController
       :total_price,
       :status,
       :origin,
-      client_attributes: [:civilty, :first_name, :last_name, :address, :phone_number, :email])
+      client_attributes: [:id, :civilty, :first_name, :last_name, :address, :phone_number, :email])
   end
 
 
