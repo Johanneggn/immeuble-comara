@@ -1,4 +1,6 @@
 <div class="container-fluid">
+    <div class="message-flash"><%= flash[:confirmed] %></div>
+    <div class="message-flash"><%= flash[:refused] %></div>
   <div class="booking-waiting">
     <h1>Demandes en attente</h1>
     <% @bookings.each do |booking| %>
