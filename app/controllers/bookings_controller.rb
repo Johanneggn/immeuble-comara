@@ -56,6 +56,7 @@ private
     :travellers,
     :flat_id,
     :total_price,
+    :total_price_xof,
     :status,
     :origin,
     client_attributes: [:id, :civilty, :first_name, :last_name, :address, :phone_number, :email])
