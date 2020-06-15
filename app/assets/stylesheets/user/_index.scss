@@ -56,12 +56,13 @@
 
 .link-flat {
   text-decoration: none;
-  color: $dark-gray;
+  color: $green;
+  font-size: 18px;
 }
 
 .link-flat:hover {
   text-decoration: none;
-  color: $green;
+  color: red;
 }
 
 .equipment-name {
