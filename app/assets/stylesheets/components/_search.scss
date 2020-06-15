@@ -261,6 +261,7 @@
   .home-search-bar {
     width: 420px;
     height: 10vh;
+    right: 55px;
   }
 
   .datepicker-query {
@@ -293,6 +294,7 @@
 @media(max-width: 768px){
 
   .home-search-bar {
+    right: 50px;
   }
 
   .search-components {
@@ -321,24 +323,25 @@
   .home-search-bar {
     width: 100vw;
     display: grid;
-    height: 50px;
+    height: 35px;
     right: 0;
+    margin-top: 0px;
   }
 
   .search-components {
     display: grid;
     width: 100%;
-    height: 50px;
+    height: 35px;
   }
 
   .datepicker-query {
     width: 100%;
-    height: 50px;
+    height: 35px;
   }
 
   .end-date-query {
     width: 100%;
-    height: 50px;
+    height: 35px;
   }
 
   .icon-capacity {
@@ -350,25 +353,25 @@
     background-color: white;
     color: black;
     margin: 0;
-    height: 50px;
+    height: 35px;
     padding-left: 50px;
   }
 
   .capacity-home-booking {
     width: 70%;
     padding-top: 10px;
-    height: 50px;
+    height: 35px;
   }
 
   .submit-home-booking {
     width: 100%;
-    height: 50px;
+    height: 35px;
 
   }
 
   .submit-index-show {
   width: 100%;
-  height: 10vh;
+  height: 35px;
 }
 
 }
