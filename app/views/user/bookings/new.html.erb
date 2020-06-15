@@ -76,7 +76,7 @@
         <%= f.simple_fields_for :client do |c| %>
           <div class="row">
             <div class="col">
-              <%= c.input :civility, as: :string, required: true, label: "Civilité" %>
+              <%= c.input :civility, as: :select, collection: Client::CIVILITY, required: true, label: "Civilité" %>
             </div>
             <div class="col">
               <%= c.input :first_name, as: :string, required: true, label: "Prénom" %>

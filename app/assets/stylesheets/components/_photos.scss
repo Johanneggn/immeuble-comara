@@ -23,3 +23,63 @@
 .close-photos:hover {
   color: $green;
 }
+@media(max-width: 1024px){
+ .dotnav-container {
+  height: 80vh;
+  width: 800px;
+  position: relative;
+  margin-bottom: -600px;
+  top: 150px;
+  z-index: 1;
+  background-color: $white !important;
+}
+
+}
+@media(max-width: 768px){
+ .dotnav-container {
+  height: 80vh;
+  width: 700px;
+  position: relative;
+  margin-bottom: -600px;
+  top: 150px;
+  z-index: 1;
+  background-color: $white !important;
+}
+
+}
+@media(max-width: 415px){
+
+  .dotnav-container {
+  height: 80vh;
+  width: 360px;
+  position: relative;
+  margin-bottom: -600px;
+  top: 150px;
+  z-index: 1;
+  background-color: $white !important;
+}
+
+.grande-photo {
+  margin-top: 30px;
+  max-width: 200px;
+  display: inline-block;
+}
+
+}
+@media (max-width: 320px){
+  .dotnav-container {
+    height: 80vh;
+    width: 300px;
+    position: relative;
+    margin-bottom: -600px;
+    top: 150px;
+    z-index: 1;
+    background-color: $white !important;
+  }
+
+  .grande-photo {
+    margin-top: 30px;
+    max-width: 200px;
+    display: inline-block;
+  }
+}

@@ -5,15 +5,20 @@
       <%= b.input :end_date, as: :hidden %>
       <%= b.input :travellers, as: :hidden %>
     <% end %>
+    <%= f.input :civility,
+                as: :select,
+                collection: Client::CIVILITY,
+                required: true,
+                label: "Civilité" %>
     <%= f.input :first_name,
                 as: :string,
                 required: true,
                 label: "Prénom" %>
+
     <%= f.input :last_name,
                 as: :string,
                 required: true,
                 label: "Nom de Famille" %>
-
     <%= f.input :address,
                 as: :string,
                 required: true,

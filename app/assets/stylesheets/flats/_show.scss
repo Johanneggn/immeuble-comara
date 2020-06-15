@@ -105,15 +105,31 @@
 .title-index-flat{
   margin-left: 30px;
 }
+
 .photo-flat-index-principale {
  height: 370px;
- width: 320px
+ width: 320px;
 }
 
+.photo-flat-index-secondaire {
+ height: 170px;
+ width: 170px;
+ cursor: pointer;
+ display: grid;
+ padding-left: 10px;
+}
 }
 @media (max-width: 320px) {
 .photo-flat-index-principale {
  height: 300px;
  width: 280px
+}
+
+.photo-flat-index-secondaire {
+ height: 130px;
+ width: 130px;
+ cursor: pointer;
+ display: grid;
+ padding-left: 10px;
 }
 }

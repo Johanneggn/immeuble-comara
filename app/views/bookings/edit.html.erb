@@ -15,10 +15,20 @@
             input_html: {class: "select2"},
             label: 'Appartement',
             collection: @display_flat_names %>
-      <%= f.input :total_price,
-            as: :integer,
-            required: true,
-            label: 'Prix Total' %>
+      <div class="row">
+        <div class="col">
+          <%= f.input :total_price_xof,
+                      as: :integer,
+                      required: true,
+                      label: 'Prix total XOF' %>
+        </div>
+        <div class="col">
+          <%= f.input :total_price,
+                as: :integer,
+                required: true,
+                label: 'Prix Total en Euro' %>
+        </div>
+      </div>
       <div class="row">
         <div class="col">
           <%= f.input :start_date,
@@ -59,11 +69,14 @@
         </div>
       </div>
       <div class="pt-5">
-        <h3>Coordonées du client</h3>
+        <div class="d-flex">
+          <h3 class="mr-3">Coordonées du client</h3>
+          <%= render "bookings/emails/nouvelle_reservation" %>
+        </div>
         <%= f.simple_fields_for :client do |c| %>
           <div class="row">
             <div class="col">
-              <%= c.input :civility, as: :string, required: true, label: "Civilité" %>
+              <%= c.input :civility, as: :select, collection: Client::CIVILITY, required: true, label: "Civilité" %>
             </div>
             <div class="col">
               <%= c.input :first_name, as: :string, required: true, label: "Prénom" %>
