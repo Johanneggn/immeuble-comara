@@ -85,51 +85,79 @@
 }
 @media(max-width: 768px) {
 
-.photo-flat-index-principale {
- height: 400px;
- width: 350px
-}
+  .photo-flat-index-principale {
+   height: 400px;
+   width: 350px
+  }
 
-.photo-flat-index-secondaire {
- height: 120px;
- width: 120px;
- cursor: pointer;
-}
+  .photo-flat-index-secondaire {
+   height: 120px;
+   width: 120px;
+   cursor: pointer;
+  }
 
-.photo-show-flat {
-  border-top: 1px solid $lm-gray;
+  .photo-show-flat {
+    border-top: 1px solid $lm-gray;
+  }
+
+  .total-price-content {
+    font-family: "Mukta";
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  .button-booking {
+  background-color: $green;
+  border: none;
+  font-family: 'Staatliches';
+  padding: 10px 60px;
+  font-size: 24px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  color: $light-dark;
 }
 
 }
 @media(max-width: 415px) {
-.title-index-flat{
-  margin-left: 30px;
-}
+  .title-index-flat{
+    margin-left: 30px;
+  }
 
-.photo-flat-index-principale {
- height: 370px;
- width: 320px;
-}
+  .photo-flat-index-principale {
+   height: 370px;
+   width: 320px;
+  }
 
-.photo-flat-index-secondaire {
- height: 170px;
- width: 170px;
- cursor: pointer;
- display: grid;
- padding-left: 10px;
+  .photo-flat-index-secondaire {
+   height: 120px;
+   width: 120px;
+   cursor: pointer;
+   display: grid;
+   margin-left: 20px;
+  }
+
+  .button-booking {
+  background-color: $green;
+  border: none;
+  font-family: 'Staatliches';
+  padding: 10px 90px;
+  font-size: 24px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  color: $light-dark;
 }
 }
 @media (max-width: 320px) {
-.photo-flat-index-principale {
- height: 300px;
- width: 280px
-}
+  .photo-flat-index-principale {
+   height: 300px;
+   width: 280px
+  }
 
-.photo-flat-index-secondaire {
- height: 130px;
- width: 130px;
- cursor: pointer;
- display: grid;
- padding-left: 10px;
-}
+  .photo-flat-index-secondaire {
+   height: 100px;
+   width: 100px;
+   cursor: pointer;
+   display: grid;
+   padding-left: 10px;
+  }
 }

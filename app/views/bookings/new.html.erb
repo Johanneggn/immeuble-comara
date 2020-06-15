@@ -17,7 +17,7 @@
 
           </div>
           <div class="row">
-            <p> Prix total <%= @booking.total_price_xof %> XOF</p>
+            <p> Prix total <%= @booking.total_price_xof.to_s.split("").reverse.each_slice(3).map {|y| y.join("").reverse}.reverse.join(" ")  %> XOF</p>
           </div>
         </div>
       </div>

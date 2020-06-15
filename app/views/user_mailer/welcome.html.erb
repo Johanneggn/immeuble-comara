@@ -2,8 +2,8 @@
 
 <p>Pour faire le point :</p>
 <p>Vous avez une demande de réservations chez nous, pour <%= @booking.flat.name %>
-  du <%= @booking.start_date %> au <%= @booking.end_date %>, avec un reste à payer de
-  <%= @booking.total_price_xof %> = <%= (@booking.end_date - @booking.start_date).to_i %> X <%= @booking.flat.price_xof %> XOF soit <%= @booking.total_price %> €.
+  du <%= l(@booking.start_date, format: '%d %B') %> au <%= l(@booking.end_date, format: '%d %B %Y') %>, avec un reste à payer de
+  <%= @booking.total_price_xof.to_s.split("").reverse.each_slice(3).map {|y| y.join("").reverse}.reverse.join(" ") %> = <%= (@booking.end_date - @booking.start_date).to_i %> X <%= @booking.flat.price_xof.to_s.split("").reverse.each_slice(3).map {|y| y.join("").reverse}.reverse.join(" ") %> XOF soit <%= @booking.total_price %> €.
   Afin de confirmer les dates et sécuriser la demande de réservation de manière définitive,
   nous vous invitons à régler 20 % de la somme total par virement ou autre, au moins
   14 jours avant l’arrivée, et le reste sur place.
