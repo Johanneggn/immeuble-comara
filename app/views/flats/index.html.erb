@@ -8,19 +8,19 @@
                   params[:start_date_response],
                   input_html: {class: "datepicker"},
                   class: "datepicker-query bg-white",
-                  placeholder: "Date de départ" %>
+                  placeholder: "Date d'arrivée" %>
             <%= text_field_tag :end_date_response,
                   params[:end_date_response],
                   input_html: {class: "end_date"},
                   class: "end-date-query bg-white",
-                  placeholder: "Date de fin" %>
+                  placeholder: "Date de départ" %>
             <div class="icon-capacity">
             <div class="user-capacity">
               <i class="fas fa-user-friends"></i>
             </div>
           <%= select_tag :capacity_response,
                 options_for_select([ "1", "2", "3", "4", "5", "6" ], params[:capacity_response]),
-                class: "capacity-home-booking" %>
+                class: "capacity-home-booking bg-white" %>
             </div>
           <%= submit_tag 'Recherchez',
           class: "submit-index-show"%>

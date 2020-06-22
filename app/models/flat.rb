@@ -9,7 +9,7 @@ BELONGING = ["Immeuble Comara", "Partenaire"]
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
-  validates :name, :description, :price_per_day, :longitude, :latitude, :max_capacity, :min_capacity, :price_xof, presence: true
+  validates :name, :description, :price_per_day, :max_capacity, :min_capacity, :price_xof, presence: true
 
     def unavailable_dates
     bookings.pluck(:start_date, :end_date).map do |range|
