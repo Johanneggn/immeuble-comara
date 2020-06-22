@@ -1,4 +1,4 @@
-<div class="container bg-white my-5">
+<div class="container bg-white my-5 new-flat">
   <h1 class="p-4">Créer une annonce</h1>
     <%= simple_form_for @flat do |f| %>
       <% if @flat.errors.any? %>
@@ -57,7 +57,20 @@
                     [false, 'Partenaire']],
                     :first, :last,
                     label: "Appartenance" %>
-
+        <div class="geolocation d-none">
+          <div class="row">
+            <div class="col">
+              <%= f.input :longitude,
+                          as: :float,
+                          label: "Longitude" %>
+            </div>
+            <div class="col">
+              <%= f.input :latitude,
+                          as: :float,
+                          label: "Latitude" %>
+            </div>
+          </div>
+        </div>
           <div class="row">
           <%= f.simple_fields_for :equipment do |c| %>
             <div class="col-md-6">

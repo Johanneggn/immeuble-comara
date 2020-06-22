@@ -29,12 +29,10 @@
                     as: :file,
                     input_html: { multiple: true },
                     label: 'Photos secondaires' %>
-        <% @flat.photos.each do |photo| %>
-          <div class="row">
-            <%= cl_image_tag photo.key, crop: :fill_pad, class: "photo-flat-index-secondaire" %>
-          </div>
+        <%= link_to delete_photos_flat_path(@flat), method: :patch do %>
+          <p>Supprimer les photos</p>
         <% end %>
-                    <div class="row">
+        <div class="row">
           <%= f.simple_fields_for :equipment do |c| %>
             <div class="col-md-6 my-3">
               <div class="row ml-2">

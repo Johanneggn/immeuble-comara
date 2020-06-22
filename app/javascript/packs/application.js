@@ -6,3 +6,4 @@ import "../components/bookings_treatement";
 import "../components/photo_displayed";
 import "../components/total_price_calculation"
 import '../plugins/init_mapbox';
+import "../components/new_partners_flat";

@@ -21,6 +21,9 @@ Rails.application.routes.draw do
 
   resources :flats do
     resources :bookings, only: [:new, :create]
+    member do
+      patch :delete_photos
+    end
   end
 
   resources :client, only: [:new, :create] do

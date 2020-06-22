@@ -1,6 +1,6 @@
 class FlatsController < ApplicationController
     skip_before_action :authenticate_user!, only: [:index, :show]
-    before_action :set_flat, only: %i[show edit update destroy]
+    before_action :set_flat, only: %i[show edit update destroy delete_photos]
 
   def index
     start_date, end_date = params[:start_date_response].split(' to ')
@@ -51,10 +51,8 @@ class FlatsController < ApplicationController
 
   def update
     @flat.update(flat_params)
-
     if @flat.save
     redirect_to flat_path(@flat)
-
     else
       render :edit
     end
@@ -63,6 +61,11 @@ class FlatsController < ApplicationController
   def destroy
     @flat.destroy
     redirect_to user_flats_path
+  end
+
+  def delete_photos
+    @flat.photos.purge
+    flash[:delete_photos] = "Les photos sont supprimées."
   end
 
   private
