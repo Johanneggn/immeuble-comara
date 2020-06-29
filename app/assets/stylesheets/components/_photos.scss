@@ -23,6 +23,16 @@
 .close-photos:hover {
   color: $green;
 }
+
+
+.slick-prev:before {
+  color: black !important;
+}
+
+.slick-next:before {
+  color: black !important;
+}
+
 @media(max-width: 1024px){
  .dotnav-container {
   height: 80vh;

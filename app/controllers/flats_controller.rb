@@ -83,6 +83,7 @@ class FlatsController < ApplicationController
       :max_capacity,
       :min_capacity,
       :belonging,
+      :offer,
       photos: [],
       equipment_attributes: [:id, :name, :available, :pricing, :icon])
   end
