@@ -40,7 +40,7 @@
               <div class="flat-list m-4">
                 <div class="d-flex">
                   <div class="col-3 px-0 d-flex align-items-center">
-                    <%= cl_image_tag flat.picture.key, crop: :fill, class: "photo-flat-index" %>
+                    <%= cl_image_tag flat.picture.key, crop: :scale, class: "photo-flat-index" %>
                   </div>
                   <div class="col-6">
                     <div class="row">
@@ -86,7 +86,24 @@
               <% end %>
             <% end %>
           </div>
+          <div class="cars-info ml-4">
+            <div class="car-info m-4 bg-white">
+              <div class="row">
+                <div class="col-3">
+                  <%= image_tag "kia-sportage-.jpg", class: "photo-car-index", crop: :scale %>
+                </div>
+                <div class="col-9">
+                  <div class="block-info">
+                    <h3 class="pt-2" id="flat-name-index">Vous souhaitez louer une voiture ?</h3>
+                    <p class="car-text">Avec ou sans chauffeur ? Pour l'aéroport ou toute la durée de votre séjour ?</p>
+                    <p class="car-text">Retrouvez tous les renseignements lors de votre réservation d'appartement.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
           <div class="col-md-4">
             <div
               id="map"

@@ -189,12 +189,15 @@
 }
 
 .datepicker-query {
- width: 12vw;
- height: 15vh;
- border: none;
- font-family: "mukta";
- text-align: center;
- box-shadow: none;
+  width: 12vw;
+  height: 15vh;
+  border: none;
+  font-family: "mukta";
+  text-align: center;
+ &:focus {
+  box-shadow: none;
+ }
+
 }
 
 .end-date-query {

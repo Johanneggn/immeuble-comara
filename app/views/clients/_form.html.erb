@@ -1,10 +1,6 @@
 <div class="form-client p-4">
   <%= simple_form_for @client, url: flat_bookings_path(@flat) do |f| %>
-    <%= f.simple_fields_for :booking do |b| %>
-      <%= b.input :start_date, as: :hidden %>
-      <%= b.input :end_date, as: :hidden %>
-      <%= b.input :travellers, as: :hidden %>
-    <% end %>
+
     <%= f.input :civility,
                 as: :select,
                 collection: Client::CIVILITY,
@@ -31,6 +27,11 @@
                 as: :string,
                 required: true,
                 label: "Adresse e-mail" %>
+    <%= f.simple_fields_for :booking do |b| %>
+      <%= b.input :start_date, as: :hidden %>
+      <%= b.input :end_date, as: :hidden %>
+      <%= b.input :travellers, as: :hidden %>
+    <% end %>
     <div class="d-flex flex-row-reverse mt-4 justify-content-center">
       <%= f.submit "Réservez", class: "back-to-home-link" %>
     </div>
