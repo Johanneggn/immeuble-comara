@@ -22,6 +22,9 @@ class BookingsController < ApplicationController
     @booking.total_price_xof = @booking.flat.price_xof*((@booking.end_date - @booking.start_date).to_i)
     @booking.status = 'pending'
     @booking.origin = 'Site internet'
+    if @booking.airport_car = true
+      @booking.total_price_xof + 30000
+    end
     if @client.save
       mail = UserMailer.with(booking: @booking).welcome.deliver_now
       mail_notif = UserMailer.new_booking.deliver_now
@@ -59,6 +62,8 @@ private
     :total_price_xof,
     :status,
     :origin,
+    :airport_car,
+    :rental_car,
     client_attributes: [:id, :civilty, :first_name, :last_name, :address, :phone_number, :email])
   end
 

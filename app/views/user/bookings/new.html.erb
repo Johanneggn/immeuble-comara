@@ -68,6 +68,8 @@
                 label: "Origine de réservation" %>
         </div>
       </div>
+      <%= f.input :airport_car, as: :boolean, label: "Navette pour l'aéroport (A/R)." %>
+      <%= f.input :rental_car, as: :boolean, label: "Demande de devis location voiture." %>
       <div class="pt-5">
         <div class="d-flex">
           <h3 class="mr-3">Coordonées du client</h3>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_01_104716) do
+ActiveRecord::Schema.define(version: 2020_07_08_100458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 2020_07_01_104716) do
     t.string "status"
     t.string "origin"
     t.integer "total_price_xof"
+    t.boolean "airport_car"
+    t.boolean "rental_car"
     t.index ["client_id"], name: "index_bookings_on_client_id"
     t.index ["flat_id"], name: "index_bookings_on_flat_id"
   end

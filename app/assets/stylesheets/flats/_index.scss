@@ -12,19 +12,25 @@
   border-radius: 5px;
   height: 150px;
   margin-top: 30px !important;
+  display: flex;
 }
 
 .car-text {
- //line-height: normal;
- // margin: 0;
+ line-height: 20px;
+ margin: 0;
  color: $light-dark;
  font-weight: 500;
 }
 
 .photo-car-index {
-  height: 150px;
+  max-height: 150px;
   width: 200px;
 }
+
+.block-info {
+  padding: 0px 15px;
+}
+
 // chaque appartement
 
 .title-page-index-flats {
@@ -128,6 +134,10 @@ width: 170px;
   .title-page-index-flats {
     margin-top: 110px !important;
   }
+
+  .photo-car-index {
+    width: 120px;
+  }
 }
 //taille petite tablette
 @media(max-width: 768px) {
@@ -140,7 +150,7 @@ width: 170px;
   }
 
   #flat-name-index {
-    font-size: 18px !important;
+    font-size: 16px !important;
     color: $light-dark;
     font-weight: 600;
   }
@@ -170,6 +180,14 @@ width: 170px;
     width : 100px !important;
   }
 
+  .photo-car-index {
+    width: 100px;
+  }
+
+  .car-text {
+    font-size: 12px;
+  }
+
   .block-info {
   height: 23px;
   margin: 10px;
@@ -181,6 +199,22 @@ width: 170px;
 // taille grand téléphone
 
 @media(max-width: 415px) {
+
+  .car-info {
+    display: grid;
+  }
+
+  .photo-car {
+    display: none !important;
+  }
+
+  .photo-car-index {
+    display: none;
+  }
+
+  .block-info {
+    margin-top: -100px;
+  }
 
   .title-page-index-flats {
     margin-top: 60px !important;
@@ -224,8 +258,8 @@ width: 170px;
   }
 
   .block-info {
-  height: 30px;
-  margin: 0px;
+    height: 30px;
+    margin: 0px;
   }
   .price-per-day-index {
     font-size: 10px;
@@ -257,6 +291,10 @@ width: 170px;
   }
   .title-index-flat {
     font-size: 12px;
+  }
+
+  .car-info {
+    height: 170px;
   }
 
   #flat-name-index {

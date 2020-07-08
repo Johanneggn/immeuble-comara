@@ -13,6 +13,14 @@
                   <p class="flat-name-booking"><%= booking.flat.name %> </p>
                   <p><%= l(booking.start_date, format: '%d %B') %> - <%= l(booking.end_date, format: '%d %B %Y') %></p>
                   <p><%= booking.total_price %>€</p>
+                  <div class="d-flex">
+                    <% if booking.airport_car = true %>
+                      <p class="pr-2">Navette aéroport</p>
+                    <% end %>
+                    <% if booking.rental_car = true %>
+                      <p class="px-2">Location de voiture</p>
+                    <% end %>
+                  </div>
                 </div>
                 <div class="col d-flex justify-content-center align-items-center">
                   <div class="mx-2">
@@ -73,6 +81,9 @@
                   <p class="mx-2">-</p>
                   <p class="end-date-booking"><%= l(booking.end_date, format: '%d %B %Y') %></p>
                 </div>
+                <% if booking.airport_car = true %>
+                  <p>Navette aéroport</p>
+                <% end %>
                 <%= link_to 'Modifier', edit_booking_path(booking), class: 'link-flat'  %>
               </div>
             <% end %>
@@ -110,6 +121,9 @@
                     <p class="mx-2">-</p>
                     <p class="end-date-booking"><%= l(booking.end_date, format: '%d %B %Y') %></p>
                   </div>
+                  <% if booking.airport_car = true %>
+                    <p>Navette aéroport</p>
+                  <% end %>
                   <%= link_to 'Modifier', edit_booking_path(booking), booking: @booking, class: 'link-flat'  %>
                 </div>
               <% end %>
