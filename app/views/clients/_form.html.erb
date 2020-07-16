@@ -32,7 +32,8 @@
       <%= b.input :end_date, as: :hidden %>
       <%= b.input :travellers, as: :hidden %>
       <%= b.input :rental_car, as: :boolean, label: "Je souhaite recevoir un devis concernant une location de voiture." %>
-      <%= b.input :airport_car, as: :boolean, label: "Je souhaite prendre la navette pour l'aéroport (A/R) au prix de 30 000 XOF." %>
+      <%= b.input :airport_car, as: :boolean, label: "Je souhaite prendre la navette depuis l'aéroport vers l'immeuble Comara au prix de 15 000 XOF." %>
+      <%= b.input :airport_car_back, as: :boolean, label: "Je souhaite prendre la navette depuis l'immeuble Comara vers l'aéroport au prix de 15 000 XOF." %>
     <% end %>
     <div class="d-flex flex-row-reverse mt-4 justify-content-center">
       <%= f.submit "Réservez", class: "back-to-home-link" %>

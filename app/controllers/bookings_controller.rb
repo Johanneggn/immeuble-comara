@@ -63,6 +63,7 @@ private
     :status,
     :origin,
     :airport_car,
+    :airport_car_back,
     :rental_car,
     client_attributes: [:id, :civilty, :first_name, :last_name, :address, :phone_number, :email])
   end

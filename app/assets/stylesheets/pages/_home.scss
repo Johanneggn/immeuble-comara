@@ -35,12 +35,16 @@
   padding: 100px 70px;
 }
 
+.parts-presentation-home {
+ display: flex;
+}
+
 .title-presentation-immeuble {
   border-bottom: 1px solid $lm-gray;
 }
 
 .photo-home {
-  width: 510px;
+  width: 550px;
   height: 430px;
   border-radius: 5px;
   border: 1px solid black;
@@ -173,6 +177,10 @@
     display: none;
   }
 
+  .photo-home {
+    width: 410px;
+    height: 320px;
+  }
 
   // flat part
 
@@ -219,6 +227,14 @@
 // flat part
   .cards-flat-home {
     margin-left: 50px;
+  }
+
+  .photo-home {
+    display: none;
+  }
+
+  .parts-presentation-home {
+    display: inline;
   }
 }
 
