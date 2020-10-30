@@ -17,7 +17,7 @@ class UserMailer < ApplicationMailer
   def new_contact_car(contact)
     @contact = contact
 
-    mail(to: 'johanne.gueguen@gmail.com', subject: 'Vous avez un message pour une location de voiture')
+    mail(to: 'Sides.lgr@gmail.com', subject: 'Vous avez un message pour une location de voiture')
   end
 
 end
