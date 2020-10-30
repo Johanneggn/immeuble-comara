@@ -1,0 +1,30 @@
+.contact-new {
+  padding: 5rem;
+}
+
+.form-contact {
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.contact-info {
+  padding: 3rem 5rem 1.5rem 5rem;
+}
+
+.form-control {
+  border-radius: 10px;
+}
+.photo-contact-car {
+  width: 100%;
+}
+
+@media(max-width: 415px){
+  .contact-new {
+    padding: 1rem;
+  }
+
+  .contact-info {
+    padding: 1rem;
+  }
+
+}

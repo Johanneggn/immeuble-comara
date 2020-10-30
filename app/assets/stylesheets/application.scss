@@ -19,6 +19,7 @@
 @import "fontawesome/fontawesome";
 @import "simple_calendar";
 @import "bookings/show";
+@import "contacts/new";
 
 @import "fontawesome/solid";
 @import "fontawesome/brands";
@@ -26,6 +27,7 @@
 
 @import 'slick';
 @import 'slick-theme';
+
 .user {
   @extend %fa-icon;
   @extend .fas;

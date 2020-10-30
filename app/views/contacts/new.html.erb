@@ -1,0 +1,30 @@
+<div class="contact-new">
+  <div class="message-flash"><%= flash[:success] %></div>
+  <div class="form-contact">
+    <%= image_tag "test-contact.jpeg", class: "photo-contact-car" %>
+      <%= simple_form_for @contact do |f| %>
+        <div class="contact-info">
+          <%= f.input :name,
+                      as: :string,
+                      required: true,
+                      label: "Votre prénom et nom" %>
+          <%= f.input :email,
+                      as: :string,
+                      required: true,
+                      label: "Votre adresse e-mail" %>
+          <%= f.input :phone_number,
+                      as: :string,
+                      required: true,
+                      label: "Votre numéro de téléphone" %>
+          <%= f.input :text,
+                      as: :text,
+                      required: true,
+                      class: 'text-contact',
+                      label: "Votre message" %>
+        </div>
+        <div class="d-flex flex-row-reverse mt-4 justify-content-center">
+          <%= f.submit "Envoyer", class: "button-booking" %>
+        </div>
+      <% end %>
+  </div>
+</div>

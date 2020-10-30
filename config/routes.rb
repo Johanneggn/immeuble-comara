@@ -31,4 +31,6 @@ Rails.application.routes.draw do
   end
 
  resources :bookings, only: [:new, :create, :show, :edit, :update]
+
+ resources :contacts, only: [:new, :create]
 end

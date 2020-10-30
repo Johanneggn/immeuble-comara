@@ -13,6 +13,9 @@
   height: 150px;
   margin-top: 30px !important;
   display: flex;
+  &:hover {
+    border: 2px solid $green;
+  }
 }
 
 .car-text {
@@ -31,6 +34,9 @@
   padding: 0px 15px;
 }
 
+.link-to-contact:hover {
+  text-decoration: none;
+}
 // chaque appartement
 
 .title-page-index-flats {
