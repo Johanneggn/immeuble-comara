@@ -9,7 +9,7 @@
       <h1 class="title-index-flat mt-5"><%= @flat.name %></h1>
       <div class="photo-show-flat" id="photo-show-flat">
         <div class="photos-show-flat">
-          <div class="col d-flex justify-content-center py-4">
+          <div class="col d-flex py-4">
             <%= cl_image_tag @flat.picture.key, crop: :fit, class: "photo-flat-index-principale" %>
           </div>
           <div class="col">

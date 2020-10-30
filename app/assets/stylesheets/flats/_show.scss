@@ -2,7 +2,8 @@
 
 .photo-flat-index-principale {
  height: 540px;
- width: 550px
+ width: 550px;
+ border-radius: 10px;
 }
 
 .photo-flat-index-secondaire {
@@ -10,6 +11,7 @@
  width: 170px;
  cursor: pointer;
  display: grid;
+ border-radius: 10px;
 }
 
 .photo-show-flat {
